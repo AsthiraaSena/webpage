@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Planet Transit | Asthiraa Astrology</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/stylepanchangam.css">
+</head>
+
+<body data-page="transit">
+
+<header class="topbar">
+  <div class="logo">🪐 Asthiraa Astrology</div>
+  <div class="actions">
+    <button id="langBtn">தமிழ்</button>
+    <button id="menuBtn">☰</button>
+  </div>
+</header>
+
+<nav id="menu" class="menu hidden">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Our Services</a>
+  <a href="classes.html">Class Details</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="transit.html">Daily Planet Transit</a>
+</nav>
+
+<main>
+
+<h2>🪐 Planet Transit</h2>
+
+<div class="controls">
+  <input type="date" id="dateInput">
+  <button id="showBtn">Show</button>
+</div>
+
+<div id="info"></div>
+
+<table>
+<thead>
+<tr>
+  <th>Planet</th>
+  <th>D.M.S</th>
+  <th>Sign</th>
+  <th>Star</th>
+  <th>Sub</th>
+  <th>S.Time</th>
+</tr>
+</thead>
+<tbody id="tbody">
+<tr><td colspan="6">Select a date</td></tr>
+</tbody>
+</table>
+
+</main>
+
+<script src="js/app.js"></script>
+<script src="js/transit.js"></script>
+</body>
+</html>
