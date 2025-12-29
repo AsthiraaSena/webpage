@@ -14,9 +14,9 @@ const content = {
     title:"Welcome",
     body:"Asthiraa Astrology provides guidance for life, health, education and profession.",
     guru:[
-      "✔ Traditional & Scientific Astrology",
-      "✔ Medical Astrology Specialist",
-      "✔ KP & Classical Astrology Methods",
+      "✔ Baskara Astrology",
+      "✔ Medical Astrology Researcher",
+      "✔ Baskara Classical Astrology Methods",
       "✔ Teaching with Practical Examples",
       "✔ Years of Experience in Astrology"
     ]
@@ -25,9 +25,9 @@ const content = {
     title:"குருவே துணை",
     body:"வாழ்க்கை, மருத்துவம், கல்வி மற்றும் தொழிலுக்கான ஜோதிட வழிகாட்டல்.",
     guru:[
-      "✔ பாரம்பரிய மற்றும் அறிவியல் ஜோதிடம்",
-      "✔ மருத்துவ ஜோதிட நிபுணர்",
-      "✔ கே.பி & பாரம்பரிய ஜோதிட முறைகள்",
+      "✔ பாஸ்கரா  ஜோதிடம்",
+      "✔ மருத்துவ ஜோதிட ஆராய்ச்சி",
+      "✔ பாஸ்கரா பாரம்பரிய ஜோதிட முறைகள்",
       "✔ நடைமுறை எடுத்துக்காட்டுகளுடன் கற்பித்தல்",
       "✔ பல ஆண்டுகளான ஜோதிட அனுபவம்"
     ]
@@ -74,6 +74,9 @@ const content = {
       body:"தொலைபேசி: 9787-92-1438 | மின்னஞ்சல்: info@asthiraaastrology.in"
     }
   },
+
+  
+
   blogs:{
     en:{
       title:"Blogs & Info",
@@ -107,4 +110,3 @@ langBtn.onclick = () => {
   }
 
 };
-
