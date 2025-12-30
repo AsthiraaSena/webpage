@@ -47,31 +47,48 @@ async function loadTable(){
 
   tbody.innerHTML = "";
 
-  data.forEach(r => {
+ data.forEach(r => {
 
-    const sno    = r.sno ?? r["s.no"] ?? "";
-    const degree = r.degree ?? r["D.M.S"] ?? 0;
-    const rasi   = Number(r.rasi ?? r.Raasi) - 1;
-    const star   = Number(r.star ?? r.Star) - 1;
+  // ---- SAFE FIELD EXTRACTION ----
+  const sno =
+    r.sno ??
+    r["s.no"] ??
+    "";
 
-    let lastVal;
-    if(mode === "sub"){
-      lastVal = Number(r.sub ?? r.Sub) - 1;
-    }else{
-      lastVal = Number(r.ssb ?? r.SSB) - 1;
-    }
+  const degree =
+    r.degree ??
+    r["D.M.S"] ??
+    0;
 
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${sno}</td>
-      <td>${toDMS(degree)}</td>
-      <td>${safeIndex(rasiMap[currentLang], rasi)}</td>
-      <td>${safeIndex(planetMap[currentLang], star)}</td>
-      <td>${safeIndex(planetMap[currentLang], lastVal)}</td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
+  const rasi =
+    Number(r.rasi ?? r.Raasi) - 1;
+
+  const star =
+    Number(r.star ?? r.Star) - 1;
+
+  let lastVal;
+
+  if (mode === "sub") {
+    lastVal = Number(r.sub ?? r.Sub);
+  } else {
+    lastVal = Number(r.ssb ?? r.SSB);
+  }
+
+  lastVal = isNaN(lastVal) || lastVal < 1 ? -1 : lastVal - 1;
+
+  // ---- BUILD ROW ----
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>${sno}</td>
+    <td>${toDMS(degree)}</td>
+    <td>${safeIndex(rasiMap[currentLang], rasi)}</td>
+    <td>${safeIndex(planetMap[currentLang], star)}</td>
+    <td>${safeIndex(planetMap[currentLang], lastVal)}</td>
+  `;
+
+  tbody.appendChild(tr);
+});
+
 
 /* ================= EVENTS ================= */
 
