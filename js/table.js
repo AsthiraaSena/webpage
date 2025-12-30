@@ -39,50 +39,56 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 
-  loadBtn.addEventListener("click", function () {
+ loadBtn.addEventListener("click", function () {
 
-    const mode = document.querySelector("input[name='mode']:checked").value;
-    const url  = mode === "sub" ? "data/sub.json" : "data/ssb.json";
+  const mode = document.querySelector("input[name='mode']:checked").value;
+  const url  = mode === "sub" ? "data/sub.json" : "data/ssb.json";
 
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
+  // 🔵 START animation
+  loadBtn.classList.add("loading");
+  loadBtn.textContent = "Loading";
 
-        tableBody.innerHTML = "";
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
 
-        if (mode === "sub") {
-          ssbHead.style.display = "none";
-        } else {
-          ssbHead.style.display = "";
+      tableBody.innerHTML = "";
+
+      if (mode === "sub") {
+        ssbHead.style.display = "none";
+      } else {
+        ssbHead.style.display = "";
+      }
+
+      data.forEach(r => {
+
+        let row = `
+          <tr>
+            <td>${r["s.no"]}</td>
+            <td>${toDMS(r["D.M.S"])}</td>
+            <td>${rasiMap[r["Raasi"] - 1]}</td>
+            <td>${planetMap[r["Star"] - 1]}</td>
+            <td>${planetMap[r["Sub"] - 1]}</td>
+        `;
+
+        if (mode === "ssb") {
+          row += `<td>${planetMap[r["Ssb"] - 1]}</td>`;
         }
 
-        data.forEach(r => {
-
-          let row = `
-            <tr>
-              <td>${r["s.no"]}</td>
-              <td>${toDMS(r["D.M.S"])}</td>
-              <td>${rasiMap[r["Raasi"] - 1]}</td>
-              <td>${planetMap[r["Star"] - 1]}</td>
-              <td>${planetMap[r["Sub"] - 1]}</td>
-          `;
-
-          if (mode === "ssb") {
-            row += `<td>${planetMap[r["Ssb"] - 1]}</td>`;
-          }
-
-          row += `</tr>`;
-
-          tableBody.insertAdjacentHTML("beforeend", row);
-        });
-
-      })
-      .catch(err => {
-        console.error(err);
-        tableBody.innerHTML =
-          `<tr><td colspan="6">Error loading data</td></tr>`;
+        row += `</tr>`;
+        tableBody.insertAdjacentHTML("beforeend", row);
       });
 
-  });
+    })
+    .catch(err => {
+      console.error(err);
+      tableBody.innerHTML =
+        `<tr><td colspan="6">Error loading data</td></tr>`;
+    })
+    .finally(() => {
+      // 🟢 STOP animation
+      loadBtn.classList.remove("loading");
+      loadBtn.textContent = "Load";
+    });
 
 });
