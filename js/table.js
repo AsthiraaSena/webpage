@@ -48,7 +48,7 @@ async function loadTable(){
     const sno   = r["s.no"];
     const deg   = r["D.M.S"];
     const rasi  = r["Raasi"];
-    const star  = r["Star"];
+    const Star  = r["Star"];
     const sub   = r["Sub"];
     const ssb   = r["SSB"];
 
