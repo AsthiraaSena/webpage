@@ -4,7 +4,7 @@ let currentLang = localStorage.getItem("lang") || "en";
 
 const rasiMap = {
   en:["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"],
-  ta:["மேஷம்","ரிஷபம்","மிதுனம்","கடகம்","சிம்மம்","கன்னி","துலாம்","விருச்சிகம்","தனுசு","மகரம்","கும்பம்","மீனம்"]
+  ta:["மேஷ","ரிஷ","மிது","கட","சிம்","கன்","துலா","விரு","தனு","மக","கும்","மீன"]
 };
 
 const planetMap = {
