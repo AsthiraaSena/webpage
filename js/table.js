@@ -37,7 +37,7 @@ async function loadSubTable(){
   const tbody = document.getElementById("tableBody");
   const lastHead = document.getElementById("lastHead");
 
-  lastHead.innerText = currentLang === "en" ? "Sub" : "சப்";
+  lastHead.innerText = currentLang === "en" ? "Sub" : "Sub";
   clearTable();
 
   data.forEach(r => {
@@ -64,7 +64,7 @@ async function loadSSBTable(){
   const tbody = document.getElementById("tableBody");
   const lastHead = document.getElementById("lastHead");
 
-  lastHead.innerText = currentLang === "en" ? "SSB" : "எஸ்.எஸ்.பி";
+  lastHead.innerText = currentLang === "en" ? "Ssb" : "Ssb";
   clearTable();
 
   data.forEach(r => {
