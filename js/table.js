@@ -14,12 +14,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const subHead   = document.getElementById("subHead");
   const ssbHead   = document.getElementById("ssbHead");
 
-  function toDMS(deg){
-    const d = Math.floor(deg);
-    const m = Math.floor((deg - d) * 60);
-    const s = Math.round((((deg - d) * 60) - m) * 60);
-    return `${d}° ${m}' ${s}"`;
+ function toDMS(deg){
+
+  let d = Math.floor(deg);
+
+  let mFloat = (deg - d) * 60;
+  let m = Math.floor(mFloat);
+
+  let s = Math.round((mFloat - m) * 60);
+
+  // 🔥 FIX: handle 60 seconds
+  if (s === 60) {
+    s = 0;
+    m += 1;
   }
+
+  // 🔥 FIX: handle 60 minutes
+  if (m === 60) {
+    m = 0;
+    d += 1;
+  }
+
+  return `${d}° ${m.toString().padStart(2,"0")}' ${s.toString().padStart(2,"0")}"`;
+}
+
 
   loadBtn.addEventListener("click", function () {
 
