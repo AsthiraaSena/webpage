@@ -15,16 +15,12 @@ const planetMap = {
 /* ================= HELPERS ================= */
 
 function toDMS(deg){
-  deg = Number(deg) || 0;
+  if (deg === undefined || isNaN(deg)) return "";
   const d = Math.floor(deg);
   const mFloat = (deg - d) * 60;
   const m = Math.floor(mFloat);
   const s = Math.round((mFloat - m) * 60);
   return `${d}° ${m}' ${s}"`;
-}
-
-function safeIndex(arr, index){
-  return arr[index] ?? "-";
 }
 
 /* ================= LOAD TABLE ================= */
@@ -38,65 +34,45 @@ async function loadTable(){
   const data = await res.json();
 
   const tbody = document.getElementById("tableBody");
-  const head  = document.getElementById("lastHead");
+  const lastHead = document.getElementById("lastHead");
 
-  head.innerText =
+  lastHead.innerText =
     mode === "sub"
       ? (currentLang==="en" ? "Sub" : "சப்")
       : (currentLang==="en" ? "SSB" : "எஸ்.எஸ்.பி");
 
   tbody.innerHTML = "";
 
- data.forEach(r => {
+  data.forEach(r => {
 
-  // ---- SAFE FIELD EXTRACTION ----
-  const sno =
-    r.sno ??
-    r["s.no"] ??
-    "";
+    const sno   = r["s.no"];
+    const deg   = r["D.M.S"];
+    const rasi  = r["Raasi"];
+    const star  = r["Star"];
+    const sub   = r["Sub"];
+    const ssb   = r["SSB"];
 
-  const degree =
-    r.degree ??
-    r["D.M.S"] ??
-    0;
+    const lastVal = mode === "sub" ? sub : ssb;
 
-  const rasi =
-    Number(r.rasi ?? r.Raasi) - 1;
-
-  const star =
-    Number(r.star ?? r.Star) - 1;
-
-  let lastVal;
-
-  if (mode === "sub") {
-    lastVal = Number(r.sub ?? r.Sub);
-  } else {
-    lastVal = Number(r.ssb ?? r.SSB);
-  }
-
-  lastVal = isNaN(lastVal) || lastVal < 1 ? -1 : lastVal - 1;
-
-  // ---- BUILD ROW ----
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
-    <td>${sno}</td>
-    <td>${toDMS(degree)}</td>
-    <td>${safeIndex(rasiMap[currentLang], rasi)}</td>
-    <td>${safeIndex(planetMap[currentLang], star)}</td>
-    <td>${safeIndex(planetMap[currentLang], lastVal)}</td>
-  `;
-
-  tbody.appendChild(tr);
-});
-
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${sno}</td>
+      <td>${toDMS(deg)}</td>
+      <td>${rasiMap[currentLang][rasi-1]}</td>
+      <td>${planetMap[currentLang][star-1]}</td>
+      <td>${planetMap[currentLang][lastVal-1]}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
 
 /* ================= EVENTS ================= */
 
 document.getElementById("loadBtn").onclick = loadTable;
 
 document.getElementById("langBtn")?.addEventListener("click",()=>{
-  currentLang = currentLang === "en" ? "ta" : "en";
-  localStorage.setItem("lang", currentLang);
+  currentLang = currentLang==="en" ? "ta" : "en";
+  localStorage.setItem("lang",currentLang);
   loadTable();
 });
 
