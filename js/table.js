@@ -14,81 +14,57 @@ document.addEventListener("DOMContentLoaded", function () {
   const subHead   = document.getElementById("subHead");
   const ssbHead   = document.getElementById("ssbHead");
 
- function toDMS(deg){
-
-  let d = Math.floor(deg);
-
-  let mFloat = (deg - d) * 60;
-  let m = Math.floor(mFloat);
-
-  let s = Math.round((mFloat - m) * 60);
-
-  // 🔥 FIX: handle 60 seconds
-  if (s === 60) {
-    s = 0;
-    m += 1;
+  function toDMS(deg){
+    const d = Math.floor(deg);
+    const m = Math.floor((deg - d) * 60);
+    const s = Math.round((((deg - d) * 60) - m) * 60);
+    return `${d}° ${m}' ${s}"`;
   }
 
-  // 🔥 FIX: handle 60 minutes
-  if (m === 60) {
-    m = 0;
-    d += 1;
-  }
+  loadBtn.addEventListener("click", function () {
 
-  return `${d}° ${m.toString().padStart(2,"0")}' ${s.toString().padStart(2,"0")}"`;
-}
+    const mode = document.querySelector("input[name='mode']:checked").value;
+    const url  = mode === "sub" ? "data/sub.json" : "data/ssb.json";
 
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
 
- loadBtn.addEventListener("click", function () {
+        tableBody.innerHTML = "";
 
-  const mode = document.querySelector("input[name='mode']:checked").value;
-  const url  = mode === "sub" ? "data/sub.json" : "data/ssb.json";
-
-  // 🔵 START animation
-  loadBtn.classList.add("loading");
-  loadBtn.textContent = "Loading";
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-
-      tableBody.innerHTML = "";
-
-      if (mode === "sub") {
-        ssbHead.style.display = "none";
-      } else {
-        ssbHead.style.display = "";
-      }
-
-      data.forEach(r => {
-
-        let row = `
-          <tr>
-            <td>${r["s.no"]}</td>
-            <td>${toDMS(r["D.M.S"])}</td>
-            <td>${rasiMap[r["Raasi"] - 1]}</td>
-            <td>${planetMap[r["Star"] - 1]}</td>
-            <td>${planetMap[r["Sub"] - 1]}</td>
-        `;
-
-        if (mode === "ssb") {
-          row += `<td>${planetMap[r["Ssb"] - 1]}</td>`;
+        if (mode === "sub") {
+          ssbHead.style.display = "none";
+        } else {
+          ssbHead.style.display = "";
         }
 
-        row += `</tr>`;
-        tableBody.insertAdjacentHTML("beforeend", row);
+        data.forEach(r => {
+
+          let row = `
+            <tr>
+              <td>${r["s.no"]}</td>
+              <td>${toDMS(r["D.M.S"])}</td>
+              <td>${rasiMap[r["Raasi"] - 1]}</td>
+              <td>${planetMap[r["Star"] - 1]}</td>
+              <td>${planetMap[r["Sub"] - 1]}</td>
+          `;
+
+          if (mode === "ssb") {
+            row += `<td>${planetMap[r["Ssb"] - 1]}</td>`;
+          }
+
+          row += `</tr>`;
+
+          tableBody.insertAdjacentHTML("beforeend", row);
+        });
+
+      })
+      .catch(err => {
+        console.error(err);
+        tableBody.innerHTML =
+          `<tr><td colspan="6">Error loading data</td></tr>`;
       });
 
-    })
-    .catch(err => {
-      console.error(err);
-      tableBody.innerHTML =
-        `<tr><td colspan="6">Error loading data</td></tr>`;
-    })
-    .finally(() => {
-      // 🟢 STOP animation
-      loadBtn.classList.remove("loading");
-      loadBtn.textContent = "Load";
-    });
+  });
 
 });
