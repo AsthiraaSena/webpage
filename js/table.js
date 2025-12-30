@@ -15,11 +15,16 @@ const planetMap = {
 /* ================= HELPERS ================= */
 
 function toDMS(deg){
-  const d=Math.floor(deg);
-  const mFloat=(deg-d)*60;
-  const m=Math.floor(mFloat);
-  const s=Math.round((mFloat-m)*60);
+  deg = Number(deg) || 0;
+  const d = Math.floor(deg);
+  const mFloat = (deg - d) * 60;
+  const m = Math.floor(mFloat);
+  const s = Math.round((mFloat - m) * 60);
   return `${d}° ${m}' ${s}"`;
+}
+
+function safeIndex(arr, index){
+  return arr[index] ?? "-";
 }
 
 /* ================= LOAD TABLE ================= */
@@ -33,25 +38,36 @@ async function loadTable(){
   const data = await res.json();
 
   const tbody = document.getElementById("tableBody");
-  const head = document.getElementById("lastHead");
+  const head  = document.getElementById("lastHead");
 
   head.innerText =
     mode === "sub"
-      ? (currentLang==="en" ? "Sub" : "உப")
-      : (currentLang==="en" ? "SSB" : "உஉப");
+      ? (currentLang==="en" ? "Sub" : "சப்")
+      : (currentLang==="en" ? "SSB" : "எஸ்.எஸ்.பி");
 
   tbody.innerHTML = "";
 
-  data.forEach(r=>{
-    const lastVal = mode === "sub" ? r.sub : r.ssb;
+  data.forEach(r => {
+
+    const sno    = r.sno ?? r["s.no"] ?? "";
+    const degree = r.degree ?? r["D.M.S"] ?? 0;
+    const rasi   = Number(r.rasi ?? r.Raasi) - 1;
+    const star   = Number(r.star ?? r.Star) - 1;
+
+    let lastVal;
+    if(mode === "sub"){
+      lastVal = Number(r.sub ?? r.Sub) - 1;
+    }else{
+      lastVal = Number(r.ssb ?? r.SSB) - 1;
+    }
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.sno}</td>
-      <td>${toDMS(r.degree)}</td>
-      <td>${rasiMap[currentLang][r.rasi-1]}</td>
-      <td>${planetMap[currentLang][r.star-1]}</td>
-      <td>${planetMap[currentLang][lastVal-1]}</td>
+      <td>${sno}</td>
+      <td>${toDMS(degree)}</td>
+      <td>${safeIndex(rasiMap[currentLang], rasi)}</td>
+      <td>${safeIndex(planetMap[currentLang], star)}</td>
+      <td>${safeIndex(planetMap[currentLang], lastVal)}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -62,8 +78,8 @@ async function loadTable(){
 document.getElementById("loadBtn").onclick = loadTable;
 
 document.getElementById("langBtn")?.addEventListener("click",()=>{
-  currentLang = currentLang==="en" ? "ta" : "en";
-  localStorage.setItem("lang",currentLang);
+  currentLang = currentLang === "en" ? "ta" : "en";
+  localStorage.setItem("lang", currentLang);
   loadTable();
 });
 
