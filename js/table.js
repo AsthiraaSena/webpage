@@ -23,58 +23,85 @@ function toDMS(deg){
   return `${d}° ${m}' ${s}"`;
 }
 
-/* ================= LOAD TABLE ================= */
+function clearTable(){
+  document.getElementById("tableBody").innerHTML = "";
+}
 
-async function loadTable(){
+/* ================= SUB TABLE ================= */
 
-  const mode = document.querySelector("input[name='mode']:checked").value;
-  const url = mode === "sub" ? "data/sub.json" : "data/ssb.json";
+async function loadSubTable(){
 
-  const res = await fetch(url);
+  const res = await fetch("data/sub.json");
   const data = await res.json();
 
   const tbody = document.getElementById("tableBody");
   const lastHead = document.getElementById("lastHead");
 
-  lastHead.innerText =
-    mode === "sub"
-      ? (currentLang==="en" ? "Sub" : "சப்")
-      : (currentLang==="en" ? "SSB" : "எஸ்.எஸ்.பி");
-
-  tbody.innerHTML = "";
+  lastHead.innerText = currentLang === "en" ? "Sub" : "சப்";
+  clearTable();
 
   data.forEach(r => {
 
-    const sno   = r["s.no"];
-    const deg   = r["D.M.S"];
-    const rasi  = r["Raasi"];
-    const Star  = r["Star"];
-    const sub   = r["Sub"];
-    const ssb   = r["SSB"];
-
-    const lastVal = mode === "sub" ? sub : ssb;
-
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${sno}</td>
-      <td>${toDMS(deg)}</td>
-      <td>${rasiMap[currentLang][rasi-1]}</td>
-      <td>${planetMap[currentLang][star-1]}</td>
-      <td>${planetMap[currentLang][lastVal-1]}</td>
+      <td>${r["s.no"]}</td>
+      <td>${toDMS(r["D.M.S"])}</td>
+      <td>${rasiMap[currentLang][r["Raasi"] - 1]}</td>
+      <td>${planetMap[currentLang][r["Star"] - 1]}</td>
+      <td>${planetMap[currentLang][r["Sub"] - 1]}</td>
     `;
     tbody.appendChild(tr);
   });
+}
+
+/* ================= SSB TABLE ================= */
+
+async function loadSSBTable(){
+
+  const res = await fetch("data/ssb.json");
+  const data = await res.json();
+
+  const tbody = document.getElementById("tableBody");
+  const lastHead = document.getElementById("lastHead");
+
+  lastHead.innerText = currentLang === "en" ? "SSB" : "எஸ்.எஸ்.பி";
+  clearTable();
+
+  data.forEach(r => {
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${r["s.no"]}</td>
+      <td>${toDMS(r["D.M.S"])}</td>
+      <td>${rasiMap[currentLang][r["Raasi"] - 1]}</td>
+      <td>${planetMap[currentLang][r["Star"] - 1]}</td>
+      <td>${planetMap[currentLang][r["SSB"] - 1]}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+/* ================= MAIN LOAD ================= */
+
+function loadTable(){
+  const mode = document.querySelector("input[name='mode']:checked").value;
+  if (mode === "sub") {
+    loadSubTable();
+  } else {
+    loadSSBTable();
+  }
 }
 
 /* ================= EVENTS ================= */
 
 document.getElementById("loadBtn").onclick = loadTable;
 
-document.getElementById("langBtn")?.addEventListener("click",()=>{
-  currentLang = currentLang==="en" ? "ta" : "en";
-  localStorage.setItem("lang",currentLang);
+document.getElementById("langBtn")?.addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "ta" : "en";
+  localStorage.setItem("lang", currentLang);
   loadTable();
 });
 
 /* ================= INIT ================= */
+
 loadTable();
