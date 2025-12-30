@@ -1,0 +1,66 @@
+/* ================= TABLE PAGE ONLY ================= */
+
+.controls{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin:10px 0;
+  flex-wrap:wrap;
+}
+
+.controls label{
+  font-size:14px;
+}
+
+button{
+  padding:6px 14px;
+  background:#243c8f;
+  color:#fff;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+/* 🔄 Loading spinner on button */
+button.loading{
+  pointer-events:none;
+  opacity:0.8;
+}
+
+button.loading::after{
+  content:"";
+  width:14px;
+  height:14px;
+  margin-left:8px;
+  border:2px solid #fff;
+  border-top:2px solid transparent;
+  border-radius:50%;
+  display:inline-block;
+  animation:spin 0.8s linear infinite;
+  vertical-align:middle;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+/* ================= TABLE ================= */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:12px;
+  background:#fff;
+  font-size:14px;
+}
+
+th, td{
+  border:1px solid #ccc;
+  padding:8px;
+  text-align:center;
+}
+
+th{
+  background:#243c8f;
+  color:#fff;
+}
