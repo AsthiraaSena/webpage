@@ -129,5 +129,20 @@ p,li{
   font-size:14px;
 }
 
+button{
+  padding:6px 14px;
+  background:#243c8f;
+  color:#fff;
+  border:none;
+  border-radius:4px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:12px;
+  background:#fff;
+  font-size:14px;
+}
 
 
