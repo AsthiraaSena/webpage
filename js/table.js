@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.innerHTML = `
         <td>${r["s.no"]}</td>
         <td>${toDMS(r["D.M.S"])}</td>
-        <td>${rasiMap[currentLang][r["Rassi"]-1]}</td>
+        <td>${rasiMap[currentLang][r["Raasi"]-1]}</td>
         <td>${planetMap[currentLang][r["Star"]-1]}</td>
         <td>${planetMap[currentLang][r["Sub"]-1]}</td>
       `;
@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${toDMS(r["D.M.S"])}</td>
         <td>${rasiMap[currentLang][r["Raasi"]-1]}</td>
         <td>${planetMap[currentLang][r["Star"]-1]}</td>
-        <td>${planetMap[currentLang][r["sub"]-1]}</td>
-        <td>${planetMap[currentLang][r["ssb"]-1]}</td>
+        <td>${planetMap[currentLang][r["Sub"]-1]}</td>
+        <td>${planetMap[currentLang][r["Ssb"]-1]}</td>
       `;
       tbody.appendChild(tr);
     });
