@@ -1,113 +1,92 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  let currentLang = localStorage.getItem("lang") || "en";
+let currentLang = localStorage.getItem("lang") || "en";
+let fullData = [];
+let rowHeight = 38;
+let visibleCount = 20;
 
-  /* ================= MAPS ================= */
+const rasiMap = {
+  en:["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"],
+  ta:["மேஷ","ரிஷ","மிது","கட","சிம்","கன்","துலா","விரு","தனு","மக","கும்","மீன"]
+};
 
-  const rasiMap = {
-    en:["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"],
-    ta:["மேஷ","ரிஷ","மிது","கட","சிம்","கன்","துலா","விரு","தனு","மக","கும்","மீன"]
-  };
+const planetMap = {
+  en:["Ke","Ve","Sun","Mo","Mar","Ra","Jup","Sat","Mer"],
+  ta:["கேது","சுக்","சூரி","சந்","செவ்","ராகு","குரு","சனி","புத"]
+};
 
-  const planetMap = {
-    en:["Ke","Ve","Sun","Mo","Mar","Ra","Jup","Sat","Mer"],
-    ta:["கேது","சுக்","சூரி","சந்","செவ்","ராகு","குரு","சனி","புத"]
-  };
+const tbody = document.getElementById("tableBody");
+const wrapper = document.querySelector(".table-wrap");
 
-  /* ================= HELPERS ================= */
+function toDMS(deg){
+  const d=Math.floor(deg);
+  const m=Math.floor((deg-d)*60);
+  const s=Math.round((((deg-d)*60)-m)*60);
+  return `${d}° ${m}' ${s}"`;
+}
 
-  function toDMS(deg){
-    if (deg === undefined || isNaN(deg)) return "";
-    const d = Math.floor(deg);
-    const m = Math.floor((deg - d) * 60);
-    const s = Math.round((((deg - d) * 60) - m) * 60);
-    return `${d}° ${m}' ${s}"`;
-  }
+/* ---------- LOAD DATA ---------- */
+async function loadData(){
+  const mode = document.querySelector("input[name='mode']:checked").value;
+  const url = mode==="sub" ? "data/sub.json" : "data/ssb.json";
 
-  function clearTable(){
-    document.getElementById("tableBody").innerHTML = "";
-  }
+  const res = await fetch(url);
+  fullData = await res.json();
 
-  /* ================= SUB TABLE ================= */
+  document.getElementById("ssbHead").style.display = mode==="ssb"?"":"none";
+  render();
+}
 
-  async function loadSubTable(){
+/* ---------- RENDER (VIRTUAL) ---------- */
+function render(){
+  const scrollTop = wrapper.scrollTop;
+  const start = Math.floor(scrollTop / rowHeight);
+  const end = start + visibleCount;
 
-    const res = await fetch("data/sub.json");
-    const data = await res.json();
+  const filter = document.getElementById("searchBox").value.toLowerCase();
+  const mode = document.querySelector("input[name='mode']:checked").value;
 
-    clearTable();
-
-    document.getElementById("subHead").style.display = "";
-    document.getElementById("ssbHead").style.display = "none";
-
-    const tbody = document.getElementById("tableBody");
-
-    data.forEach(r=>{
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${r["s.no"]}</td>
-        <td>${toDMS(r["D.M.S"])}</td>
-        <td>${rasiMap[currentLang][r["Raasi"]-1]}</td>
-        <td>${planetMap[currentLang][r["Star"]-1]}</td>
-        <td>${planetMap[currentLang][r["Sub"]-1]}</td>
-      `;
-      tbody.appendChild(tr);
-    });
-  }
-
-  /* ================= SSB TABLE ================= */
-
-  async function loadSSBTable(){
-
-    const res = await fetch("data/ssb.json");
-    const data = await res.json();
-
-    clearTable();
-
-    document.getElementById("subHead").style.display = "";
-    document.getElementById("ssbHead").style.display = "";
-
-    const tbody = document.getElementById("tableBody");
-
-    data.forEach(r=>{
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${r["s.no"]}</td>
-        <td>${toDMS(r["D.M.S"])}</td>
-        <td>${rasiMap[currentLang][r["Raasi"]-1]}</td>
-        <td>${planetMap[currentLang][r["Star"]-1]}</td>
-        <td>${planetMap[currentLang][r["Sub"]-1]}</td>
-        <td>${planetMap[currentLang][r["Ssb"]-1]}</td>
-      `;
-      tbody.appendChild(tr);
-    });
-  }
-
-  /* ================= MAIN LOAD ================= */
-
-  function loadTable(){
-    const modeRadio = document.querySelector("input[name='mode']:checked");
-    if(!modeRadio) return;
-
-    if(modeRadio.value === "sub"){
-      loadSubTable();
-    }else{
-      loadSSBTable();
-    }
-  }
-
-  /* ================= EVENTS ================= */
-
-  document.getElementById("loadBtn").addEventListener("click", loadTable);
-
-  document.getElementById("langBtn")?.addEventListener("click",()=>{
-    currentLang = currentLang === "en" ? "ta" : "en";
-    localStorage.setItem("lang", currentLang);
-    loadTable();
+  const filtered = fullData.filter(r=>{
+    const txt = (
+      rasiMap[currentLang][r.Raasi-1] +
+      planetMap[currentLang][r.Star-1]
+    ).toLowerCase();
+    return txt.includes(filter);
   });
 
-  /* ================= INIT ================= */
+  tbody.innerHTML = "";
+  tbody.style.paddingTop = (start*rowHeight)+"px";
+  tbody.style.paddingBottom = ((filtered.length-end)*rowHeight)+"px";
 
-  loadTable();
+  filtered.slice(start,end).forEach(r=>{
+    tbody.insertAdjacentHTML("beforeend",`
+      <tr style="height:${rowHeight}px">
+        <td>${r["s.no"]}</td>
+        <td>${toDMS(r["D.M.S"])}</td>
+        <td>${rasiMap[currentLang][r.Raasi-1]}</td>
+        <td>${planetMap[currentLang][r.Star-1]}</td>
+        <td>${planetMap[currentLang][r.Sub-1]}</td>
+        ${mode==="ssb"?`<td>${planetMap[currentLang][r.Ssb-1]}</td>`:""}
+      </tr>
+    `);
+  });
+}
+
+/* ---------- EVENTS ---------- */
+document.querySelectorAll("input[name='mode']").forEach(r=>{
+  r.addEventListener("change", loadData);
+});
+
+document.getElementById("searchBox").addEventListener("input", render);
+wrapper.addEventListener("scroll", render);
+
+document.getElementById("langBtn").onclick = ()=>{
+  currentLang = currentLang==="en"?"ta":"en";
+  localStorage.setItem("lang",currentLang);
+  render();
+};
+
+/* ---------- INIT ---------- */
+loadData();
 
 });
