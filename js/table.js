@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const tableBody = document.getElementById("tableBody");
-  const lastHead  = document.getElementById("lastHead");
   const loadBtn   = document.getElementById("loadBtn");
+  const subHead   = document.getElementById("subHead");
+  const ssbHead   = document.getElementById("ssbHead");
 
   function toDMS(deg){
     const d = Math.floor(deg);
@@ -32,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
         tableBody.innerHTML = "";
 
         if (mode === "sub") {
-          lastHead.innerText = "Sub";
+          ssbHead.style.display = "none";
         } else {
-          lastHead.innerText = "SSB";
+          ssbHead.style.display = "";
         }
 
         data.forEach(r => {
@@ -45,11 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
               <td>${toDMS(r["D.M.S"])}</td>
               <td>${rasiMap[r["Raasi"] - 1]}</td>
               <td>${planetMap[r["Star"] - 1]}</td>
-              <td>${planetMap[
-                (mode === "sub" ? r["Sub"] : r["Ssb"]) - 1
-              ]}</td>
-            </tr>
+              <td>${planetMap[r["Sub"] - 1]}</td>
           `;
+
+          if (mode === "ssb") {
+            row += `<td>${planetMap[r["Ssb"] - 1]}</td>`;
+          }
+
+          row += `</tr>`;
 
           tableBody.insertAdjacentHTML("beforeend", row);
         });
@@ -58,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(err => {
         console.error(err);
         tableBody.innerHTML =
-          `<tr><td colspan="5">Error loading data</td></tr>`;
+          `<tr><td colspan="6">Error loading data</td></tr>`;
       });
 
   });
