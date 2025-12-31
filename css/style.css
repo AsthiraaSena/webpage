@@ -145,7 +145,7 @@ p,li{
 
 .menu a{
   display:block;
-  color:#fff;
+  color:#336b99;
   text-decoration:none;
   font-size:20px;
   font-weight:500;
@@ -155,7 +155,7 @@ p,li{
 }
 
 .menu a:hover{
-  color:#eceb8c;
+  color:#0f0e0e;
   transform:scale(1.05);
 }
 
@@ -167,7 +167,7 @@ p,li{
 .menu > *{
   display:flex;
   flex-direction:column;
-  background:#222221;
+  background:#fcfcf8;
   padding:30px 40px;
   border-radius:14px;
   min-width:260px;
