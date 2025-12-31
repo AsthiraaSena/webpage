@@ -124,6 +124,75 @@ p,li{
   margin:14px 0 0;
 }
 
+/* ================= BEAUTIFUL CENTER MENU ================= */
+
+.menu{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+  transition:opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu.hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.menu a{
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:500;
+  padding:12px 0;
+  text-align:center;
+  transition:color 0.2s, transform 0.2s;
+}
+
+.menu a:hover{
+  color:#eceb8c;
+  transform:scale(1.05);
+}
+
+/* menu box */
+.menu::before{
+  content:"";
+}
+
+.menu > *{
+  display:flex;
+  flex-direction:column;
+  background:#4b4848;
+  padding:30px 40px;
+  border-radius:14px;
+  min-width:260px;
+  animation:menuPop 0.3s ease;
+}
+
+@keyframes menuPop{
+  from{
+    transform:scale(0.9);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* Mobile tuning */
+@media (max-width:480px){
+  .menu a{
+    font-size:18px;
+  }
+}
+
+
 .guru-points li{
   padding:6px 0;
   font-size:14px;
