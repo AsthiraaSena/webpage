@@ -1,22 +1,29 @@
+/* ================= RESET ================= */
 *{
+  margin:0;
+  padding:0;
   box-sizing:border-box;
   font-family:system-ui,-apple-system,Segoe UI,Roboto;
 }
 
+/* ================= BODY ================= */
 body{
-  margin:0;
   background:#f4f6fb;
   color:#222;
+  line-height:1.6;
 }
 
-/* TOP BAR */
+/* ================= TOP BAR ================= */
 .topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 12px;
+  padding:10px 14px;
   background:#243c8f;
   color:#fff;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
 .title{
@@ -28,13 +35,29 @@ body{
   margin-left:6px;
   padding:6px 10px;
   border:none;
-  border-radius:4px;
+  border-radius:6px;
   background:#fff;
   color:#243c8f;
   font-size:13px;
+  cursor:pointer;
 }
 
-/* MENU */
+/* ================= COMMON CONTENT ================= */
+main{
+  padding:16px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h1,h2,h3,h4{
+  color:#243c8f;
+}
+
+p,li{
+  font-size:14px;
+}
+
+/* ================= BASIC MENU (FOR NON-POPUP PAGES) ================= */
 .menu{
   background:#fff;
   border-bottom:1px solid #ddd;
@@ -53,148 +76,249 @@ body{
   border-bottom:none;
 }
 
-.hidden{ display:none; }
-
-/* CONTENT */
-main{
-  padding:16px;
-}
-
-h2{
-  margin-top:0;
-  font-size:18px;
-  color:#243c8f;
-}
-
-p,li{
-  font-size:14px;
-  line-height:1.6;
-}
-/* ================= GURU CARD ================= */
-/* ================= GURU CARD ================= */
-.guru-card{
-  padding:24px;
-  border-radius:var(--radius-lg);
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.95)),
-    var(--card);
-  border:1px solid var(--border);
-  box-shadow:var(--shadow-lg);
-  backdrop-filter:blur(10px);
-}
-
-
-
-/* TOP ROW: IMAGE LEFT */
-.guru-head{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  margin-bottom:14px;
-}
-
-/* IMAGE STYLE */
-.guru-img{
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  flex-shrink:0;
-  border:3px solid var(--primary);
-  box-shadow:0 6px 14px rgba(0,0,0,.25);
-  background:#fff;
-}
-
-/* TEXT RIGHT SIDE */
-.guru-text h2{
-  margin:0 0 6px;
-  font-size:18px;
-  color:var(--primary);
-}
-
-.guru-text p{
-  margin:0;
-  font-size:14px;
-  line-height:1.5;
-}
-
-/* POINTS */
-.guru-points{
-  list-style:none;
-  padding:0;
-  margin:14px 0 0;
-}
-
-/* ================= BEAUTIFUL CENTER MENU ================= */
-
-.menu{
+/* ================= CENTER POPUP MENU ================= */
+.menu-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.75);
+  background:rgba(0,0,0,.75);
   display:flex;
   justify-content:center;
   align-items:center;
   z-index:999;
-  transition:opacity 0.3s ease, visibility 0.3s ease;
+  transition:.3s ease;
 }
 
-.menu.hidden{
+.menu-overlay.hidden{
   opacity:0;
   visibility:hidden;
   pointer-events:none;
 }
 
-.menu a{
-  display:block;
-  color:#336b99;
-  text-decoration:none;
-  font-size:20px;
-  font-weight:500;
-  padding:12px 0;
-  text-align:center;
-  transition:color 0.2s, transform 0.2s;
-}
-
-.menu a:hover{
-  color:#0f0e0e;
-  transform:scale(1.05);
-}
-
-/* menu box */
-.menu::before{
-  content:"";
-}
-
-.menu > *{
+.menu-box{
   display:flex;
   flex-direction:column;
   background:#fcfcf8;
-  padding:30px 40px;
-  border-radius:14px;
+  padding:28px 36px;
+  border-radius:16px;
   min-width:260px;
-  animation:menuPop 0.3s ease;
+  text-align:center;
+  animation:menuPop .3s ease;
+}
+
+.menu-box a{
+  padding:12px 0;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:500;
+  color:#243c8f;
+  transition:.2s;
+}
+
+.menu-box a:hover{
+  transform:scale(1.05);
 }
 
 @keyframes menuPop{
-  from{
-    transform:scale(0.9);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
 }
 
-/* Mobile tuning */
-@media (max-width:480px){
-  .menu a{
+@media(max-width:480px){
+  .menu-box a{
     font-size:18px;
   }
 }
 
+/* ================= GURU CARD ================= */
+.guru-card{
+  background:#ffffff;
+  padding:24px;
+  border-radius:22px;
+  box-shadow:0 25px 60px rgba(36,60,143,.15);
+  text-align:center;
+}
 
-.guru-points li{
-  padding:6px 0;
+.guru-img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:4px solid #243c8f;
+  margin-bottom:12px;
+}
+
+.guru-card h3{
+  font-size:18px;
+  margin-bottom:4px;
+}
+
+.guru-card h4{
   font-size:14px;
+  margin-bottom:10px;
+  color:#444;
+}
+
+.guru-card p{
+  font-size:13px;
+  color:#555;
+}
+
+/* ================= INFO CARDS ================= */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  margin-top:30px;
+}
+
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 18px 40px rgba(36,60,143,.12);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 25px 60px rgba(36,60,143,.2);
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card ul{
+  list-style:none;
+  padding:0;
+}
+
+.card ul li{
+  padding:6px 0;
+}
+
+/* ================= CONTACT / FOOTER ================= */
+.site-footer{
+  margin-top:40px;
+  background:linear-gradient(135deg,#1f2a55,#111827);
+  color:#e5e7eb;
+  padding:30px 16px 18px;
+}
+
+.site-footer h3,
+.site-footer h4{
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.site-footer p{
+  font-size:14px;
+}
+
+.site-footer a{
+  color:#93c5fd;
+  text-decoration:none;
+}
+
+.site-footer a:hover{
+  text-decoration:underline;
+}
+
+.footer-card{
+  margin-bottom:22px;
+}
+
+.footer-copy{
+  border-top:1px solid rgba(255,255,255,.15);
+  margin-top:16px;
+  padding-top:10px;
+  font-size:12px;
+  text-align:center;
+  color:#c7d2fe;
+}
+
+/* ================= POPUP ================= */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popup.hidden{
+  display:none;
+}
+
+.popup-card{
+  background:#fff;
+  padding:20px;
+  border-radius:18px;
+  width:90%;
+  max-width:320px;
+  text-align:center;
+  animation:menuPop .3s ease;
+}
+
+.popup-card h3{
+  margin-bottom:8px;
+}
+
+.popup-card p{
+  font-size:14px;
+}
+
+.popup-contact p{
+  font-size:15px;
+  margin:8px 0;
+}
+
+.popup-contact a{
+  color:#16a34a;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.popup-close-btn{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:#243c8f;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ================= UTIL ================= */
+.hidden{
+  display:none;
+}
+
+/* ================= MOBILE TUNING ================= */
+@media(max-width:600px){
+
+  main{
+    padding:14px;
+  }
+
+  .guru-img{
+    width:90px;
+    height:90px;
+  }
+
+  .guru-card{
+    padding:18px;
+  }
+
+  .card{
+    padding:16px;
+  }
+
+  .site-footer{
+    text-align:center;
+  }
 }
 
