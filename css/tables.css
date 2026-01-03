@@ -13,15 +13,12 @@
 }
 
 button{
-  padding:10px 16px;
+  padding:6px 14px;
   background:#243c8f;
   color:#fff;
   border:none;
-  border-radius:6px;
+  border-radius:4px;
   cursor:pointer;
-  font-size:14px;
-  min-height:44px;
-  -webkit-tap-highlight-color:rgba(36,60,143,0.2);
 }
 
 /* 🔄 Loading spinner on button */
@@ -49,50 +46,21 @@ button.loading::after{
 
 /* ================= TABLE ================= */
 
-/* Table wrapper for mobile scrolling */
-.table-wrapper{
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-  margin:12px 0;
-}
-
 table{
   width:100%;
   border-collapse:collapse;
   margin-top:12px;
   background:#fff;
-  font-size:13px;
+  font-size:12px;
 }
 
 th, td{
   border:1px solid #ccc;
-  padding:10px 8px;
+  padding:8px;
   text-align:center;
-  white-space:nowrap;
 }
 
 th{
   background:#243c8f;
   color:#fff;
-  font-weight:600;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-/* Mobile table adjustments */
-@media(max-width:600px){
-  table{
-    font-size:12px;
-    min-width:600px;
-  }
-  
-  th, td{
-    padding:8px 6px;
-  }
-  
-  .table-wrapper{
-    margin:12px -12px;
-    padding:0 12px;
-  }
 }
