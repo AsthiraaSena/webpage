@@ -1,0 +1,494 @@
+/* ================= MOBILE-FIRST OPTIMIZATIONS ================= */
+/* This file contains mobile-specific improvements for better UX */
+
+/* ================= TOUCH TARGETS - MINIMUM 44x44px ================= */
+.actions button,
+.menu-btn,
+.popup-close-btn,
+#loadBtn,
+#showBtn,
+button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px 16px;
+  font-size: 15px;
+  -webkit-tap-highlight-color: rgba(36, 60, 143, 0.2);
+  touch-action: manipulation;
+}
+
+/* Improve button spacing on mobile */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+/* ================= FONT SIZES - MOBILE READABILITY ================= */
+@media (max-width: 600px) {
+  /* Base font size increase */
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 28px !important;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-size: 18px !important;
+  }
+
+  /* Paragraphs and text */
+  p, li {
+    font-size: 15px !important;
+    line-height: 1.7;
+  }
+
+  /* Card text */
+  .card p {
+    font-size: 15px !important;
+  }
+
+  .card ul li {
+    font-size: 14px !important;
+    padding: 10px 0;
+  }
+}
+
+/* ================= SPACING IMPROVEMENTS ================= */
+@media (max-width: 600px) {
+  main {
+    padding: 16px 12px !important;
+  }
+
+  .card {
+    padding: 20px 16px !important;
+    margin-bottom: 16px;
+  }
+
+  .cards {
+    gap: 16px !important;
+  }
+
+  .guru-card {
+    padding: 20px 16px !important;
+    margin-bottom: 20px;
+  }
+
+  .site-footer {
+    padding: 28px 16px 18px !important;
+  }
+}
+
+/* ================= MENU IMPROVEMENTS ================= */
+@media (max-width: 600px) {
+  .menu-box {
+    width: 90%;
+    max-width: 300px;
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .menu-box a {
+    padding: 16px 0 !important;
+    font-size: 18px !important;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(36, 60, 143, 0.1);
+  }
+
+  .menu-box a:last-child {
+    border-bottom: none;
+  }
+
+  .menu-box a:active {
+    background: rgba(36, 60, 143, 0.05);
+    transform: scale(0.98);
+  }
+}
+
+/* ================= TABLES - MOBILE RESPONSIVE ================= */
+@media (max-width: 600px) {
+  /* Make tables horizontally scrollable */
+  main {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    min-width: 600px; /* Minimum width for readability */
+    font-size: 13px;
+    border-collapse: collapse;
+  }
+
+  table th,
+  table td {
+    padding: 10px 8px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  table th {
+    font-size: 12px;
+    font-weight: 600;
+    background: #243c8f;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  /* Table wrapper for better scrolling */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -12px;
+    padding: 0 12px;
+  }
+
+  /* Controls for tables */
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+  }
+
+  .controls label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(36, 60, 143, 0.1);
+  }
+
+  .controls input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+
+  .controls input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  .controls button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #243c8f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(36, 60, 143, 0.2);
+  }
+
+  .controls button:active {
+    transform: scale(0.98);
+    background: #1f2a55;
+  }
+}
+
+/* ================= POPUP MOBILE OPTIMIZATION ================= */
+@media (max-width: 600px) {
+  .popup-card {
+    width: 92% !important;
+    max-width: 340px !important;
+    padding: 24px 20px !important;
+    margin: 20px;
+    border-radius: 20px;
+  }
+
+  .popup-card h3 {
+    font-size: 20px !important;
+    margin-bottom: 12px;
+  }
+
+  .popup-card p {
+    font-size: 15px !important;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .popup-close-btn {
+    padding: 14px !important;
+    font-size: 16px !important;
+    margin-top: 16px;
+  }
+
+  /* Make phone number tappable */
+  .popup-card a[href^="tel:"] {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #16a34a;
+    text-decoration: none;
+    border-radius: 8px;
+    background: rgba(22, 163, 74, 0.1);
+    -webkit-tap-highlight-color: rgba(22, 163, 74, 0.2);
+  }
+}
+
+/* ================= FOOTER MOBILE ================= */
+@media (max-width: 600px) {
+  .site-footer {
+    text-align: center;
+    padding: 32px 16px 20px !important;
+  }
+
+  .footer-card {
+    margin-bottom: 28px;
+  }
+
+  .footer-card h3,
+  .footer-card h4 {
+    font-size: 18px !important;
+    margin-bottom: 12px;
+  }
+
+  .footer-card p {
+    font-size: 15px !important;
+    margin-bottom: 8px;
+  }
+
+  .footer-card a {
+    display: block;
+    padding: 10px 0;
+    font-size: 15px !important;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 6px 0;
+    -webkit-tap-highlight-color: rgba(147, 197, 253, 0.2);
+  }
+
+  .footer-card a:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Phone number in footer */
+  .site-footer a[href^="tel:"] {
+    font-size: 18px !important;
+    font-weight: 600;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
+
+/* ================= PERFORMANCE OPTIMIZATIONS ================= */
+/* Reduce animations on mobile for better performance */
+@media (max-width: 600px) {
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Disable heavy animations on low-end devices */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* ================= CLASSES PAGE MOBILE OPTIMIZATION ================= */
+@media (max-width: 600px) {
+  body[data-page="classes"] > main > h1 {
+    font-size: 2rem !important;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+
+  body[data-page="classes"] > main > p {
+    font-size: 15px !important;
+    padding: 0 16px;
+    margin-bottom: 32px;
+  }
+
+  body[data-page="classes"] .cards {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 12px;
+  }
+
+  body[data-page="classes"] .card {
+    padding: 24px 18px !important;
+  }
+
+  body[data-page="classes"] .card h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 12px;
+  }
+
+  body[data-page="classes"] .card p {
+    font-size: 14px !important;
+    margin-bottom: 16px;
+  }
+
+  body[data-page="classes"] .card ul li {
+    font-size: 14px !important;
+    padding: 10px 0;
+    padding-left: 36px;
+  }
+
+  /* Reduce background animation intensity on mobile */
+  body[data-page="classes"] {
+    background-size: 200% 200%;
+    animation-duration: 20s;
+  }
+
+  body[data-page="classes"]::before {
+    opacity: 0.15;
+  }
+}
+
+/* ================= SERVICES PAGE MOBILE ================= */
+@media (max-width: 600px) {
+  body[data-page="services"] .cards {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  body[data-page="services"] .card {
+    padding: 20px 16px !important;
+  }
+
+  body[data-page="services"] .card h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 12px;
+  }
+
+  body[data-page="services"] .card p {
+    font-size: 14px !important;
+    line-height: 1.7;
+  }
+}
+
+/* ================= HOME PAGE MOBILE ================= */
+@media (max-width: 600px) {
+  .layout {
+    margin: 24px auto !important;
+    gap: 20px !important;
+    padding: 0 12px !important;
+  }
+
+  .right h1 {
+    font-size: 28px !important;
+    line-height: 1.2;
+  }
+
+  .right h2 {
+    font-size: 20px !important;
+    margin: 10px 0;
+  }
+
+  .hero-desc {
+    font-size: 15px !important;
+  }
+}
+
+/* ================= ACCESSIBILITY IMPROVEMENTS ================= */
+/* Focus states for keyboard navigation */
+button:focus,
+a:focus,
+input:focus {
+  outline: 3px solid rgba(36, 60, 143, 0.5);
+  outline-offset: 2px;
+}
+
+/* ================= SAFE AREA FOR NOTCHED DEVICES ================= */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+
+  .topbar {
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+  }
+}
+
+/* ================= LANDSCAPE ORIENTATION ================= */
+@media (max-width: 900px) and (orientation: landscape) {
+  .topbar {
+    padding: 8px 14px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  main {
+    padding: 12px;
+  }
+}
+
+/* ================= VERY SMALL SCREENS (320px and below) ================= */
+@media (max-width: 320px) {
+  .title {
+    font-size: 14px;
+  }
+
+  .actions button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  .card {
+    padding: 16px 12px !important;
+  }
+}
+
