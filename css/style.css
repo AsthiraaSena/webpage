@@ -1,324 +1,489 @@
+/* ================= MODERN MOBILE-FIRST DESIGN SYSTEM ================= */
+
 /* ================= RESET ================= */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto;
 }
 
-/* ================= BODY ================= */
+/* ================= TYPOGRAPHY - LARGE & READABLE FOR ALL AGES ================= */
 body{
-  background:#f4f6fb;
-  color:#222;
-  line-height:1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:#f8fafc;
+  color:#1e293b;
+  line-height:1.7;
+  font-size: 16px; /* Base 16px prevents iOS zoom */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-/* ================= TOP BAR ================= */
+h1{
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h2{
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #243c8f;
+  line-height: 1.3;
+  margin-bottom: 0.875rem;
+}
+
+h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #243c8f;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+h4{
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+p, li{
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* ================= TOP BAR - STICKY HEADER ================= */
 .topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 14px;
-  background:#243c8f;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #243c8f, #1e3a8a);
   color:#fff;
   position:sticky;
   top:0;
   z-index:100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .title{
-  font-size:16px;
-  font-weight:600;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.actions{
+  display: flex;
+  gap: 8px;
 }
 
 .actions button{
-  margin-left:6px;
-  padding:6px 10px;
-  border:none;
-  border-radius:6px;
-  background:#fff;
-  color:#243c8f;
-  font-size:13px;
-  cursor:pointer;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #243c8f;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  -webkit-tap-highlight-color: rgba(255,255,255,0.3);
+  touch-action: manipulation;
+  transition: all 0.2s ease;
 }
 
-/* ================= COMMON CONTENT ================= */
+.actions button:active{
+  transform: scale(0.95);
+  background: #f1f5f9;
+}
+
+/* ================= MAIN CONTENT ================= */
 main{
-  padding:16px;
-  max-width:1100px;
-  margin:auto;
+  padding: 24px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 200px);
 }
 
-h1,h2,h3,h4{
-  color:#243c8f;
-}
-
-p,li{
-  font-size:14px;
-}
-
-/* ================= BASIC MENU (FOR NON-POPUP PAGES) ================= */
+/* ================= MENU - CENTER POPUP ================= */
 .menu{
-  background:#fff;
-  border-bottom:1px solid #ddd;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease;
 }
 
-.menu a{
-  display:block;
-  padding:12px;
-  border-bottom:1px solid #eee;
-  text-decoration:none;
-  color:#243c8f;
-  font-weight:500;
-}
-
-.menu a:last-child{
-  border-bottom:none;
-}
-
-/* ================= CENTER POPUP MENU ================= */
-.menu-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.75);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
-  transition:.3s ease;
-}
-
-.menu-overlay.hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
+.menu.hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .menu-box{
-  display:flex;
-  flex-direction:column;
-  background:#fcfcf8;
-  padding:28px 36px;
-  border-radius:16px;
-  min-width:260px;
-  text-align:center;
-  animation:menuPop .3s ease;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 20px;
+  min-width: 280px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: menuPop 0.3s ease;
 }
 
 .menu-box a{
-  padding:12px 0;
-  text-decoration:none;
-  font-size:20px;
-  font-weight:500;
-  color:#243c8f;
-  transition:.2s;
+  display: block;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #243c8f;
+  border-radius: 10px;
+  margin: 4px 0;
+  transition: all 0.2s ease;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.menu-box a:hover{
-  transform:scale(1.05);
+.menu-box a:active{
+  background: #f1f5f9;
+  transform: scale(0.98);
 }
 
 @keyframes menuPop{
-  from{transform:scale(.9);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-
-@media(max-width:480px){
-  .menu-box a{
-    font-size:18px;
+  from{
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-/* ================= GURU CARD ================= */
-.guru-card{
-  background:#ffffff;
-  padding:24px;
-  border-radius:22px;
-  box-shadow:0 25px 60px rgba(36,60,143,.15);
-  text-align:center;
-}
-
-.guru-img{
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  border:4px solid #243c8f;
-  margin-bottom:12px;
-}
-
-.guru-card h3{
-  font-size:18px;
-  margin-bottom:4px;
-}
-
-.guru-card h4{
-  font-size:14px;
-  margin-bottom:10px;
-  color:#444;
-}
-
-.guru-card p{
-  font-size:13px;
-  color:#555;
-}
-
-/* ================= INFO CARDS ================= */
+/* ================= CARDS - MODERN & CLEAN ================= */
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
-  margin-top:30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
 }
 
 .card{
-  background:#fff;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 18px 40px rgba(36,60,143,.12);
-  transition:.3s;
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(36,60,143,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
 }
 
 .card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 25px 60px rgba(36,60,143,.2);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(36,60,143,0.15);
 }
 
 .card h3{
-  margin-bottom:10px;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: #243c8f;
+}
+
+.card p{
+  font-size: 15px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 12px;
 }
 
 .card ul{
-  list-style:none;
-  padding:0;
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
 }
 
 .card ul li{
-  padding:6px 0;
+  padding: 8px 0;
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
 }
 
-/* ================= CONTACT / FOOTER ================= */
+/* ================= FOOTER ================= */
 .site-footer{
-  margin-top:40px;
-  background:linear-gradient(135deg,#1f2a55,#111827);
-  color:#e5e7eb;
-  padding:30px 16px 18px;
+  margin-top: 60px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #e2e8f0;
+  padding: 40px 20px 24px;
 }
 
 .site-footer h3,
 .site-footer h4{
-  color:#fff;
-  margin-bottom:10px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
 }
 
 .site-footer p{
-  font-size:14px;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  color: #cbd5e1;
 }
 
 .site-footer a{
-  color:#93c5fd;
-  text-decoration:none;
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  padding: 4px 0;
 }
 
 .site-footer a:hover{
-  text-decoration:underline;
+  color: #fff;
+  text-decoration: underline;
 }
 
 .footer-card{
-  margin-bottom:22px;
+  margin-bottom: 32px;
+}
+
+.footer-card a{
+  display: block;
+  margin: 8px 0;
+  padding: 8px 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .footer-copy{
-  border-top:1px solid rgba(255,255,255,.15);
-  margin-top:16px;
-  padding-top:10px;
-  font-size:12px;
-  text-align:center;
-  color:#c7d2fe;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 24px;
+  padding-top: 16px;
+  font-size: 13px;
+  text-align: center;
+  color: #94a3b8;
 }
 
 /* ================= POPUP ================= */
 .popup{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
 }
 
 .popup.hidden{
-  display:none;
+  display: none;
 }
 
 .popup-card{
-  background:#fff;
-  padding:20px;
-  border-radius:18px;
-  width:90%;
-  max-width:320px;
-  text-align:center;
-  animation:menuPop .3s ease;
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: menuPop 0.3s ease;
 }
 
 .popup-card h3{
-  margin-bottom:8px;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #243c8f;
 }
 
 .popup-card p{
-  font-size:14px;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #475569;
 }
 
-.popup-contact p{
-  font-size:15px;
-  margin:8px 0;
-}
-
-.popup-contact a{
-  color:#16a34a;
-  font-weight:700;
-  text-decoration:none;
+.popup-card a{
+  color: #16a34a;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(22,163,74,0.1);
+  margin-top: 8px;
 }
 
 .popup-close-btn{
-  width:100%;
-  margin-top:10px;
-  padding:10px;
-  border:none;
-  border-radius:10px;
-  background:#243c8f;
-  color:#fff;
-  font-weight:600;
-  cursor:pointer;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #243c8f;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  min-height: 48px;
+  -webkit-tap-highlight-color: rgba(36,60,143,0.2);
+  touch-action: manipulation;
+  transition: all 0.2s ease;
 }
 
-/* ================= UTIL ================= */
+.popup-close-btn:active{
+  transform: scale(0.98);
+  background: #1e3a8a;
+}
+
+/* ================= UTILITIES ================= */
 .hidden{
-  display:none;
+  display: none;
 }
 
-/* ================= MOBILE TUNING ================= */
-@media(max-width:600px){
+/* ================= MOBILE OPTIMIZATIONS ================= */
+@media (max-width: 600px){
+  body{
+    font-size: 16px;
+  }
+
+  h1{
+    font-size: 1.75rem;
+  }
+
+  h2{
+    font-size: 1.5rem;
+  }
+
+  h3{
+    font-size: 1.35rem;
+  }
+
+  .topbar{
+    padding: 12px 14px;
+  }
+
+  .title{
+    font-size: 16px;
+  }
+
+  .actions button{
+    padding: 8px 12px;
+    font-size: 14px;
+    min-height: 40px;
+  }
 
   main{
-    padding:14px;
+    padding: 20px 14px;
   }
 
-  .guru-img{
-    width:90px;
-    height:90px;
-  }
-
-  .guru-card{
-    padding:18px;
+  .cards{
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
   }
 
   .card{
-    padding:16px;
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .card h3{
+    font-size: 1.25rem;
+  }
+
+  .card p,
+  .card ul li{
+    font-size: 15px;
+  }
+
+  .menu-box{
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .menu-box a{
+    padding: 14px 16px;
+    font-size: 17px;
+    min-height: 48px;
   }
 
   .site-footer{
-    text-align:center;
+    padding: 32px 16px 20px;
+    text-align: center;
+  }
+
+  .popup-card{
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .popup-card h3{
+    font-size: 1.35rem;
+  }
+
+  .popup-card p{
+    font-size: 15px;
   }
 }
 
+/* ================= VERY SMALL SCREENS ================= */
+@media (max-width: 360px){
+  .title{
+    font-size: 14px;
+  }
+
+  .actions button{
+    padding: 8px 10px;
+    font-size: 13px;
+    min-width: 40px;
+  }
+
+  h1{
+    font-size: 1.5rem;
+  }
+
+  h2{
+    font-size: 1.35rem;
+  }
+
+  .card{
+    padding: 18px;
+  }
+}
+
+/* ================= ACCESSIBILITY ================= */
+button:focus,
+a:focus,
+input:focus{
+  outline: 3px solid rgba(36,60,143,0.5);
+  outline-offset: 2px;
+}
+
+/* ================= SAFE AREA FOR NOTCHED DEVICES ================= */
+@supports (padding: max(0px)){
+  body{
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+
+  .topbar{
+    padding-left: max(16px, env(safe-area-inset-left) + 16px);
+    padding-right: max(16px, env(safe-area-inset-right) + 16px);
+  }
+}
