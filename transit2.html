@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Planet Transit | Asthiraa Astrology</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/stylepanchangam.css">
+<link rel="stylesheet" href="css/mobile.css">
+
+<style>
+/* Planet label */
+#planetLabel{
+  text-align:center;
+  font-size:18px;
+  font-weight:600;
+  margin:12px 0;
+}
+
+/* Hide date controls (not used) */
+#dateInput,
+#showBtn{
+  display:none;
+}
+</style>
+</head>
+
+<body data-page="transit2">
+
+<header class="topbar">
+  <div class="logo">🪐 Asthiraa Astrology</div>
+  <div class="actions">
+    <button id="langBtn">தமிழ்</button>
+    <button id="menuBtn">☰</button>
+  </div>
+</header>
+
+<nav id="menu" class="menu hidden">
+  <div class="menu-box">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Our Services</a>
+    <a href="classes.html">Class Details</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="tables.html">Tables</a>
+    <a href="transit.html">Daily Planet Transit</a>
+  </div>
+</nav>
+
+<main>
+
+<h2>🪐 Planet Transit (2026)</h2>
+
+<!-- Planet Select (always visible) -->
+<div class="controls">
+  <select id="planetSelect">
+    <option value="">-- Planet Select --</option>
+  </select>
+</div>
+
+<!-- Selected Planet -->
+<h3 id="planetLabel"></h3>
+
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+  <!-- ❌ Planet column removed -->
+  <th>Sign</th>
+  <th>Star</th>
+  <th>Sub</th>
+  <th>S.Time</th>
+</tr>
+</thead>
+<tbody id="tbody">
+<tr>
+  <td colspan="4">Select a planet</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</main>
+
+<script src="js/app.js"></script>
+
+<script>
+/* ===============================
+   PLANET TRANSIT LOGIC – 2026
+   =============================== */
+
+const planetSelect = document.getElementById("planetSelect");
+const planetLabel  = document.getElementById("planetLabel");
+const tbody        = document.getElementById("tbody");
+
+let transitData = [];
+
+/* 🔹 Load JSON file */
+fetch("data/planet-transit-2026.json")
+  .then(res => res.json())
+  .then(data => {
+    // remove empty rows
+    transitData = data.filter(r => r.planet && r.date);
+    loadPlanets();
+  })
+  .catch(err => {
+    console.error(err);
+    tbody.innerHTML = `<tr><td colspan="4">Error loading data</td></tr>`;
+  });
+
+/* 🔹 Fill planet ComboBox */
+function loadPlanets(){
+  const planets = [...new Set(transitData.map(r => r.planet))];
+
+  planets.forEach(p => {
+    const opt = document.createElement("option");
+    opt.value = p;
+    opt.textContent = p;
+    planetSelect.appendChild(opt);
+  });
+}
+
+/* 🔹 On planet selection (no hiding combo box) */
+planetSelect.addEventListener("change", () => {
+  const planet = planetSelect.value;
+  tbody.innerHTML = "";
+
+  if (!planet) {
+    planetLabel.textContent = "";
+    tbody.innerHTML = `<tr><td colspan="4">Select a planet</td></tr>`;
+    return;
+  }
+
+  // Show selected planet in label
+  planetLabel.textContent = "🪐 " + planet;
+
+  // Load all records for selected planet
+  transitData
+    .filter(r => r.planet === planet)
+    .forEach(r => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${r.house}</td>
+        <td>${r.star}</td>
+        <td>${r.sub}</td>
+        <td>${r.date}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+});
+</script>
+
+</body>
+</html>
