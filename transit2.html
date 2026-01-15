@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Planet Transit | Asthiraa Astrology</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stylepanchangam.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/transit2.css">
+
+  <style>
+    /* Planet label */
+    #planetLabel {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 12px 0;
+    }
+
+    /* Hide date controls (not used) */
+    #dateInput,
+    #showBtn {
+      display: none;
+    }
+  </style>
+</head>
+
+<body data-page="transit2">
+
+  <header class="topbar">
+    <div class="header-left">
+      <div class="title">🪐 Asthiraa Astrology</div>
+      <div class="header-contact">
+        <span>Astrologer: Senapathi</span>
+        <span>|</span>
+        <a href="tel:9787921438">📞 97879-21438</a>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="langBtn">தமிழ்</button>
+      <button id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <nav id="menu" class="menu hidden">
+    <div class="menu-box">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="classes.html">Classes</a>
+      <a href="consultation.html">Consultation</a>
+      <a href="contact.html">Contact</a>
+      <a href="tables.html">Tables</a>
+      <a href="transit.html">Daily Transit</a>
+      <a href="transit2.html">Planet Transit 2026</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <h2>🪐 Planet Transit (2026)</h2>
+
+    <!-- Planet Select (always visible) -->
+    <div class="controls">
+      <select id="planetSelect">
+        <option value="">-- Planet Select --</option>
+      </select>
+    </div>
+
+    <!-- Selected Planet -->
+    <h3 id="planetLabel"></h3>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <!-- ❌ Planet column removed -->
+            <th>Sign</th>
+            <th>Star</th>
+            <th>Sub</th>
+            <th>S.Time</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <td colspan="4">Select a planet</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <script src="js/script.js"></script>
+  <script src="js/transit2.js"></script>
+
+</body>
+
+</html>

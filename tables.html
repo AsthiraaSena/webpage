@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asthiraa Astrology – Tables</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tables.css">
+  <link rel="stylesheet" href="css/mobile.css">
+
+</head>
+
+<body data-page="tables">
+
+  <header class="topbar">
+    <div class="header-left">
+      <div class="title">🪐 Asthiraa Astrology</div>
+      <div class="header-contact">
+        <span>Astrologer: Senapathi</span>
+        <span>|</span>
+        <a href="tel:9787921438">📞 97879-21438</a>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="langBtn">தமிழ்</button>
+      <button id="menuBtn">☰</button>
+    </div>
+  </header>
+
+  <nav id="menu" class="menu hidden">
+    <div class="menu-box">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="classes.html">Classes</a>
+      <a href="consultation.html">Consultation</a>
+      <a href="contact.html">Contact</a>
+      <a href="tables.html">Tables</a>
+      <a href="transit.html">Daily Transit</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <h2>sub(249) & subsub(2193) Tables</h2>
+
+    <div class="controls">
+      <label>
+        <input type="radio" name="mode" value="sub" checked>
+        Sub
+      </label>
+
+      <label>
+        <input type="radio" name="mode" value="ssb">
+        SSB
+      </label>
+
+      <button id="loadBtn">Load</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>D.M.S</th>
+            <th>Rasi</th>
+            <th>Star</th>
+            <th id="subHead">Sub</th>
+            <th id="ssbHead" style="display:none;">SSB</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableBody">
+          <tr>
+            <td colspan="6">Select option & click Load</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <script src="js/script.js"></script>
+  <script src="js/table.js"></script>
+</body>
+
+</html>
