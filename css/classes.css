@@ -1,0 +1,222 @@
+/* ================= CLASSES PAGE - CLEAN DESIGN ================= */
+
+body[data-page="classes"] {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+body[data-page="classes"] main {
+  padding: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Page Title */
+body[data-page="classes"]>main>h1 {
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+/* Intro Paragraph */
+body[data-page="classes"]>main>p {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* Cards Layout */
+body[data-page="classes"] .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+body[data-page="classes"] .card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+body[data-page="classes"] .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Card Title */
+body[data-page="classes"] .card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Card Text */
+body[data-page="classes"] .card p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+/* List */
+body[data-page="classes"] .card ul {
+  list-style: none;
+  padding: 0;
+}
+
+body[data-page="classes"] .card ul li {
+  padding: 10px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+body[data-page="classes"] .card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  color: #3b82f6;
+}
+
+/* Links */
+body[data-page="classes"] .card a {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+body[data-page="classes"] .card a:hover {
+  text-decoration: underline;
+}
+
+/* Course Details */
+body[data-page="classes"] .course-details {
+  margin-top: 36px;
+  background: #1e293b;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body[data-page="classes"] .course-details h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+body[data-page="classes"] .course-details p {
+  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+body[data-page="classes"] .course-details .phone {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+body[data-page="classes"] .course-details a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+body[data-page="classes"] .course-details a:hover {
+  text-decoration: underline;
+}
+
+/* Consultation Card */
+body[data-page="classes"] .consultation-card {
+  margin-top: 36px;
+  background: #1e293b;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body[data-page="classes"] .consultation-card h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+body[data-page="classes"] .consultation-card p {
+  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+body[data-page="classes"] .consultation-card .phone {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+body[data-page="classes"] .consultation-card a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+body[data-page="classes"] .consultation-card a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body[data-page="classes"]>main>h1 {
+    font-size: 1.875rem;
+  }
+
+  body[data-page="classes"]>main>p {
+    font-size: 15px;
+  }
+
+  body[data-page="classes"] .card {
+    padding: 24px;
+  }
+
+  body[data-page="classes"] .card h3 {
+    font-size: 1.25rem;
+  }
+
+  body[data-page="classes"] .card ul li {
+    font-size: 14px;
+  }
+
+  body[data-page="classes"] .course-details,
+  body[data-page="classes"] .consultation-card {
+    padding: 24px;
+    margin-top: 28px;
+  }
+
+  body[data-page="classes"] .course-details h3,
+  body[data-page="classes"] .consultation-card h3 {
+    font-size: 1.3rem;
+  }
+
+  body[data-page="classes"] .course-details .phone,
+  body[data-page="classes"] .consultation-card .phone {
+    font-size: 16px;
+  }
+}
