@@ -1,0 +1,67 @@
+/* ================= SERVICES PAGE - CLEAN DESIGN ================= */
+
+/* Clean background */
+body[data-page="services"] {
+  background: #f8fafc;
+}
+
+/* Service cards */
+body[data-page="services"] .card {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+body[data-page="services"] .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Consultation card */
+.consultation-card {
+  background: #ffffff !important;
+  border: 2px solid #3b82f6 !important;
+  margin-top: 32px;
+}
+
+.consultation-card h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 14px;
+}
+
+.consultation-card .phone {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.consultation-card .phone a {
+  color: #16a34a;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: rgba(22, 163, 74, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.consultation-card .phone a:hover {
+  background: rgba(22, 163, 74, 0.2);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .consultation-card {
+    margin-top: 24px;
+    padding: 24px 20px !important;
+  }
+
+  .consultation-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .consultation-card .phone {
+    font-size: 18px;
+  }
+}

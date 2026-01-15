@@ -1,0 +1,74 @@
+/* ================= PLANET TRANSIT TABLE ================= */
+
+/* Controls */
+.controls{
+  display:flex;
+  justify-content:center;
+  margin:10px 0;
+}
+
+.controls select{
+  min-width:220px;
+  height:44px;
+  padding:8px 12px;
+  font-size:14px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* Selected planet label */
+#planetLabel{
+  text-align:center;
+  font-size:16px;
+  font-weight:600;
+  margin:8px 0;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  margin:12px 0;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  font-size:13px;
+}
+
+th, td{
+  border:1px solid #ccc;
+  padding:10px 8px;
+  text-align:center;
+  white-space:nowrap;   /* ⭐ IMPORTANT */
+}
+
+th{
+  background:#243c8f;
+  color:#fff;
+  font-weight:600;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:600px){
+
+  table{
+    font-size:12px;
+    min-width:600px;   /* ⭐ KEY FIX */
+  }
+
+  th, td{
+    padding:8px 6px;
+  }
+
+  .table-wrapper{
+    margin:12px -12px;
+    padding:0 12px;
+  }
+}

@@ -1,0 +1,388 @@
+/* ================= HOME PAGE - CLEAN DESIGN ================= */
+
+/* Simple clean background */
+body {
+  background: #f8fafc;
+}
+
+/* ================= MAIN LAYOUT ================= */
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 36px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* ================= GURU CARD ================= */
+.guru-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.guru-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.guru-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #3b82f6;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.guru-card h3 {
+  color: #1e293b;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.guru-card h4 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.guru-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* ================= HERO TEXT ================= */
+.right h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.right h2 {
+  font-size: 28px;
+  margin: 12px 0;
+  font-weight: 600;
+  color: #334155;
+}
+
+.hero-desc {
+  font-size: 16px;
+  max-width: 600px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* ================= INFO CARDS ================= */
+.cards {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  color: #1e293b;
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  padding: 8px 0;
+  font-size: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.card ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-size: 18px;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 32px;
+  border-radius: 12px;
+  background: #1e293b;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.contact p {
+  font-size: 15px;
+  margin: 8px 0;
+  color: #e2e8f0;
+}
+
+/* ================= POPUP ================= */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 340px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e8f0;
+}
+
+.popup-card h3 {
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.popup-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.popup-card .small {
+  font-size: 13px;
+  color: #64748b;
+  margin: 8px 0 14px;
+}
+
+.popup-close-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.popup-close-btn:hover {
+  background: #334155;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  margin-top: 50px;
+  background: #1e293b;
+  color: #e5e7eb;
+  padding: 40px 24px 24px;
+}
+
+.site-footer a {
+  color: #93c5fd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.site-footer p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.footer-card {
+  margin-bottom: 28px;
+}
+
+.footer-card a {
+  display: block;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.footer-copy {
+  border-top: 1px solid rgba(255, 255, 255, .15);
+  margin-top: 24px;
+  padding-top: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* ================= MOBILE OPTIMIZED ================= */
+@media(max-width:900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: 32px auto;
+    gap: 28px;
+  }
+
+  .right h1 {
+    font-size: 36px;
+  }
+
+  .right h2 {
+    font-size: 24px;
+  }
+}
+
+@media(max-width:600px) {
+  .site-footer {
+    text-align: center;
+  }
+
+  .footer-card {
+    margin-bottom: 28px;
+  }
+
+  .layout {
+    margin: 24px auto;
+    gap: 24px;
+  }
+
+  .guru-card {
+    padding: 24px;
+  }
+
+  .guru-img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 12px;
+  }
+
+  .guru-card h3 {
+    font-size: 17px;
+  }
+
+  .guru-card h4 {
+    font-size: 14px;
+  }
+
+  .guru-card p {
+    font-size: 14px;
+  }
+
+  .right h1 {
+    font-size: 32px;
+  }
+
+  .right h2 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+  .cards {
+    margin: 40px auto;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+  }
+
+  .card p,
+  .card ul li {
+    font-size: 14px;
+  }
+
+  .contact {
+    margin: 50px auto;
+    padding: 24px;
+  }
+
+  .contact h3 {
+    font-size: 20px;
+  }
+
+  .contact p {
+    font-size: 14px;
+  }
+
+  .popup-card {
+    padding: 24px 20px;
+  }
+
+  .popup-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .popup-card p {
+    font-size: 14px;
+  }
+
+  .site-footer {
+    padding: 32px 18px 20px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+  }
+}
