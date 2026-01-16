@@ -1,11 +1,4 @@
-const menuBtn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
 const langBtn = document.getElementById("langBtn");
-
-/* ================= MENU ================= */
-menuBtn.onclick = () => {
-  menu.classList.toggle("hidden");
-};
 
 /* ================= LANGUAGE CORE ================= */
 function setLang(lang) {
@@ -22,17 +15,21 @@ function setLang(lang) {
   });
 
   // Toggle button text (show opposite language)
-  langBtn.textContent = lang === "ta" ? "English" : "தமிழ்";
+  if (langBtn) {
+    langBtn.textContent = lang === "ta" ? "English" : "தமிழ்";
+  }
 
   // Dispatch event for other scripts
   window.dispatchEvent(new CustomEvent("languageChange", { detail: { lang } }));
 }
 
 /* ================= LANGUAGE BUTTON ================= */
-langBtn.onclick = () => {
-  const current = localStorage.getItem("lang") || "ta";
-  setLang(current === "ta" ? "en" : "ta");
-};
+if (langBtn) {
+  langBtn.onclick = () => {
+    const current = localStorage.getItem("lang") || "ta";
+    setLang(current === "ta" ? "en" : "ta");
+  };
+}
 
 /* ================= INIT (FORCE TAMIL FIRST) ================= */
 (function forceTamilFirstPaint() {
@@ -44,16 +41,18 @@ langBtn.onclick = () => {
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= FREE POPUP (once per session) ================= */
-  if (!sessionStorage.getItem("freePopupShown")) {
-    setTimeout(() => {
-      document.getElementById("freePopup")?.classList.remove("hidden");
-      sessionStorage.setItem("freePopupShown", "yes");
-    }, 900);
+  // Using Bootstrap Modal API
+  const popupElement = document.getElementById("freePopup");
+
+  if (popupElement && !sessionStorage.getItem("freePopupShown")) {
+    // Check if bootstrap is available
+    if (typeof bootstrap !== 'undefined') {
+      const myModal = new bootstrap.Modal(popupElement);
+      setTimeout(() => {
+        myModal.show();
+        sessionStorage.setItem("freePopupShown", "yes");
+      }, 2000); // 2 seconds delay
+    }
   }
 
 });
-
-/* ================= POPUP CLOSE ================= */
-function closePopup() {
-  document.getElementById("freePopup")?.classList.add("hidden");
-}
