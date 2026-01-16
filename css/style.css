@@ -107,9 +107,75 @@ a {
     /* Smaller text for mobile */
   }
 
+
   .table-mobile-compact th,
   .table-mobile-compact td {
     padding: 0.25rem 0.15rem !important;
     /* Tighter spacing */
+  }
+}
+
+/* ================= 4. MODERN BLUE HEADER & FOOTER ================= */
+.bg-modern-blue {
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+  /* Slate 900 to Blue 800 */
+}
+
+/* Footer Font Sizes */
+footer h3,
+footer .h4 {
+  font-size: 1.1rem !important;
+}
+
+footer h4,
+footer .h5 {
+  font-size: 1rem !important;
+}
+
+footer p,
+footer a {
+  font-size: 0.9rem;
+}
+
+footer .small {
+  font-size: 0.8rem !important;
+}
+
+/* Adaptive Fonts */
+@media (max-width: 991px) {
+
+  h1,
+  .display-4,
+  .display-6 {
+    font-size: 1.8rem !important;
+  }
+
+  h2,
+  .h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  /* Footer even smaller on mobile */
+  footer h3,
+  footer .h4 {
+    font-size: 1rem !important;
+  }
+
+  footer h4,
+  footer .h5 {
+    font-size: 0.9rem !important;
+  }
+
+  footer p,
+  footer a {
+    font-size: 0.85rem;
   }
 }
