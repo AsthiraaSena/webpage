@@ -4,84 +4,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asthiraa Astrology – Tables</title>
+  <title>Astrology Tables | Asthiraa Astrology</title>
+
+  <!-- ✅ BOOTSTRAP 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/tables.css">
-  <link rel="stylesheet" href="css/mobile.css">
 
+  <style>
+    /* Custom loading spinner for button */
+    .spinner-btn {
+      display: none;
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid #fff;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: spinner-border .75s linear infinite;
+      vertical-align: text-bottom;
+      margin-left: 0.5rem;
+    }
+
+    button.loading .spinner-btn {
+      display: inline-block;
+    }
+  </style>
 </head>
 
 <body data-page="tables">
 
-  <header class="topbar">
-    <div class="header-left">
-      <div class="title">🪐 Asthiraa Astrology</div>
-      <div class="header-contact">
-        <span>Astrologer: Senapathi</span>
-        <span>|</span>
-        <a href="tel:9787921438">📞 97879-21438</a>
-      </div>
-    </div>
-    <div class="actions">
-      <button id="langBtn">தமிழ்</button>
-      <button id="menuBtn">☰</button>
-    </div>
-  </header>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="index.html">
+        🪐 Asthiraa Astrology
+      </a>
 
-  <nav id="menu" class="menu hidden">
-    <div class="menu-box">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="classes.html">Classes</a>
-      <a href="consultation.html">Consultation</a>
-      <a href="contact.html">Contact</a>
-      <a href="tables.html">Tables</a>
-      <a href="transit.html">Daily Transit</a>
+      <div class="d-flex align-items-center order-lg-3 ms-lg-3">
+        <!-- Language Toggle -->
+        <button id="langBtn" class="btn btn-sm btn-light text-primary fw-bold me-2">தமிழ்</button>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link lang" href="index.html" data-en="Home" data-ta="முகப்பு">Home</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="about.html" data-en="About" data-ta="பற்றி">About</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="services.html" data-en="Services"
+              data-ta="சேவைகள்">Services</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="classes.html" data-en="Classes"
+              data-ta="வகுப்புகள்">Classes</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="consultation.html" data-en="Consultation"
+              data-ta="ஆலோசனை">Consultation</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact"
+              data-ta="தொடர்பு">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active lang" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" data-en="More" data-ta="மேலும்">
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item active lang" href="tables.html" data-en="Tables"
+                  data-ta="அட்டவணைகள்">Tables</a></li>
+              <li><a class="dropdown-item lang" href="transit.html" data-en="Daily Transit"
+                  data-ta="தினசரி கிரக மாற்றம்">Daily Transit</a></li>
+              <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026"
+                  data-ta="கிரக பெயர்ச்சி 2026">Planet Transit 2026</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <main>
+  <main class="container my-5">
 
-    <h2>sub(249) & subsub(2193) Tables</h2>
-
-    <div class="controls">
-      <label>
-        <input type="radio" name="mode" value="sub" checked>
-        Sub
-      </label>
-
-      <label>
-        <input type="radio" name="mode" value="ssb">
-        SSB
-      </label>
-
-      <button id="loadBtn">Load</button>
+    <div class="text-center mb-4">
+      <h1 class="display-6 fw-bold text-primary">Sub & Sub-Sub Tables</h1>
+      <p class="text-muted">Select a table type and click load to view data.</p>
     </div>
 
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>S.No</th>
-            <th>D.M.S</th>
-            <th>Rasi</th>
-            <th>Star</th>
-            <th id="subHead">Sub</th>
-            <th id="ssbHead" style="display:none;">SSB</th>
-          </tr>
-        </thead>
+    <!-- CONTROLS -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
 
-        <tbody id="tableBody">
-          <tr>
-            <td colspan="6">Select option & click Load</td>
-          </tr>
-        </tbody>
-      </table>
+          <div class="btn-group" role="group" aria-label="Table Mode">
+            <input type="radio" class="btn-check" name="mode" id="modeSub" value="sub" checked>
+            <label class="btn btn-outline-primary" for="modeSub">Sub (249)</label>
+
+            <input type="radio" class="btn-check" name="mode" id="modeSSB" value="ssb">
+            <label class="btn btn-outline-primary" for="modeSSB">Sub-Sub (2193)</label>
+          </div>
+
+          <button id="loadBtn" class="btn btn-primary d-flex align-items-center">
+            Load Data <span class="spinner-btn"></span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="card shadow rounded-3 border-0">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover mb-0 text-center align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th class="py-3">S.No</th>
+                <th class="py-3">D.M.S</th>
+                <th class="py-3">Rasi</th>
+                <th class="py-3">Star</th>
+                <th class="py-3" id="subHead">Sub</th>
+                <th class="py-3" id="ssbHead" style="display:none;">SSB</th>
+              </tr>
+            </thead>
+
+            <tbody id="tableBody">
+              <tr>
+                <td colspan="6" class="py-5 text-muted">
+                  <i class="bi bi-arrow-up-circle fs-3 d-block mb-2"></i>
+                  Select an option and click <strong>Load Data</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
   </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- ABOUT / BRAND -->
+        <div class="col-md-6">
+          <h3 class="h4 text-warning lang" data-en="Astrologer : Senapathi" data-ta="ஜோதிடர் : சேனாபதி">
+            Astrologer : Senapathi
+          </h3>
+          <p class="text-white-50 lang" data-en="Asthiraa Astrology Research and Training Institute"
+            data-ta="அஸ்திரா ஜோதிட ஆய்வகம் & பயிற்சி மையம்">
+            Traditional Baskara Astrology Institute
+          </p>
+          <p class="mb-1">📞 <a href="tel:9787921438" class="text-white text-decoration-none">97879-21438</a></p>
+          <p class="text-white-50 lang" data-en="Dharapuram, Tamil Nadu, India" data-ta="தாராபுரம், தமிழ்நாடு, இந்தியா">
+            Dharapuram, Tamil Nadu, India
+          </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="col-md-6">
+          <h4 class="h5 text-white mb-3 lang" data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">Quick Links</h4>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="services.html" class="link-light text-decoration-none lang" data-en="Astrology Services"
+              data-ta="ஜோதிட சேவைகள்">Astrology Services</a>
+            <a href="classes.html" class="link-light text-decoration-none lang" data-en="Astrology Classes"
+              data-ta="ஜோதிட வகுப்புகள்">Astrology Classes</a>
+            <a href="tables.html" class="link-light text-decoration-none lang" data-en="Astrology Tables"
+              data-ta="ஜோதிட அட்டவணைகள்">Astrology Tables</a>
+            <a href="transit.html" class="link-light text-decoration-none lang" data-en="Daily Planet Transit"
+              data-ta="தினசரி கிரக மாற்றம்">Daily Planet Transit</a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <!-- COPYRIGHT -->
+      <div class="text-center text-white-50 small">
+        © 2026 Asthiraa Astrology · All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- ✅ BOOTSTRAP 5 BUNDLE (JS + Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="js/script.js"></script>
   <script src="js/table.js"></script>
