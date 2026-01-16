@@ -1,0 +1,101 @@
+/* ================= ASTHIRAA ASTROLOGY - CORE THEME ================= */
+/* 
+   Integrated with Bootstrap 5
+   Design: Clean, Modern, Mobile-First
+   Colors: Slate (Dark), Blue (Primary), White (Bg)
+   Font: Inter
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ================= 1. VARIABLES & OVERRIDES ================= */
+:root {
+  --primary: #2563eb;
+  /* Blue 600 */
+  --primary-dark: #1d4ed8;
+  /* Blue 700 */
+  --secondary: #4f46e5;
+  /* Indigo 600 */
+  --accent: #16a34a;
+  /* Green 600 */
+
+  --bs-primary: var(--primary);
+  --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  color: #475569;
+  /* Slate 600 */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0f172a;
+  /* Slate 900 */
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ================= 2. BOOTSTRAP OVERRIDES & UTILITIES ================= */
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Cards Hover Effect */
+.transition-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Guru Image in Card */
+.guru-img-card {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 4px solid #f8fafc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Links */
+.footer-link {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+/* Language Button Active State */
+.btn-outline-primary.active {
+  background-color: var(--primary);
+  color: white;
+}
