@@ -4,251 +4,316 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asthiraa Astrology</title>
+  <title>Asthiraa Astrology | Classes</title>
+
+  <!-- ✅ BOOTSTRAP 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/classes.css">
-  <link rel="stylesheet" href="css/mobile.css">
+
 </head>
 
 <body data-page="classes">
 
-  <header class="topbar">
-    <div class="header-left">
-      <div class="title">🪐 Asthiraa Astrology</div>
-      <div class="header-contact">
-        <span>Astrologer: Senapathi</span>
-        <span>|</span>
-        <a href="tel:9787921438">📞 97879-21438</a>
-      </div>
-    </div>
-    <div class="actions">
-      <button id="langBtn">தமிழ்</button>
-      <button id="menuBtn">☰</button>
-    </div>
-  </header>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-white" href="index.html">
+        🪐 Asthiraa Astrology
+      </a>
 
-  <nav id="menu" class="menu hidden">
-    <div class="menu-box">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="classes.html">Classes</a>
-      <a href="consultation.html">Consultation</a>
-      <a href="contact.html">Contact</a>
-      <a href="tables.html">Tables</a>
-      <a href="transit.html">Daily Transit</a>
+      <div class="d-flex align-items-center order-lg-3 ms-lg-3">
+        <!-- Language Toggle -->
+        <button id="langBtn" class="btn btn-sm btn-light text-primary fw-bold me-2">தமிழ்</button>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link lang" href="index.html" data-en="Home" data-ta="முகப்பு">Home</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="about.html" data-en="About" data-ta="பற்றி">About</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="services.html" data-en="Services"
+              data-ta="சேவைகள்">Services</a></li>
+          <li class="nav-item"><a class="nav-link active lang" href="classes.html" data-en="Classes"
+              data-ta="வகுப்புகள்">Classes</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="consultation.html" data-en="Consultation"
+              data-ta="ஆலோசனை">Consultation</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact"
+              data-ta="தொடர்பு">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle lang" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" data-en="More" data-ta="மேலும்">
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item lang" href="tables.html" data-en="Tables" data-ta="அட்டவணைகள்">Tables</a></li>
+              <li><a class="dropdown-item lang" href="transit.html" data-en="Daily Transit"
+                  data-ta="தினசரி கிரக மாற்றம்">Daily Transit</a></li>
+              <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026"
+                  data-ta="கிரக பெயர்ச்சி 2026">Planet Transit 2026</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
+  <main class="container my-5">
 
-  <main>
-    <h1 class="lang" data-en="Astrology Classes & Courses" data-ta="ஜோதிட வகுப்புகள் & படிப்புகள்">
-      Astrology Classes & Courses
-    </h1>
+    <div class="text-center mb-5">
+      <h1 class="display-5 fw-bold text-primary lang" data-en="Astrology Classes & Courses"
+        data-ta="ஜோதிட வகுப்புகள் & படிப்புகள்">
+        Astrology Classes & Courses
+      </h1>
+      <p class="lead text-muted mx-auto mt-3" style="max-width: 800px;"
+        data-en="Learn traditional Baskara astrology through structured courses. We offer comprehensive training in both Tamil and English, available online and offline. Master the art of astrology from basics to advanced levels."
+        data-ta="கட்டமைக்கப்பட்ட படிப்புகள் மூலம் பாரம்பரிய பாஸ்கரா ஜோதிடத்தைக் கற்றுக்கொள்ளுங்கள். தமிழ் மற்றும் ஆங்கிலம் இரண்டிலும் விரிவான பயிற்சியை வழங்குகிறோம், ஆன்லைன் மற்றும் நேரடி வகையில் கிடைக்கிறது. அடிப்படைகளிலிருந்து மேம்பட்ட நிலைகள் வரை ஜோதிடக் கலையை மாஸ்டர் செய்யுங்கள்.">
+        Learn traditional Baskara astrology through structured courses. We offer comprehensive training in both Tamil
+        and
+        English, available online and offline. Master the art of astrology from basics to advanced levels.
+      </p>
+    </div>
 
-    <p class="lang"
-      data-en="Learn traditional Baskara astrology through structured courses. We offer comprehensive training in both Tamil and English, available online and offline. Master the art of astrology from basics to advanced levels."
-      data-ta="கட்டமைக்கப்பட்ட படிப்புகள் மூலம் பாரம்பரிய பாஸ்கரா ஜோதிடத்தைக் கற்றுக்கொள்ளுங்கள். தமிழ் மற்றும் ஆங்கிலம் இரண்டிலும் விரிவான பயிற்சியை வழங்குகிறோம், ஆன்லைன் மற்றும் நேரடி வகையில் கிடைக்கிறது. அடிப்படைகளிலிருந்து மேம்பட்ட நிலைகள் வரை ஜோதிடக் கலையை மாஸ்டர் செய்யுங்கள்.">
-      Learn traditional Baskara astrology through structured courses. We offer comprehensive training in both Tamil and
-      English, available online and offline. Master the art of astrology from basics to advanced levels.
-    </p>
+    <!-- COURSES GRID -->
+    <div class="row g-4 mb-5">
 
-    <section class="cards">
-
-      <div class="card" style="border-left: 4px solid #243c8f;" data-card-color="#243c8f">
-        <h3 class="lang" data-en="📚 Level 1: Foundation Course" data-ta="📚 நிலை 1: அடிப்படை படிப்பு">
-          📚 Level 1: Foundation Course
-        </h3>
-        <p class="lang"
-          data-en="Introduction to Baskara astrology principles. Learn the basics of planets, signs, houses, and their meanings. Perfect for beginners."
-          data-ta="பாஸ்கரா ஜோதிட கொள்கைகளின் அறிமுகம். கிரகங்கள், இராசிகள், வீடுகள் மற்றும் அவற்றின் அர்த்தங்களின் அடிப்படைகளைக் கற்றுக்கொள்ளுங்கள். தொடக்கநிலைக்கு சிறந்தது.">
-          Introduction to Baskara astrology principles. Learn the basics of planets, signs, houses, and their meanings.
-          Perfect for beginners.
-        </p>
-        <ul>
-          <li class="lang" data-en="• Planets and their characteristics"
-            data-ta="• கிரகங்கள் மற்றும் அவற்றின் பண்புகள்">• Planets and their characteristics</li>
-          <li class="lang" data-en="• 12 Zodiac signs" data-ta="• 12 இராசிகள்">• 12 Zodiac signs</li>
-          <li class="lang" data-en="• 12 Houses and their significance"
-            data-ta="• 12 வீடுகள் மற்றும் அவற்றின் முக்கியத்துவம்">• 12 Houses and their significance</li>
-          <li class="lang" data-en="• Basic chart reading" data-ta="• அடிப்படை விளக்கப்பட வாசிப்பு">• Basic chart
-            reading</li>
-        </ul>
+      <!-- Level 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm transition-hover border-0 border-start border-4 border-primary">
+          <div class="card-body">
+            <h3 class="h5 card-title text-primary fw-bold lang" data-en="📚 Level 1: Foundation Course"
+              data-ta="📚 நிலை 1: அடிப்படை படிப்பு">
+              📚 Level 1: Foundation Course
+            </h3>
+            <p class="card-text text-muted lang"
+              data-en="Introduction to Baskara astrology principles. Learn the basics of planets, signs, houses, and their meanings. Perfect for beginners."
+              data-ta="பாஸ்கரா ஜோதிட கொள்கைகளின் அறிமுகம். கிரகங்கள், இராசிகள், வீடுகள் மற்றும் அவற்றின் அர்த்தங்களின் அடிப்படைகளைக் கற்றுக்கொள்ளுங்கள். தொடக்கநிலைக்கு சிறந்தது.">
+              Introduction to Baskara astrology principles. Learn the basics of planets, signs, houses, and their
+              meanings.
+              Perfect for beginners.
+            </p>
+            <ul class="list-unstyled text-muted small">
+              <li class="mb-1 lang" data-en="• Planets and their characteristics"
+                data-ta="• கிரகங்கள் மற்றும் அவற்றின் பண்புகள்">• Planets and their characteristics</li>
+              <li class="mb-1 lang" data-en="• 12 Zodiac signs" data-ta="• 12 இராசிகள்">• 12 Zodiac signs</li>
+              <li class="mb-1 lang" data-en="• 12 Houses and their significance"
+                data-ta="• 12 வீடுகள் மற்றும் அவற்றின் முக்கியத்துவம்">• 12 Houses and their significance</li>
+              <li class="mb-1 lang" data-en="• Basic chart reading" data-ta="• அடிப்படை விளக்கப்பட வாசிப்பு">• Basic
+                chart reading</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="card" style="border-left: 4px solid #16a34a;" data-card-color="#16a34a">
-        <h3 class="lang" data-en="📖 Level 2: Intermediate Course" data-ta="📖 நிலை 2: இடைநிலை படிப்பு">
-          📖 Level 2: Intermediate Course
-        </h3>
-        <p class="lang"
-          data-en="Deep dive into Baskara astrology techniques. Learn aspects, conjunctions, transits, and predictive methods. Build on your foundation knowledge."
-          data-ta="பாஸ்கரா ஜோதிட நுட்பங்களில் ஆழமான ஆய்வு. கோணங்கள், சேர்க்கைகள், மாற்றங்கள் மற்றும் கணிப்பு முறைகளைக் கற்றுக்கொள்ளுங்கள். உங்கள் அடிப்படை அறிவை வளர்த்துக் கொள்ளுங்கள்.">
-          Deep dive into Baskara astrology techniques. Learn aspects, conjunctions, transits, and predictive methods.
-          Build on your foundation knowledge.
-        </p>
-        <ul>
-          <li class="lang" data-en="• Planetary aspects and relationships" data-ta="• கிரக கோணங்கள் மற்றும் உறவுகள்">•
-            Planetary aspects and relationships</li>
-          <li class="lang" data-en="• Dasha systems and timing" data-ta="• தசா அமைப்புகள் மற்றும் நேரம்">• Dasha systems
-            and timing</li>
-          <li class="lang" data-en="• Transit analysis" data-ta="• மாற்றம் ஆய்வு">• Transit analysis</li>
-          <li class="lang" data-en="• Predictive techniques" data-ta="• கணிப்பு நுட்பங்கள்">• Predictive techniques</li>
-        </ul>
+      <!-- Level 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm transition-hover border-0 border-start border-4 border-success">
+          <div class="card-body">
+            <h3 class="h5 card-title text-success fw-bold lang" data-en="📖 Level 2: Intermediate Course"
+              data-ta="📖 நிலை 2: இடைநிலை படிப்பு">
+              📖 Level 2: Intermediate Course
+            </h3>
+            <p class="card-text text-muted lang"
+              data-en="Deep dive into Baskara astrology techniques. Learn aspects, conjunctions, transits, and predictive methods. Build on your foundation knowledge."
+              data-ta="பாஸ்கரா ஜோதிட நுட்பங்களில் ஆழமான ஆய்வு. கோணங்கள், சேர்க்கைகள், மாற்றங்கள் மற்றும் கணிப்பு முறைகளைக் கற்றுக்கொள்ளுங்கள். உங்கள் அடிப்படை அறிவை வளர்த்துக் கொள்ளுங்கள்.">
+              Deep dive into Baskara astrology techniques. Learn aspects, conjunctions, transits, and predictive
+              methods.
+              Build on your foundation knowledge.
+            </p>
+            <ul class="list-unstyled text-muted small">
+              <li class="mb-1 lang" data-en="• Planetary aspects and relationships"
+                data-ta="• கிரக கோணங்கள் மற்றும் உறவுகள்">• Planetary aspects and relationships</li>
+              <li class="mb-1 lang" data-en="• Dasha systems and timing" data-ta="• தசா அமைப்புகள் மற்றும் நேரம்">•
+                Dasha systems and timing</li>
+              <li class="mb-1 lang" data-en="• Transit analysis" data-ta="• மாற்றம் ஆய்வு">• Transit analysis</li>
+              <li class="mb-1 lang" data-en="• Predictive techniques" data-ta="• கணிப்பு நுட்பங்கள்">• Predictive
+                techniques</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="card" style="border-left: 4px solid #dc2626;" data-card-color="#dc2626">
-        <h3 class="lang" data-en="🎓 Level 3: Advanced Course" data-ta="🎓 நிலை 3: மேம்பட்ட படிப்பு">
-          🎓 Level 3: Advanced Course
-        </h3>
-        <p class="lang"
-          data-en="Master advanced Baskara astrology concepts including Cuspal Interlink Theory, advanced prediction methods, and professional consultation techniques."
-          data-ta="பாவ முனை உள்தொடர்பு கோட்பாடு, மேம்பட்ட கணிப்பு முறைகள் மற்றும் தொழில்முறை ஆலோசனை நுட்பங்கள் உட்பட மேம்பட்ட பாஸ்கரா ஜோதிட கருத்துக்களை மாஸ்டர் செய்யுங்கள்.">
-          Master advanced Baskara astrology concepts including Cuspal Interlink Theory, advanced prediction methods, and
-          professional consultation techniques.
-        </p>
-        <ul>
-          <li class="lang" data-en="• Cuspal Interlink Theory (CIL)" data-ta="• பாவ முனை உள்தொடர்பு கோட்பாடு (CIL)">•
-            Cuspal Interlink Theory (CIT)</li>
-          <li class="lang" data-en="• Advanced prediction methods" data-ta="• மேம்பட்ட கணிப்பு முறைகள்">• Advanced
-            prediction methods</li>
-          <li class="lang" data-en="• Professional consultation skills" data-ta="• தொழில்முறை ஆலோசனை திறன்கள்">•
-            Professional consultation skills</li>
-          <li class="lang" data-en="• Case studies and practical application"
-            data-ta="• வழக்கு ஆய்வுகள் மற்றும் நடைமுறை பயன்பாடு">• Case studies and practical application</li>
-        </ul>
+      <!-- Level 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm transition-hover border-0 border-start border-4 border-danger">
+          <div class="card-body">
+            <h3 class="h5 card-title text-danger fw-bold lang" data-en="🎓 Level 3: Advanced Course"
+              data-ta="🎓 நிலை 3: மேம்பட்ட படிப்பு">
+              🎓 Level 3: Advanced Course
+            </h3>
+            <p class="card-text text-muted lang"
+              data-en="Master advanced Baskara astrology concepts including Cuspal Interlink Theory, advanced prediction methods, and professional consultation techniques."
+              data-ta="பாவ முனை உள்தொடர்பு கோட்பாடு, மேம்பட்ட கணிப்பு முறைகள் மற்றும் தொழில்முறை ஆலோசனை நுட்பங்கள் உட்பட மேம்பட்ட பாஸ்கரா ஜோதிட கருத்துக்களை மாஸ்டர் செய்யுங்கள்.">
+              Master advanced Baskara astrology concepts including Cuspal Interlink Theory, advanced prediction methods,
+              and
+              professional consultation techniques.
+            </p>
+            <ul class="list-unstyled text-muted small">
+              <li class="mb-1 lang" data-en="• Cuspal Interlink Theory (CIL)"
+                data-ta="• பாவ முனை உள்தொடர்பு கோட்பாடு (CIL)">• Cuspal Interlink Theory (CIT)</li>
+              <li class="mb-1 lang" data-en="• Advanced prediction methods" data-ta="• மேம்பட்ட கணிப்பு முறைகள்">•
+                Advanced prediction methods</li>
+              <li class="mb-1 lang" data-en="• Professional consultation skills" data-ta="• தொழில்முறை ஆலோசனை திறன்கள்">
+                • Professional consultation skills</li>
+              <li class="mb-1 lang" data-en="• Case studies and practical application"
+                data-ta="• வழக்கு ஆய்வுகள் மற்றும் நடைமுறை பயன்பாடு">• Case studies and practical application</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="card" style="border-left: 4px solid #9333ea;" data-card-color="#9333ea">
-        <h3 class="lang" data-en="🏥 Medical Astrology Course" data-ta="🏥 மருத்துவ ஜோதிட படிப்பு">
-          🏥 Medical Astrology Course
-        </h3>
-        <p class="lang"
-          data-en="Specialized course on medical astrology. Learn to identify health issues, predict diseases, and suggest remedies through astrological analysis."
-          data-ta="மருத்துவ ஜோதிடத்தில் சிறப்பு படிப்பு. சுகாதார பிரச்சினைகளை அடையாளம் காண, நோய்களை கணிக்க மற்றும் ஜோதிட ஆய்வு மூலம் தீர்வுகளை பரிந்துரைக்க கற்றுக்கொள்ளுங்கள்.">
-          Specialized course on medical astrology. Learn to identify health issues, predict diseases, and suggest
-          remedies through astrological analysis.
-        </p>
-        <ul>
-          <li class="lang" data-en="• Planetary influence on health" data-ta="• சுகாதாரத்தில் கிரக தாக்கம்">• Planetary
-            influence on health</li>
-          <li class="lang" data-en="• Disease prediction and timing" data-ta="• நோய் கணிப்பு மற்றும் நேரம்">• Disease
-            prediction and timing</li>
-          <li class="lang" data-en="• Medical remedies and gemstones"
-            data-ta="• மருத்துவ தீர்வுகள் மற்றும் மணிக்கற்கள்">• Medical remedies and gemstones</li>
-          <li class="lang" data-en="• Preventive health measures" data-ta="• தடுப்பு சுகாதார நடவடிக்கைகள்">• Preventive
-            health measures</li>
-          <li class="lang" data-en="• Case studies in medical astrology"
-            data-ta="• மருத்துவ ஜோதிடத்தில் வழக்கு ஆய்வுகள்">• Case studies in medical astrology</li>
-        </ul>
+      <!-- Medical -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm transition-hover border-0 border-start border-4 border-primary"
+          style="--bs-border-opacity: .5; border-color: #9333ea !important;">
+          <div class="card-body">
+            <h3 class="h5 card-title fw-bold lang" style="color: #9333ea;" data-en="🏥 Medical Astrology Course"
+              data-ta="🏥 மருத்துவ ஜோதிட படிப்பு">
+              🏥 Medical Astrology Course
+            </h3>
+            <p class="card-text text-muted lang"
+              data-en="Specialized course on medical astrology. Learn to identify health issues, predict diseases, and suggest remedies through astrological analysis."
+              data-ta="மருத்துவ ஜோதிடத்தில் சிறப்பு படிப்பு. சுகாதார பிரச்சினைகளை அடையாளம் காண, நோய்களை கணிக்க மற்றும் ஜோதிட ஆய்வு மூலம் தீர்வுகளை பரிந்துரைக்க கற்றுக்கொள்ளுங்கள்.">
+              Specialized course on medical astrology. Learn to identify health issues, predict diseases, and suggest
+              remedies through astrological analysis.
+            </p>
+            <ul class="list-unstyled text-muted small">
+              <li class="mb-1 lang" data-en="• Planetary influence on health" data-ta="• சுகாதாரத்தில் கிரக தாக்கம்">•
+                Planetary influence on health</li>
+              <li class="mb-1 lang" data-en="• Disease prediction and timing" data-ta="• நோய் கணிப்பு மற்றும் நேரம்">•
+                Disease prediction and timing</li>
+              <li class="mb-1 lang" data-en="• Medical remedies and gemstones"
+                data-ta="• மருத்துவ தீர்வுகள் மற்றும் மணிக்கற்கள்">• Medical remedies and gemstones</li>
+              <li class="mb-1 lang" data-en="• Preventive health measures" data-ta="• தடுப்பு சுகாதார நடவடிக்கைகள்">•
+                Preventive health measures</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="card" style="border-left: 4px solid #ea580c;" data-card-color="#ea580c">
-        <h3 class="lang" data-en="💑 Marriage Matching Course" data-ta="💑 திருமண பொருத்தம் படிப்பு">
-          💑 Marriage Matching Course
-        </h3>
-        <p class="lang"
-          data-en="Learn the traditional methods of horoscope matching for marriage. Understand compatibility factors and how to assess marital harmony."
-          data-ta="திருமணத்திற்கான ஜாதக பொருத்தத்தின் பாரம்பரிய முறைகளைக் கற்றுக்கொள்ளுங்கள். பொருத்தம் காரணிகளைப் புரிந்து கொண்டு திருமண இணக்கத்தை மதிப்பிடுவது எப்படி.">
-          Learn the traditional methods of horoscope matching for marriage. Understand compatibility factors and how to
-          assess marital harmony.
-        </p>
-        <ul>
-          <li class="lang" data-en="• Baskara matching methods" data-ta="• பாஸ்கரா பொருத்த முறைகள்">• Traditional
-            matching methods</li>
-          <li class="lang" data-en="• Compatibility analysis" data-ta="• பொருத்தம் ஆய்வு">• Compatibility analysis</li>
-          <li class="lang" data-en="• Dosha analysis and remedies" data-ta="• தோஷ ஆய்வு மற்றும் தீர்வுகள்">• Dosha
-            analysis and remedies</li>
-          <li class="lang" data-en="• Marriage timing and Muhurtham" data-ta="• திருமண நேரம் மற்றும் முகூர்த்தம்">•
-            Marriage timing and Muhurtham</li>
-        </ul>
+      <!-- Marriage -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm transition-hover border-0 border-start border-4 border-warning">
+          <div class="card-body">
+            <h3 class="h5 card-title text-warning fw-bold lang" data-en="💑 Marriage Matching Course"
+              data-ta="💑 திருமண பொருத்தம் படிப்பு">
+              💑 Marriage Matching Course
+            </h3>
+            <p class="card-text text-muted lang"
+              data-en="Learn the traditional methods of horoscope matching for marriage. Understand compatibility factors and how to assess marital harmony."
+              data-ta="திருமணத்திற்கான ஜாதக பொருத்தத்தின் பாரம்பரிய முறைகளைக் கற்றுக்கொள்ளுங்கள். பொருத்தம் காரணிகளைப் புரிந்து கொண்டு திருமண இணக்கத்தை மதிப்பிடுவது எப்படி.">
+              Learn the traditional methods of horoscope matching for marriage. Understand compatibility factors and how
+              to
+              assess marital harmony.
+            </p>
+            <ul class="list-unstyled text-muted small">
+              <li class="mb-1 lang" data-en="• Baskara matching methods" data-ta="• பாஸ்கரா பொருத்த முறைகள்">•
+                Traditional matching methods</li>
+              <li class="mb-1 lang" data-en="• Compatibility analysis" data-ta="• பொருத்தம் ஆய்வு">• Compatibility
+                analysis</li>
+              <li class="mb-1 lang" data-en="• Dosha analysis and remedies" data-ta="• தோஷ ஆய்வு மற்றும் தீர்வுகள்">•
+                Dosha analysis and remedies</li>
+              <li class="mb-1 lang" data-en="• Marriage timing and Muhurtham"
+                data-ta="• திருமண நேரம் மற்றும் முகூர்த்தம்">• Marriage timing and Muhurtham</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
+    </div>
 
+    <!-- COURSE DETAILS -->
+    <div class="card border-0 shadow bg-dark text-white p-4">
+      <div class="card-body text-center">
+        <h3 class="card-title fw-bold text-white mb-4 lang" data-en="📋 Course Details" data-ta="📋 படிப்பு விவரங்கள்">
+          📋 Course Details
+        </h3>
+        <div class="row text-start justify-content-center">
+          <div class="col-md-8">
+            <div class="d-flex flex-column gap-3 text-center">
+              <p class="lang mb-0 h5" data-en="✅ Available in Tamil and English"
+                data-ta="✅ தமிழ் மற்றும் ஆங்கிலத்தில் கிடைக்கிறது">
+                ✅ Available in Tamil and English
+              </p>
+              <p class="lang mb-0 h5" data-en="✅ Online & Offline classes available"
+                data-ta="✅ ஆன்லைன் & நேரடி வகுப்புகள் கிடைக்கின்றன">
+                ✅ Online & Offline classes available
+              </p>
+              <p class="lang mb-0 h5" data-en="✅ Flexible timing and schedule"
+                data-ta="✅ நெகிழ்வான நேரம் மற்றும் அட்டவணை">
+                ✅ Flexible timing and schedule
+              </p>
+            </div>
+          </div>
+        </div>
 
-    </section>
+        <hr class="border-secondary my-4">
 
-    <div class="card course-details">
-      <h3 class="lang" data-en="📋 Course Details" data-ta="📋 படிப்பு விவரங்கள்">
-        📋 Course Details
-      </h3>
-
-      <div class="details">
-        <p class="lang" data-en="✅ Available in Tamil and English" data-ta="✅ தமிழ் மற்றும் ஆங்கிலத்தில் கிடைக்கிறது">
-          ✅ Available in Tamil and English
-        </p>
-
-        <p class="lang" data-en="✅ Online & Offline classes available"
-          data-ta="✅ ஆன்லைன் & நேரடி வகுப்புகள் கிடைக்கின்றன">
-          ✅ Online & Offline classes available
-        </p>
-
-        <p class="lang" data-en="✅ Flexible timing and schedule" data-ta="✅ நெகிழ்வான நேரம் மற்றும் அட்டவணை">
-          ✅ Flexible timing and schedule
-        </p>
-
-
-        <p class="lang contact-text" data-en="For enrollment and more details, contact us:"
+        <p class="lang lead mb-4" data-en="For enrollment and more details, contact us:"
           data-ta="சேர்க்கை மற்றும் மேலும் விவரங்களுக்கு, எங்களைத் தொடர்பு கொள்ளுங்கள்:">
           For enrollment and more details, contact us:
         </p>
-
-        <p class="phone">
-          📞 <a href="tel:9787921438">97879-21438</a>
-        </p>
+        <a href="tel:9787921438" class="btn btn-primary btn-lg fw-bold">📞 97879-21438</a>
       </div>
     </div>
 
-
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-card">
-      <h3 class="lang" data-en="Astrologer : Senapathi" data-ta="ஜோதிடர் : சேனாபதி">
-        Astrologer : Senapathi
-      </h3>
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row g-4">
 
-      <p class="lang" data-en="Asthiraa Astrology Research and Training Institute"
-        data-ta="அஸ்திரா ஜோதிட ஆய்வகம் & பயிற்சி மையம்">
-        Asthiraa Astrology Research and Training Institute
-      </p>
+        <!-- ABOUT / BRAND -->
+        <div class="col-md-6">
+          <h3 class="h4 text-warning lang" data-en="Astrologer : Senapathi" data-ta="ஜோதிடர் : சேனாபதி">
+            Astrologer : Senapathi
+          </h3>
+          <p class="text-white-50 lang" data-en="Asthiraa Astrology Research and Training Institute"
+            data-ta="அஸ்திரா ஜோதிட ஆய்வகம் & பயிற்சி மையம்">
+            Traditional Baskara Astrology Institute
+          </p>
+          <p class="mb-1">📞 <a href="tel:9787921438" class="text-white text-decoration-none">97879-21438</a></p>
+          <p class="text-white-50 lang" data-en="Dharapuram, Tamil Nadu, India" data-ta="தாராபுரம், தமிழ்நாடு, இந்தியா">
+            Dharapuram, Tamil Nadu, India
+          </p>
+        </div>
 
-      <p>📞 <a href="tel:9787921438">97879-21438</a></p>
+        <!-- QUICK LINKS -->
+        <div class="col-md-6">
+          <h4 class="h5 text-white mb-3 lang" data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">Quick Links</h4>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="services.html" class="link-light text-decoration-none lang" data-en="Astrology Services"
+              data-ta="ஜோதிட சேவைகள்">Astrology Services</a>
+            <a href="classes.html" class="link-light text-decoration-none lang" data-en="Astrology Classes"
+              data-ta="ஜோதிட வகுப்புகள்">Astrology Classes</a>
+            <a href="tables.html" class="link-light text-decoration-none lang" data-en="Astrology Tables"
+              data-ta="ஜோதிட அட்டவணைகள்">Astrology Tables</a>
+            <a href="transit.html" class="link-light text-decoration-none lang" data-en="Daily Planet Transit"
+              data-ta="தினசரி கிரக மாற்றம்">Daily Planet Transit</a>
+          </div>
+        </div>
 
-      <p class="lang" data-en="Dharapuram, Tamil Nadu, India" data-ta="தாராபுரம், தமிழ்நாடு, இந்தியா">
-        Dharapuram, Tamil Nadu, India
-      </p>
-    </div>
+      </div>
 
-    <div class="footer-card">
-      <h4 class="lang" data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">
-        Quick Links
-      </h4>
+      <hr class="border-secondary my-4">
 
-      <a href="services.html" class="lang" data-en="Astrology Services" data-ta="ஜோதிட சேவைகள்">
-        Astrology Services
-      </a>
-
-      <a href="classes.html" class="lang" data-en="Astrology Classes" data-ta="ஜோதிட வகுப்புகள்">
-        Astrology Classes
-      </a>
-
-      <a href="consultation.html" class="lang" data-en="Book Consultation" data-ta="ஆலோசனை பதிவு">
-        Book Consultation
-      </a>
-
-      <a href="tables.html" class="lang" data-en="Astrology Tables" data-ta="ஜோதிட அட்டவணைகள்">
-        Astrology Tables
-      </a>
-
-      <a href="transit.html" class="lang" data-en="Daily Planet Transit" data-ta="தினசரி கிரக மாற்றம்">
-        Daily Planet Transit
-      </a>
-    </div>
-
-    <div class="footer-copy">
-      © 2026 Asthiraa Astrology · All Rights Reserved
+      <!-- COPYRIGHT -->
+      <div class="text-center text-white-50 small">
+        © 2026 Asthiraa Astrology · All Rights Reserved
+      </div>
     </div>
   </footer>
+
+  <!-- ✅ BOOTSTRAP 5 BUNDLE (JS + Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="js/script.js"></script>
 </body>
