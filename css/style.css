@@ -99,3 +99,17 @@ a {
   background-color: var(--primary);
   color: white;
 }
+
+/* ================= 3. MOBILE OPTIMIZATIONS ================= */
+@media (max-width: 576px) {
+  .table-mobile-compact {
+    font-size: 0.75rem;
+    /* Smaller text for mobile */
+  }
+
+  .table-mobile-compact th,
+  .table-mobile-compact td {
+    padding: 0.25rem 0.15rem !important;
+    /* Tighter spacing */
+  }
+}
