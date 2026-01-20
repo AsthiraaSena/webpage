@@ -19,10 +19,16 @@
 <body data-page="consultation">
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-modern-blue sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold text-white" href="index.html">
-                🪐 Asthiraa Astrology
+            <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="index.html">
+                <div class="solar-system-widget me-3">
+                    <div class="sun">☀️</div>
+                    <div class="orbit">
+                        <div class="planet">🪐</div>
+                    </div>
+                </div>
+                Asthiraa Astrology
             </a>
 
             <div class="d-flex align-items-center order-lg-3 ms-lg-3">
@@ -51,13 +57,20 @@
                             data-ta="Consultation">Consultation</a></li>
                     <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact"
                             data-ta="Contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link lang" href="tables.html" data-en="Tables"
-                            data-ta="Tables">Tables</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle lang" href="#" id="toolsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" data-en="Tools" data-ta="Tools">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item lang" href="tables.html" data-en="Sub Tables"
+                                    data-ta="அட்டவணைகள்">Sub Tables</a></li>
+                            <li><a class="dropdown-item lang" href="transit.html" data-en="Daily Transit"
+                                    data-ta="தினசரி கோட்சாரம்">Daily Transit</a></li>
+                            <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026"
+                                    data-ta="கோட்சாரம் 2026">Planet Transit 2026</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link lang" href="transit.html" data-en="Daily Transit"
-                            data-ta="Daily Transit">Daily Transit</a></li>
-                    <li class="nav-item"><a class="nav-link lang" href="transit2.html" data-en="Planet Transit 2026"
-                            data-ta="Transit 2026">Planet Transit 2026</a></li>
                 </ul>
             </div>
         </div>
@@ -65,159 +78,150 @@
 
     <main class="container my-5">
 
-        <div class="text-center mb-5">
-            <h1 class="display-5 fw-bold text-primary lang" data-en="Book Your Consultation"
-                data-ta="உங்கள் ஆலோசனையை பதிவு செய்யுங்கள்">
-                Book Your Consultation
+        <div class="text-center mb-5 pb-4">
+            <h1 class="display-4 fw-800 text-navy mb-3 lang" data-en="Book Your Private Consultation"
+                data-ta="உங்கள் தனிப்பட்ட ஆலோசனையை பதிவு செய்யுங்கள்">
+                Book Your Private Consultation
             </h1>
-            <p class="lead text-muted mx-auto mt-3" style="max-width: 600px;"
-                data-en="Fill in your details below to book a personalized astrology consultation. We will contact you within 24 hours."
-                data-ta="தனிப்பயனாக்கப்பட்ட ஜோதிட ஆலோசனையை பதிவு செய்ய கீழே உங்கள் விவரங்களை நிரப்பவும். நாங்கள் 24 மணி நேரத்திற்குள் உங்களை தொடர்பு கொள்வோம்.">
-                Fill in your details below to book a personalized astrology consultation. We will contact you within 24
-                hours.
+            <p class="lead text-muted mx-auto" style="max-width: 700px;"
+                data-en="Connect with Astrologist Senapathi for precise, logic-based guidance on your life path. Our consultations are strictly confidential."
+                data-ta="உங்கள் வாழ்க்கைப் பாதை குறித்து துல்லியமான, தர்க்கம் சார்ந்த வழிகாட்டலுக்கு ஜோதிடர் சேனாபதியுடன் தொடர்பு கொள்ளுங்கள்.">
+                Connect with Astrologist Senapathi for precise, logic-based guidance on your life path. Our
+                consultations are strictly confidential.
             </p>
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-lg-8 col-xl-7">
+            <div class="col-lg-8">
 
                 <!-- Form Container -->
-                <div class="card shadow border-0 rounded-4">
-                    <div class="card-body p-4 p-md-5">
+                <div class="card border-0 shadow-premium rounded-xl overflow-hidden mb-5">
+                    <div class="bg-primary py-4 px-5 text-white">
+                        <h3 class="h4 mb-0">Consultation Request Form</h3>
+                    </div>
+                    <div class="card-body p-5">
 
-                        <div class="alert alert-info d-flex align-items-center" role="alert">
-                            <i class="bi bi-info-circle-fill me-2 fs-5"></i>
-                            <div class="small">
-                                <strong>Note:</strong> First 20 minutes consultation is FREE! Please provide accurate
-                                birth details for precise analysis.
-                            </div>
+                        <div class="alert bg-soft border-primary border-start border-4 mb-5" role="alert">
+                            <i class="bi bi-gift text-primary me-2"></i>
+                            <span class="text-navy fw-semibold">Special Offer:</span> First 15 minutes are absolutely
+                            FREE.
                         </div>
 
                         <form id="consultationForm" action="#" method="POST">
 
-                            <!-- Personal Info -->
-                            <h4 class="mb-3 text-primary border-bottom pb-2">Personal Information</h4>
+                            <!-- Section -->
+                            <h5 class="text-navy fw-800 mb-4 pb-2 border-bottom">1. Identiy Information</h5>
 
-                            <div class="mb-3">
-                                <label for="fullName" class="form-label fw-semibold">Full Name <span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="fullName" name="fullName" required
-                                    placeholder="Enter your full name">
-                            </div>
-
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <label for="phone" class="form-label fw-semibold">Phone Number <span
-                                            class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" id="phone" name="phone" required
-                                        placeholder="9787921438">
+                            <div class="row g-4 mb-4">
+                                <div class="col-12">
+                                    <label for="fullName"
+                                        class="form-label small fw-bold text-muted text-uppercase">Full Name</label>
+                                    <input type="text" class="form-control form-control-lg bg-soft border-0"
+                                        id="fullName" name="fullName" required placeholder="John Doe">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="email" class="form-label fw-semibold">Email (Optional)</label>
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="your@email.com">
+                                    <label for="phone" class="form-label small fw-bold text-muted text-uppercase">Phone
+                                        (WhatsApp Preferred)</label>
+                                    <input type="tel" class="form-control form-control-lg bg-soft border-0" id="phone"
+                                        name="phone" required placeholder="97879-21438">
                                 </div>
-                            </div>
-
-                            <!-- Birth Details -->
-                            <h4 class="mb-3 mt-4 text-primary border-bottom pb-2">Birth Details</h4>
-
-                            <div class="mb-3">
-                                <label for="dob" class="form-label fw-semibold">Date of Birth <span
-                                        class="text-danger">*</span></label>
-                                <input type="date" class="form-control" id="dob" name="dob" required>
-                            </div>
-
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-8">
-                                    <label for="birthTime" class="form-label fw-semibold">Time of Birth <span
-                                            class="text-danger">*</span></label>
-                                    <input type="time" class="form-control" id="birthTime" name="birthTime" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="ampm" class="form-label fw-semibold">AM/PM</label>
-                                    <select class="form-select" id="ampm" name="ampm">
-                                        <option value="AM">AM</option>
-                                        <option value="PM">PM</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="birthPlace" class="form-label fw-semibold">Place of Birth <span
-                                        class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="birthPlace" name="birthPlace" required
-                                    placeholder="City, State, Country">
-                            </div>
-
-                            <!-- Consultation Details -->
-                            <h4 class="mb-3 mt-4 text-primary border-bottom pb-2">Consultation Details</h4>
-
-                            <div class="mb-3">
-                                <label for="consultationType" class="form-label fw-semibold">Consultation Type <span
-                                        class="text-danger">*</span></label>
-                                <select class="form-select" id="consultationType" name="consultationType" required>
-                                    <option value="">Select consultation type</option>
-                                    <option value="horoscope">Horoscope Analysis</option>
-                                    <option value="medical">Medical Astrology</option>
-                                    <option value="marriage">Marriage Matching</option>
-                                    <option value="career">Career & Education</option>
-                                    <option value="financial">Financial Astrology</option>
-                                    <option value="property">Property & Real Estate</option>
-                                    <option value="general">General Consultation</option>
-                                </select>
-                            </div>
-
-                            <div class="row g-3 mb-3">
                                 <div class="col-md-6">
-                                    <label for="preferredLanguage" class="form-label fw-semibold">Preferred Language
-                                        <span class="text-danger">*</span></label>
-                                    <select class="form-select" id="preferredLanguage" name="preferredLanguage"
-                                        required>
-                                        <option value="">Select language</option>
-                                        <option value="tamil">Tamil (தமிழ்)</option>
-                                        <option value="english">English</option>
-                                        <option value="both">Both</option>
+                                    <label for="email" class="form-label small fw-bold text-muted text-uppercase">Email
+                                        Address</label>
+                                    <input type="email" class="form-control form-control-lg bg-soft border-0" id="email"
+                                        name="email" placeholder="name@example.com">
+                                </div>
+                            </div>
+
+                            <!-- Section -->
+                            <h5 class="text-navy fw-800 mb-4 mt-5 pb-2 border-bottom">2. Precise Birth Details</h5>
+
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-6">
+                                    <label for="dob" class="form-label small fw-bold text-muted text-uppercase">Date of
+                                        Birth</label>
+                                    <input type="date" class="form-control form-control-lg bg-soft border-0" id="dob"
+                                        name="dob" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="birthTime"
+                                        class="form-label small fw-bold text-muted text-uppercase">Exact Time of
+                                        Birth</label>
+                                    <div class="input-group">
+                                        <input type="time" class="form-control form-control-lg bg-soft border-0"
+                                            id="birthTime" name="birthTime" required>
+                                        <select class="form-select border-0 bg-soft" id="ampm" name="ampm"
+                                            style="max-width: 80px;">
+                                            <option value="AM">AM</option>
+                                            <option value="PM">PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="birthPlace"
+                                        class="form-label small fw-bold text-muted text-uppercase">Birth Location
+                                        (City/State)</label>
+                                    <input type="text" class="form-control form-control-lg bg-soft border-0"
+                                        id="birthPlace" name="birthPlace" required placeholder="Dharapuram, Tamil Nadu">
+                                </div>
+                            </div>
+
+                            <!-- Section -->
+                            <h5 class="text-navy fw-800 mb-4 mt-5 pb-2 border-bottom">3. Consultation Preferences</h5>
+
+                            <div class="row g-4 mb-5">
+                                <div class="col-md-6">
+                                    <label for="consultationType"
+                                        class="form-label small fw-bold text-muted text-uppercase">Topic of
+                                        Interest</label>
+                                    <select class="form-select form-select-lg bg-soft border-0" id="consultationType"
+                                        name="consultationType" required>
+                                        <option value="">Select Category</option>
+                                        <option value="horoscope">General Horoscope</option>
+                                        <option value="medical">Medical / Health</option>
+                                        <option value="marriage">Relationship Matching</option>
+                                        <option value="career">Career & Education</option>
+                                        <option value="financial">Wealth & Finance</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="preferredMode" class="form-label fw-semibold">Consultation Mode <span
-                                            class="text-danger">*</span></label>
-                                    <select class="form-select" id="preferredMode" name="preferredMode" required>
-                                        <option value="">Select mode</option>
-                                        <option value="phone">Phone Call</option>
-                                        <option value="video">Video Call</option>
-                                        <option value="inperson">In-Person (Dharapuram)</option>
+                                    <label for="preferredMode"
+                                        class="form-label small fw-bold text-muted text-uppercase">Meeting Mode</label>
+                                    <select class="form-select form-select-lg bg-soft border-0" id="preferredMode"
+                                        name="preferredMode" required>
+                                        <option value="whatsapp">WhatsApp Audio/Video</option>
+                                        <option value="phone">Direct Phone Call</option>
+                                        <option value="inperson">In-Person Meeting</option>
                                     </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="questions"
+                                        class="form-label small fw-bold text-muted text-uppercase">Specific Questions
+                                        (Optional)</label>
+                                    <textarea class="form-control bg-soft border-0" id="questions" name="questions"
+                                        rows="3" placeholder="I would like to know about..."></textarea>
                                 </div>
                             </div>
 
-                            <div class="mb-4">
-                                <label for="questions" class="form-label fw-semibold">Your Questions / Concerns
-                                    (Optional)</label>
-                                <textarea class="form-control" id="questions" name="questions" rows="4"
-                                    placeholder="Please describe what you would like to know or any specific concerns you have..."></textarea>
-                            </div>
-
-                            <div class="d-grid">
-                                <button type="submit" class="submit-btn btn btn-primary btn-lg fw-bold shadow-sm">
-                                    📅 Submit Consultation Request
+                            <div class="text-center">
+                                <button type="submit"
+                                    class="btn btn-primary btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg">
+                                    <i class="bi bi-whatsapp me-2"></i> Submit via WhatsApp
                                 </button>
+                                <p class="text-muted small mt-3">You will be redirected to WhatsApp to confirm your
+                                    details.</p>
                             </div>
 
                         </form>
                     </div>
                 </div>
 
-                <!-- Help Card -->
-                <div class="card border-0 bg-light mt-4 rounded-4">
-                    <div class="card-body text-center p-4">
-                        <h5 class="fw-bold text-dark">Need Help?</h5>
-                        <p class="text-muted small">
-                            If you have any questions or need assistance filling the form, please call us directly.
-                        </p>
-                        <a href="tel:9787921438" class="btn btn-outline-success fw-bold">
-                            📞 97879-21438
+                <!-- Support Section -->
+                <div class="text-center py-4">
+                    <h5 class="text-navy fw-bold mb-3">Prefer to call directly?</h5>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="tel:9787921438" class="btn btn-navy d-flex align-items-center gap-2">
+                            <i class="bi bi-telephone-fill text-accent"></i> 97879-21438
                         </a>
                     </div>
                 </div>
@@ -228,7 +232,7 @@
     </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-dark text-white py-5 mt-5">
+    <footer class="bg-modern-blue text-white py-5 mt-5">
         <div class="container">
             <div class="row g-4">
 
@@ -262,6 +266,8 @@
                             data-ta="ஜோதிட அட்டவணைகள்">Astrology Tables</a>
                         <a href="transit.html" class="link-light text-decoration-none lang"
                             data-en="Daily Planet Transit" data-ta="தினசரி கிரக மாற்றம்">Daily Planet Transit</a>
+                        <a href="baskara-system.html" class="link-light text-decoration-none lang"
+                            data-en="Baskara System" data-ta="பாஸ்கரா முறை">Baskara System</a>
                     </div>
                 </div>
 
@@ -269,12 +275,78 @@
 
             <hr class="border-secondary my-4">
 
-            <!-- COPYRIGHT -->
             <div class="text-center text-white-50 small">
-                © 2026 Asthiraa Astrology · All Rights Reserved
+                © 2026 Asthiraa Astrology · All Rights Reserved | <a href="#"
+                    class="text-white-50 text-decoration-none lang" data-en="Terms & Conditions" data-ta="விதிமுறைகள்"
+                    data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a>
             </div>
         </div>
     </footer>
+
+    <!-- ================= TERMS & CONDITIONS MODAL ================= -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow-lg p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold text-navy h4 lang" id="termsModalLabel" data-en="Terms & Conditions"
+                        data-ta="விதிமுறைகள் மற்றும் நிபந்தனைகள்">
+                        Terms & Conditions
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-primary lang" data-en="1. Prediction Basis"
+                            data-ta="1. கணிப்பு அடிப்படை">1.
+                            Prediction Basis</h6>
+                        <p class="small text-muted lang"
+                            data-en="All astrological predictions and analysis are strictly based on the birth details (Date, Time, and Place of birth) provided by the client. The accuracy of the prediction is directly dependent on the accuracy of these details."
+                            data-ta="அனைத்து ஜோதிடக் கணிப்புகளும் ஆய்வுகளும் வாடிக்கையாளர் வழங்கிய பிறப்பு விவரங்களை (பிறந்த தேதி, நேரம் மற்றும் இடம்) அடிப்படையாகக் கொண்டவை. கணிப்பின் துல்லியம் இந்த விவரங்களின் துல்லியத்தைப் பொறுத்தது.">
+                            All astrological predictions and analysis are strictly based on the birth details provided
+                            by
+                            the client.
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-primary lang" data-en="2. Nature of Guidance"
+                            data-ta="2. வழிகாட்டுதலின் தன்மை">2.
+                            Nature of Guidance</h6>
+                        <p class="small text-muted lang"
+                            data-en="Astrology is a tool for guidance and self-discovery. Predictions are meant to assist in decision-making and provide a broader perspective on life events. They should not be used as a substitute for professional medical, legal, or financial advice."
+                            data-ta="ஜோதிடம் என்பது வழிகாட்டுதலுக்கான ஒரு கருவியாகும். அஸ்திரா ஜோதிடம் வழங்கும் கணிப்புகள் முடிவெடுப்பதில் உதவவும், வாழ்க்கையின் நிகழ்வுகள் குறித்த விரிவான பார்வையை வழங்கவும் மட்டுமே. இவற்றை மருத்துவ, சட்ட அல்லது நிதி ஆலோசனைகளுக்கு மாற்றாகப் பயன்படுத்தக் கூடாது.">
+                            Astrology is a tool for guidance and self-discovery.
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-primary lang" data-en="3. Technical Information"
+                            data-ta="3. தொழில்நுட்பத் தகவல்கள்">3. Technical Information</h6>
+                        <p class="small text-muted lang"
+                            data-en="Our methodology is based on the scientific principles of Baskara Astrology (K.B. System) and the Cuspal Interlink Theory (CIT)."
+                            data-ta="எங்கள் ஜோதிட முறை பாஸ்கரா ஜோதிடம் (கே.பி. சிஸ்டம்) மற்றும் பாவ முனை உள்தொடர்பு கோட்பாடு (CIT) ஆகியவற்றின் அறிவியல் கொள்கைகளை அடிப்படையாகக் கொண்டது.">
+                            Our methodology is based on the scientific principles of Baskara Astrology.
+                        </p>
+                    </div>
+                    <div class="mb-0">
+                        <h6 class="fw-bold text-primary lang" data-en="4. Disclaimer of Liability"
+                            data-ta="4. பொறுப்பு மறுப்பு">4.
+                            Disclaimer of Liability</h6>
+                        <div class="alert alert-warning border-0 small mb-0">
+                            <p class="lang mb-0"
+                                data-en="Asthiraa Astrology Research and Training Institute and its astrologers are NOT responsible for any actions, decisions, or consequences taken by the client based on the predictions or guidance provided. Final decisions must be made by the clients through their own self-assessment and judgment."
+                                data-ta="அஸ்திரா ஜோதிட ஆய்வகம் மற்றும் பயிற்சி மையம் அல்லது அதன் ஜோதிடர்கள், வழங்கப்பட்ட கணிப்புகள் அல்லது வழிகாட்டுதலின் அடிப்படையில் வாடிக்கையாளர் எடுக்கும் எந்தவொரு செயலுக்கும், முடிவுகளுக்கும் அல்லது அதன் விளைவுகளுக்கும் பொறுப்பல்ல. அனைத்து இறுதி முடிவுகளும் வாடிக்கையாளர்களின் சுய மதிப்பீடு மற்றும் முடிவெடுக்கும் திறனை அடிப்படையாகக் கொண்டிருக்க வேண்டும்.">
+                                Asthiraa Astrology and its astrologers are NOT responsible for client actions. Final
+                                decisions must be
+                                made by clients through self-assessment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ✅ BOOTSTRAP 5 BUNDLE (JS + Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

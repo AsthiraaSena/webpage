@@ -11,7 +11,7 @@ function setLang(lang) {
   // Replace all language strings
   document.querySelectorAll(".lang").forEach(el => {
     const value = el.dataset[lang];
-    if (value) el.textContent = value;
+    if (value) el.innerHTML = value;
   });
 
   // Toggle button text (show opposite language)

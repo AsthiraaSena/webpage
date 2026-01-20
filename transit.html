@@ -46,8 +46,14 @@
   <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-modern-blue sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold text-white" href="index.html">
-        🪐 Asthiraa Astrology
+      <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="index.html">
+        <div class="solar-system-widget me-3">
+          <div class="sun">☀️</div>
+          <div class="orbit">
+            <div class="planet">🪐</div>
+          </div>
+        </div>
+        Asthiraa Astrology
       </a>
 
       <div class="d-flex align-items-center order-lg-3 ms-lg-3">
@@ -74,12 +80,20 @@
               data-ta="Consultation">Consultation</a></li>
           <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact"
               data-ta="Contact">Contact</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="tables.html" data-en="Tables" data-ta="Tables">Tables</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle lang" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-en="Tools" data-ta="Tools">
+              Tools
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="toolsDropdown">
+              <li><a class="dropdown-item lang" href="tables.html" data-en="Sub Tables" data-ta="அட்டவணைகள்">Sub
+                  Tables</a></li>
+              <li><a class="dropdown-item lang" href="transit.html" data-en="Daily Transit"
+                  data-ta="தினசரி கோட்சாரம்">Daily Transit</a></li>
+              <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026"
+                  data-ta="கோட்சாரம் 2026">Planet Transit 2026</a></li>
+            </ul>
           </li>
-          <li class="nav-item"><a class="nav-link lang" href="transit.html" data-en="Daily Transit"
-              data-ta="Daily Transit">Daily Transit</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="transit2.html" data-en="Planet Transit 2026"
-              data-ta="Transit 2026">Planet Transit 2026</a></li>
         </ul>
       </div>
     </div>
@@ -87,44 +101,49 @@
 
   <main class="container my-5">
 
-    <div class="text-center mb-4">
-      <h1 class="display-6 fw-bold text-primary">🪐 Daily Planet Transit</h1>
-      <p class="text-muted">Select a date to view planetary positions.</p>
+    <div class="text-center mb-5 pb-4">
+      <h1 class="display-4 fw-800 text-navy mb-3 lang" data-en="🪐 Daily Planet Transit" data-ta="🪐 தினசரி கோட்சாரம்">
+        🪐 Daily Planet Transit</h1>
+      <p class="lead text-muted mx-auto lang" style="max-width: 600px;" data-en="Daily planetary positions"
+        data-ta="தினசரி கிரக நிலைகள்">Daily planetary positions </p>
     </div>
 
     <!-- CONTROLS -->
-    <div class="card shadow-sm mb-4 mx-auto" style="max-width: 500px;">
-      <div class="card-body">
-        <div class="input-group">
-          <input type="date" id="dateInput" class="form-control form-control-lg">
-          <button id="showBtn" class="btn btn-primary btn-lg px-4 fw-bold">Show</button>
+    <div class="card border-0 shadow-premium rounded-xl mb-5 mx-auto" style="max-width: 600px;">
+      <div class="card-body p-4 p-md-5">
+        <div class="input-group overflow-hidden rounded-pill shadow-sm">
+          <input type="date" id="dateInput" class="form-control form-control-lg border-0 bg-soft px-4">
+          <button id="showBtn" class="btn btn-primary btn-lg px-5 fw-bold border-0 lang" data-en="Fetch Positions"
+            data-ta="நிலைகளைக் காண்க">Fetch Positions</button>
         </div>
 
-        <div id="info" class="mt-3 text-center fw-bold text-secondary text-break small"></div>
+        <div id="info" class="mt-4 text-center fw-bold text-secondary text-break small opacity-75"></div>
       </div>
     </div>
 
     <!-- TABLE -->
-    <div class="card shadow rounded-3 border-0">
+    <div class="card border-0 shadow-premium rounded-xl overflow-hidden">
       <div class="card-body p-0">
         <div class="table-responsive">
-          <table class="table table-striped table-hover mb-0 text-center align-middle table-mobile-compact">
-            <thead class="table-dark">
+          <table class="table table-hover mb-0 text-center align-middle table-mobile-compact">
+            <thead class="bg-navy text-white">
               <tr>
-                <th class="py-3">Planet</th>
-                <th class="py-3">D.M.S</th>
-                <th class="py-3">Sign</th>
-                <th class="py-3">Star</th>
-                <th class="py-3">Sub</th>
-                <th class="py-3">S.Time</th>
+                <th class="py-4 border-0 lang" data-en="Planet" data-ta="கிரகம்">Planet</th>
+                <th class="py-4 border-0 lang" data-en="D.M.S" data-ta="த.க.வி">D.M.S</th>
+                <th class="py-4 border-0 lang" data-en="Sign" data-ta="ராசி">Sign</th>
+                <th class="py-4 border-0 lang" data-en="Star" data-ta="நட்சத்திரம்">Star</th>
+                <th class="py-4 border-0 lang" data-en="Sub" data-ta="உப நட்சத்திரம்">Sub</th>
+                <th class="py-4 border-0 lang" data-en="S.Time" data-ta="ஆரம்ப நேரம்">S.Time</th>
               </tr>
             </thead>
 
             <tbody id="tbody">
               <tr>
-                <td colspan="6" class="py-5 text-muted">
-                  <i class="bi bi-calendar-event fs-3 d-block mb-2"></i>
-                  Please select a date above.
+                <td colspan="6" class="py-5 text-muted opacity-50">
+                  <i class="bi bi-calendar-check display-1 d-block mb-3"></i>
+                  <span class="h5 lang" data-en="Please select a date and click <strong>Fetch Positions</strong>"
+                    data-ta="தேதியைத் தேர்ந்தெடுத்து <strong>நிலைகளைக் காண்க</strong> என்பதை அழுத்தவும்">Please select a
+                    date and click <strong>Fetch Positions</strong></span>
                 </td>
               </tr>
             </tbody>
@@ -142,44 +161,110 @@
 
         <!-- ABOUT / BRAND -->
         <div class="col-md-6">
-          <h3 class="h4 text-warning lang" data-en="Astrologer : Senapathi" data-ta="ஜோதிடர் : சேனாபதி">
-            Astrologer : Senapathi
+          <h3 class="h4 text-accent lang mb-3" data-en="Astrologist : Senapathi" data-ta="ஜோதிடர் : சேனாபதி">
+            Astrologist : Senapathi
           </h3>
-          <p class="text-white-50 lang" data-en="Asthiraa Astrology Research and Training Institute"
+          <p class="text-white-50 lang mb-4" data-en="Asthiraa Astrology Research and Training Institute"
             data-ta="அஸ்திரா ஜோதிட ஆய்வகம் & பயிற்சி மையம்">
             Traditional Baskara Astrology Institute
           </p>
-          <p class="mb-1">📞 <a href="tel:9787921438" class="text-white text-decoration-none">97879-21438</a></p>
-          <p class="text-white-50 lang" data-en="Dharapuram, Tamil Nadu, India" data-ta="தாராபுரம், தமிழ்நாடு, இந்தியா">
-            Dharapuram, Tamil Nadu, India
-          </p>
+          <div class="d-flex flex-column gap-2 mb-4">
+            <a href="tel:9787921438" class="text-white text-decoration-none"><i
+                class="bi bi-telephone text-accent me-2"></i> 97879-21438</a>
+            <span class="text-white-50"><i class="bi bi-geo-alt text-accent me-2"></i> Dharapuram, Tamil Nadu</span>
+          </div>
         </div>
 
         <!-- QUICK LINKS -->
         <div class="col-md-6">
-          <h4 class="h5 text-white mb-3 lang" data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">Quick Links</h4>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="services.html" class="link-light text-decoration-none lang" data-en="Astrology Services"
-              data-ta="ஜோதிட சேவைகள்">Astrology Services</a>
-            <a href="classes.html" class="link-light text-decoration-none lang" data-en="Astrology Classes"
-              data-ta="ஜோதிட வகுப்புகள்">Astrology Classes</a>
-            <a href="tables.html" class="link-light text-decoration-none lang" data-en="Astrology Tables"
-              data-ta="ஜோதிட அட்டவணைகள்">Astrology Tables</a>
-            <a href="transit.html" class="link-light text-decoration-none lang" data-en="Daily Planet Transit"
-              data-ta="தினசரி கிரக மாற்றம்">Daily Planet Transit</a>
+          <h4 class="h5 text-white mb-4 lang" data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">Quick Links</h4>
+          <div class="row row-cols-2 g-3">
+            <div class="col"><a href="services.html" class="text-white-50 text-decoration-none lang small"
+                data-en="Services" data-ta="சேவைகள்">Services</a></div>
+            <div class="col"><a href="classes.html" class="text-white-50 text-decoration-none lang small"
+                data-en="Classes" data-ta="வகுப்புகள்">Classes</a></div>
+            <div class="col"><a href="tables.html" class="text-white-50 text-decoration-none lang small"
+                data-en="Tables" data-ta="அட்டவணைகள்">Tables</a></div>
+            <div class="col"><a href="transit.html" class="text-white-50 text-decoration-none lang small"
+                data-en="Daily Transit" data-ta="தினசரி மாற்றம்">Daily Transit</a></div>
+            <div class="col"><a href="baskara-system.html" class="text-white-50 text-decoration-none lang small"
+                data-en="Baskara System" data-ta="பாஸ்கரா முறை">Baskara System</a></div>
+            <div class="col"><a href="consultation.html" class="text-white-50 text-decoration-none lang small"
+                data-en="Consultation" data-ta="ஆலோசனை">Consultation</a></div>
           </div>
         </div>
 
       </div>
 
-      <hr class="border-secondary my-4">
+      <hr class="border-secondary border-opacity-25 my-5">
 
       <!-- COPYRIGHT -->
       <div class="text-center text-white-50 small">
-        © 2026 Asthiraa Astrology · All Rights Reserved
+        © 2026 Asthiraa Astrology · Designed with Tradition & Precision | <a href="#"
+          class="text-white-50 text-decoration-none lang" data-en="Terms & Conditions" data-ta="விதிமுறைகள்"
+          data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a>
       </div>
     </div>
   </footer>
+
+  <!-- ================= TERMS & CONDITIONS MODAL ================= -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold text-navy h4 lang" id="termsModalLabel" data-en="Terms & Conditions"
+            data-ta="விதிமுறைகள் மற்றும் நிபந்தனைகள்">
+            Terms & Conditions
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="1. Prediction Basis" data-ta="1. கணிப்பு அடிப்படை">1.
+              Prediction Basis</h6>
+            <p class="small text-muted lang"
+              data-en="All astrological predictions and analysis are strictly based on the birth details (Date, Time, and Place of birth) provided by the client. The accuracy of the prediction is directly dependent on the accuracy of these details."
+              data-ta="அனைத்து ஜோதிடக் கணிப்புகளும் ஆய்வுகளும் வாடிக்கையாளர் வழங்கிய பிறப்பு விவரங்களை (பிறந்த தேதி, நேரம் மற்றும் இடம்) அடிப்படையாகக் கொண்டவை. கணிப்பின் துல்லியம் இந்த விவரங்களின் துல்லியத்தைப் பொறுத்தது.">
+              All astrological predictions and analysis are strictly based on the birth details provided by the client.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="2. Nature of Guidance" data-ta="2. வழிகாட்டுதலின் தன்மை">2.
+              Nature of Guidance</h6>
+            <p class="small text-muted lang"
+              data-en="Astrology is a tool for guidance and self-discovery. Predictions are meant to assist in decision-making and provide a broader perspective on life events. They should not be used as a substitute for professional medical, legal, or financial advice."
+              data-ta="ஜோதிடம் என்பது வழிகாட்டுதலுக்கான ஒரு கருவியாகும். அஸ்திரா ஜோதிடம் வழங்கும் கணிப்புகள் முடிவெடுப்பதில் உதவவும், வாழ்க்கையின் நிகழ்வுகள் குறித்த விரிவான பார்வையும் வழங்கவும் மட்டுமே. இவற்றை மருத்துவ, சட்ட அல்லது நிதி ஆலோசனைகளுக்கு மாற்றாகப் பயன்படுத்தக் கூடாது.">
+              Astrology is a tool for guidance and self-discovery.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="3. Technical Information"
+              data-ta="3. தொழில்நுட்பத் தகவல்கள்">3. Technical Information</h6>
+            <p class="small text-muted lang"
+              data-en="Our methodology is based on the scientific principles of Baskara Astrology (K.B. System) and the Cuspal Interlink Theory (CIT)."
+              data-ta="எங்கள் ஜோதிட முறை பாஸ்கரா ஜோதிடம் (கே.பி. சிஸ்டம்) மற்றும் பாவ முனை உள்தொடர்பு கோட்பாடு (CIT) ஆகியவற்றின் அறிவியல் கொள்கைகளை அடிப்படையாகக் கொண்டது.">
+              Our methodology is based on the scientific principles of Baskara Astrology.
+            </p>
+          </div>
+          <div class="mb-0">
+            <h6 class="fw-bold text-primary lang" data-en="4. Disclaimer of Liability" data-ta="4. பொறுப்பு மறுப்பு">4.
+              Disclaimer of Liability</h6>
+            <div class="alert alert-warning border-0 small mb-0">
+              <p class="lang mb-0"
+                data-en="Asthiraa Astrology Research and Training Institute and its astrologers are NOT responsible for any actions, decisions, or consequences taken by the client based on the predictions or guidance provided. Final decisions must be made by the clients through their own self-assessment and judgment."
+                data-ta="அஸ்திரா ஜோதிட ஆய்வகம் மற்றும் பயிற்சி மையம் அல்லது அதன் ஜோதிடர்கள், வழங்கப்பட்ட கணிப்புகள் அல்லது வழிகாட்டுதலின் அடிப்படையில் வாடிக்கையாளர் எடுக்கும் எந்தவொரு செயலுக்கும், முடிவுகளுக்கும் அல்லது அதன் விளைவுகளுக்கும் பொறுப்பல்ல. அனைத்து இறுதி முடிவுகளும் வாடிக்கையாளர்களின் சுய மதிப்பீடு மற்றும் முடிவெடுக்கும் திறனை அடிப்படையாகக் கொண்டிருக்க வேண்டும்.">
+                Asthiraa Astrology and its astrologers are NOT responsible for client actions. Final decisions must be
+                made by clients through self-assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ✅ BOOTSTRAP 5 BUNDLE (JS + Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,6 +1,21 @@
-/* ===============================
-   PLANET TRANSIT LOGIC – 2026
-   =============================== */
+/* ================= TRANSLATION MAP ================= */
+const transMap = {
+    // Planets
+    "சூரி": "Sun", "சந்": "Moon", "செவ்": "Mars", "புத": "Mer",
+    "குரு": "Jup", "சுக்": "Ve", "சனி": "Sat", "ராகு": "Ra", "கேது": "Ke",
+    // Signs
+    "மே": "Ari", "ரிஷ": "Tau", "மிது": "Gem", "கட": "Can",
+    "சிம்": "Leo", "கன்": "Vir", "துலா": "Lib", "விரு": "Sco",
+    "தனு": "Sag", "மக": "Cap", "கும்": "Aqu", "மீன": "Pis",
+    "மேச": "Aries", "ரிச": "Taurus"
+};
+
+function t(str) {
+    const lang = localStorage.getItem("lang") || "ta";
+    if (lang === "ta") return str;
+    if (!str) return str;
+    return transMap[str] || str;
+}
 
 const planetSelect = document.getElementById("planetSelect");
 const planetLabel = document.getElementById("planetLabel");
@@ -23,29 +38,37 @@ fetch("data/planet-transit-2026.json")
 
 /* 🔹 Fill planet ComboBox */
 function loadPlanets() {
+    const lang = localStorage.getItem("lang") || "ta";
     const planets = [...new Set(transitData.map(r => r.planet))];
+
+    // Save current selection if any
+    const currentVal = planetSelect.value;
+    planetSelect.innerHTML = `<option value="" class="lang" data-en="-- Choose Planet --" data-ta="-- கிரகத்தைத் தேர்வு செய்க --">${lang === "en" ? "-- Choose Planet --" : "-- கிரகத்தைத் தேர்வு செய்க --"}</option>`;
 
     planets.forEach(p => {
         const opt = document.createElement("option");
         opt.value = p;
-        opt.textContent = p;
+        opt.textContent = t(p);
         planetSelect.appendChild(opt);
     });
+
+    if (currentVal) planetSelect.value = currentVal;
 }
 
-/* 🔹 On planet selection (no hiding combo box) */
-planetSelect.addEventListener("change", () => {
+/* 🔹 Re-render data */
+function renderTransitData() {
     const planet = planetSelect.value;
+    const lang = localStorage.getItem("lang") || "ta";
     tbody.innerHTML = "";
 
     if (!planet) {
         planetLabel.textContent = "";
-        tbody.innerHTML = `<tr><td colspan="4">Select a planet</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="4" class="lang" data-en="Select a planet" data-ta="கிரகத்தைத் தேர்ந்தெடுக்கவும்">Select a planet</td></tr>`;
         return;
     }
 
     // Show selected planet in label
-    planetLabel.textContent = "🪐 " + planet;
+    planetLabel.textContent = "🪐 " + t(planet);
 
     // Load all records for selected planet
     transitData
@@ -53,11 +76,20 @@ planetSelect.addEventListener("change", () => {
         .forEach(r => {
             const tr = document.createElement("tr");
             tr.innerHTML = `
-        <td>${r.house}</td>
-        <td>${r.star}</td>
-        <td>${r.sub}</td>
+        <td>${t(r.house)}</td>
+        <td>${t(r.star)}</td>
+        <td>${t(r.sub)}</td>
         <td>${r.date}</td>
       `;
             tbody.appendChild(tr);
         });
+}
+
+/* 🔹 On planet selection */
+planetSelect.addEventListener("change", renderTransitData);
+
+// Re-render when language changes
+window.addEventListener("languageChange", () => {
+    loadPlanets(); // Update dropdown text
+    renderTransitData(); // Update table content
 });

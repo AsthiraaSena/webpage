@@ -21,8 +21,14 @@
   <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-modern-blue sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold text-white" href="index.html">
-        🪐 Asthiraa Astrology
+      <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="index.html">
+        <div class="solar-system-widget me-3">
+          <div class="sun">☀️</div>
+          <div class="orbit">
+            <div class="planet">🪐</div>
+          </div>
+        </div>
+        Asthiraa Astrology
       </a>
 
       <div class="d-flex align-items-center order-lg-3 ms-lg-3">
@@ -49,12 +55,20 @@
               data-ta="Consultation">Consultation</a></li>
           <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact"
               data-ta="Contact">Contact</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="tables.html" data-en="Tables" data-ta="Tables">Tables</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle lang" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-en="Tools" data-ta="Tools">
+              Tools
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="toolsDropdown">
+              <li><a class="dropdown-item lang" href="tables.html" data-en="Sub Tables" data-ta="அட்டவணைகள்">Sub
+                  Tables</a></li>
+              <li><a class="dropdown-item lang" href="transit.html" data-en="Daily Transit"
+                  data-ta="தினசரி கோட்சாரம்">Daily Transit</a></li>
+              <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026"
+                  data-ta="கோட்சாரம் 2026">Planet Transit 2026</a></li>
+            </ul>
           </li>
-          <li class="nav-item"><a class="nav-link lang" href="transit.html" data-en="Daily Transit"
-              data-ta="Daily Transit">Daily Transit</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="transit2.html" data-en="Planet Transit 2026"
-              data-ta="Transit 2026">Planet Transit 2026</a></li>
         </ul>
       </div>
     </div>
@@ -63,37 +77,35 @@
   <main class="container my-5">
 
     <!-- HEADER -->
-    <div class="text-center mb-5">
-      <h1 class="lang display-5 fw-bold text-primary" data-en="About Asthiraa Astrology"
-        data-ta="அஸ்திரா ஜோதிடம் பற்றி">
-        About Asthiraa Astrology
+    <div class="text-center mb-5 pb-4">
+      <h1 class="lang display-4 fw-800 text-navy mb-3" data-en="Our Story & Philosophy"
+        data-ta="எங்கள் கதை மற்றும் தத்துவம்">
+        Our Story & Philosophy
       </h1>
-      <p class="lead text-muted mx-auto mt-3" style="max-width: 800px;"
-        data-en="Asthiraa Astrology is a trusted astrology research and training institute dedicated to providing authentic Baskara astrology guidance. We combine traditional wisdom with practical application to help people make informed life decisions."
-        data-ta="அஸ்திரா ஜோதிடம் என்பது நம்பகமான ஜோதிட ஆய்வு மற்றும் பயிற்சி நிறுவனமாகும், இது  பாஸ்கரா ஜோதிட வழிகாட்டலை வழங்குவதற்கு அர்ப்பணிக்கப்பட்டுள்ளது. மக்கள் தகவலறிந்த வாழ்க்கை முடிவுகளை எடுக்க உதவ, பாரம்பரிய ஞானத்தை நடைமுறை பயன்பாட்டுடன் இணைக்கிறோம்.">
-        Asthiraa Astrology is a trusted astrology research and training institute dedicated to providing authentic
-        Baskara
-        astrology guidance. We combine traditional wisdom with practical application to help people make informed life
-        decisions.
+      <p class="lead text-muted mx-auto" style="max-width: 800px;"
+        data-en="Asthiraa Astrology is a premier research institute dedicated to the scientific precision of Baskara Astrology and the Cuspal Interlink Theory."
+        data-ta="அஸ்திரா ஜோதிடம் என்பது பாஸ்கரா ஜோதிடம் மற்றும் பாவ முனை உள்தொடர்பு கோட்பாட்டின் அறிவியல் துல்லியத்திற்காக அர்ப்பணிக்கப்பட்ட ஒரு முதன்மையான ஆராய்ச்சி நிறுவனம் ஆகும்.">
+        Asthiraa Astrology is a premier research institute dedicated to the scientific precision of Baskara Astrology
+        and the Cuspal Interlink Theory.
       </p>
     </div>
 
     <!-- CARDS GRID -->
-    <div class="row g-4 masonry-grid">
+    <div class="row g-4">
 
       <!-- Mission -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm transition-hover border-start border-primary border-4">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h4 card-title lang text-primary" data-en="🎯 Our Mission" data-ta="🎯 எங்கள் நோக்கம்">
-              🎯 Our Mission
+            <div class="display-6 text-primary mb-3"><i class="bi bi-bullseye"></i></div>
+            <h3 class="h4 card-title lang" data-en="Our Mission" data-ta="எங்கள் நோக்கம்">
+              Our Mission
             </h3>
             <p class="card-text text-muted lang"
-              data-en="To provide accurate, practical, and ethical astrology guidance that helps individuals navigate life's challenges and make informed decisions for their well-being. We are committed to preserving and teaching authentic Baskara astrology principles."
-              data-ta="துல்லியமான, நடைமுறை மற்றும் நெறிமுறை ஜோதிட வழிகாட்டலை வழங்குதல், இது தனிநபர்கள் வாழ்க்கையின் சவால்களை நிர்வகிக்கவும், அவர்களின் நல்வாழ்வுக்காக தகவலறிந்த முடிவுகளை எடுக்கவும் உதவுகிறது.">
-              To provide accurate, practical, and ethical astrology guidance that helps individuals navigate life's
-              challenges and make informed decisions for their well-being. We are committed to preserving and teaching
-              authentic Baskara astrology principles.
+              data-en="To provide ethical, accurate, and logical astrology guidance that empowers individuals to navigate life's complexities with complete confidence."
+              data-ta="தனிநபர்கள் வாழ்க்கையின் சிக்கல்களை முழு நம்பிக்கையுடன் கையாள உதவும் நெறிமுறை, துல்லியமான மற்றும் தர்க்கரீதியான ஜோதிட வழிகாட்டலை வழங்குதல்.">
+              To provide ethical, accurate, and logical astrology guidance that empowers individuals to navigate life's
+              complexities with complete confidence.
             </p>
           </div>
         </div>
@@ -101,106 +113,101 @@
 
       <!-- Approach -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm transition-hover border-start border-info border-4">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h4 card-title lang text-info" data-en="📚 Our Approach" data-ta="📚 எங்கள் அணுகுமுறை">
-              📚 Our Approach
+            <div class="display-6 text-secondary mb-3"><i class="bi bi-mortarboard-fill"></i></div>
+            <h3 class="h4 card-title lang" data-en="Our Approach" data-ta="எங்கள் அணுகுமுறை">
+              Our Approach
             </h3>
             <p class="card-text text-muted lang"
-              data-en="We follow the classical Baskara astrology system, founded by Thilak K. Baskaran, which includes the revolutionary Cuspal Interlink Theory (CIT). Our methods are based on decades of research and proven accuracy. We believe in practical, result-oriented astrology that provides clear guidance."
-              data-ta="திலக் கே. பாஸ்கரனால் நிறுவப்பட்ட  பாஸ்கரா ஜோதிட அமைப்பை நாங்கள் பின்பற்றுகிறோம், இதில் புரட்சிகரமான பாவ முனை உள்தொடர்பு கோட்பாடு (CIT) அடங்கும். எங்கள் முறைகள் பல தசாப்தங்களின் ஆராய்ச்சி மற்றும் நிரூபிக்கப்பட்ட துல்லியத்தை அடிப்படையாகக் கொண்டவை.">
-              We follow the classical Baskara astrology system, founded by Thilak K. Baskaran, which includes the
-              revolutionary Cuspal Interlink Theory (CIT). Our methods are based on decades of research and proven
-              accuracy.
-              We believe in practical, result-oriented astrology that provides clear guidance.
+              data-en="Rooted in decades of research, our methodology follows the revolutionary principles founded by Guru Thilak K. Baskaran, moving away from superstition towards verifiable logic."
+              data-ta="பல தசாப்த கால ஆராய்ச்சியில் வேரூன்றிய எமது அணுகுமுறை, குரு திலக் கே. பாஸ்கரனால் நிறுவப்பட்ட புரட்சிகரமான கொள்கைகளைப் பின்பற்றுகிறது.">
+              Rooted in decades of research, our methodology follows the revolutionary principles founded by Guru Thilak
+              K. Baskaran, moving away from superstition towards verifiable logic.
             </p>
           </div>
         </div>
       </div>
 
       <!-- Astrologer -->
-      <div class="col-lg-12">
-        <div class="card shadow-sm bg-light border-0">
+      <div class="col-12 py-4">
+        <div class="card border-0 shadow-premium overflow-hidden rounded-xl">
           <div class="row g-0 align-items-center">
-            <div class="col-md-4 text-center p-4">
-              <div class="display-1">👨‍🏫</div>
+            <div class="col-md-4 bg-soft text-center p-5">
+              <i class="bi bi-person-badge display-1 text-primary"></i>
             </div>
             <div class="col-md-8">
-              <div class="card-body">
-                <h3 class="h4 card-title lang text-primary" data-en="Astrologer Senapathi" data-ta="ஜோதிடர் சேனாபதி">
+              <div class="card-body p-5">
+                <span class="badge bg-primary-light text-primary mb-3">Lead Astrologer</span>
+                <h3 class="h2 card-title mb-3 lang" data-en="Astrologer Senapathi" data-ta="ஜோதிடர் சேனாபதி">
                   Astrologer Senapathi
                 </h3>
-                <p class="card-text text-muted lang"
-                  data-en="Astrologer Senapathi is the founder and lead astrologer of Asthiraa Astrology. With years of experience in Baskara astrology, he provides consultations in both Tamil and English, making astrology accessible to everyone. His approach combines traditional knowledge with modern understanding to deliver practical solutions."
-                  data-ta="ஜோதிடர் சேனாபதி அஸ்திரா ஜோதிடத்தின் நிறுவனர் மற்றும் முதன்மை ஜோதிடர். பாஸ்கரா ஜோதிடத்தில் பல ஆண்டுகளின் அனுபவத்துடன், அவர் தமிழ் மற்றும் ஆங்கிலம் இரண்டிலும் ஆலோசனைகளை வழங்குகிறார், இது ஜோதிடத்தை அனைவருக்கும் அணுகக்கூடியதாக்குகிறது.">
-                  Astrologer Senapathi is the founder and lead astrologer of Asthiraa Astrology. With years of
-                  experience in
-                  Baskara astrology, he provides consultations in both Tamil and English, making astrology accessible to
-                  everyone. His approach combines traditional knowledge with modern understanding to deliver practical
-                  solutions.
+                <p class="card-text text-muted lang lead"
+                  data-en="Founder of Asthiraa Astrology with years of specialized experience in the Baskara system. Providing bilingual consultations that combine traditional wisdom with modern clarity."
+                  data-ta="பாஸ்கரா முறையில் பல ஆண்டுகால அனுபவம் கொண்ட அஸ்திரா ஜோதிடத்தின் நிறுவனர். பாரம்பரிய ஞானத்துடன் நவீன தெளிவை இணைத்து இருமொழி ஆலோசனைகளை வழங்குகிறார்.">
+                  Founder of Asthiraa Astrology with years of specialized experience in the Baskara system. Providing
+                  bilingual consultations that combine traditional wisdom with modern clarity.
                 </p>
+                <div class="mt-4">
+                  <a href="tel:9787921438" class="btn btn-primary">Connect with Senapathi</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Location -->
+      <!-- Location & Diff -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm transition-hover">
+        <div class="card h-100 border-0 shadow-sm p-4">
           <div class="card-body">
-            <h3 class="h5 card-title lang text-dark" data-en="🌍 Our Location" data-ta="🌍 எங்கள் இடம்">
-              🌍 Our Location
+            <h3 class="h5 card-title mb-3 lang" data-en="🌍 Strategic Presence" data-ta="🌍 முக்கிய இருப்பு">
+              Strategic Presence
             </h3>
-            <p class="card-text text-muted lang"
-              data-en="Based in Dharapuram, Tamil Nadu, India, we serve clients both locally and globally through online consultations. Our institute is dedicated to spreading authentic Baskara astrology knowledge and helping people worldwide."
-              data-ta="தமிழ்நாடு, இந்தியாவின் தாராபுரத்தில் அமைந்துள்ள நாங்கள் ஆன்லைன் ஆலோசனைகள் மூலம் உள்ளூர் மற்றும் உலகளாவிய வாடிக்கையாளர்களுக்கு சேவை செய்கிறோம். எங்கள் நிறுவனம் உண்மையான பாஸ்கரா ஜோதிட அறிவை பரப்புவதற்கு அர்ப்பணிக்கப்பட்டுள்ளது.">
-              Based in Dharapuram, Tamil Nadu, India, we serve clients both locally and globally through online
-              consultations. Our institute is dedicated to spreading authentic Baskara astrology knowledge and helping
-              people worldwide.
+            <p class="card-text text-muted small lang"
+              data-en="Headquartered in Dharapuram, Tamil Nadu, we serve a global clientele through advanced online consultation systems."
+              data-ta="தமிழ்நாட்டின் தாராபுரத்தை தலைமையிடமாகக் கொண்டு, மேம்பட்ட ஆன்லைன் ஆலோசனை அமைப்புகள் மூலம் உலகளாவிய வாடிக்கையாளர்களுக்கு நாங்கள் சேவை செய்கிறோம்.">
+              Headquartered in Dharapuram, Tamil Nadu, we serve a global clientele through advanced online consultation
+              systems.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Differentiators -->
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm transition-hover">
+        <div class="card h-100 border-0 shadow-sm p-4">
           <div class="card-body">
-            <h3 class="h5 card-title lang text-warning" data-en="⭐ What Makes Us Different"
-              data-ta="⭐ எங்களை வேறுபடுத்துவது என்ன">
-              ⭐ What Makes Us Different
+            <h3 class="h5 card-title mb-3 lang" data-en="⭐ The Asthiraa Edge" data-ta="⭐ அஸ்திரா சிறப்பு">
+              The Asthiraa Edge
             </h3>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-transparent lang" data-en="Authentic Baskara astrology methodology"
-                data-ta="உண்மையான பாஸ்கரா ஜோதிட முறை">✔ Authentic Baskara astrology methodology</li>
-              <li class="list-group-item bg-transparent lang" data-en="Practical, result-oriented guidance"
-                data-ta="நடைமுறை, முடிவு சார்ந்த வழிகாட்டல்">✔ Practical, result-oriented guidance</li>
-              <li class="list-group-item bg-transparent lang" data-en="Bilingual consultations (Tamil & English)"
-                data-ta="இருமொழி ஆலோசனைகள் (தமிழ் & ஆங்கிலம்)">✔ Bilingual consultations (Tamil & English)</li>
-              <li class="list-group-item bg-transparent lang" data-en="Experienced and dedicated astrologer"
-                data-ta="அனுபவம் வாய்ந்த மற்றும் அர்ப்பணிப்புள்ள ஜோதிடர்">✔ Experienced and dedicated astrologer</li>
-            </ul>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-soft text-navy border">Authentic CIT Method</span>
+              <span class="badge bg-soft text-navy border">Bilingual Expertise</span>
+              <span class="badge bg-soft text-navy border">Rule-Based Analysis</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Guru -->
-      <div class="col-12">
-        <div class="card shadow-sm border-0 bg-primary text-white">
-          <div class="card-body p-4 text-center">
-            <h3 class="h4 card-title lang" data-en="🎓 Our Guru - Thilak K. Baskaran"
-              data-ta="🎓 எங்கள் குரு - திலக் கே. பாஸ்கரன்">
-              🎓 Our Guru - Thilak K. Baskaran
-            </h3>
-            <p class="card-text lang text-white-50"
-              data-en="We follow the teachings of Thilak K. Baskaran, the founder of Baskara Astrology and inventor of the Cuspal Interlink Theory. His revolutionary approach to astrology has transformed how we understand planetary influences and their effects on human life. His decades of research and teaching continue to guide our practice."
-              data-ta="பாஸ்கரா ஜோதிடத்தின் நிறுவனர் மற்றும் பாவ முனை உள்தொடர்பு கோட்பாட்டின் கண்டுபிடிப்பாளரான திலக் கே. பாஸ்கரனின் போதனைகளை நாங்கள் பின்பற்றுகிறோம். ஜோதிடத்திற்கான அவரது புரட்சிகர அணுகுமுறை கிரக தாக்கங்களையும் மனித வாழ்க்கையில் அவற்றின் விளைவுகளையும் நாம் புரிந்துகொள்ளும் விதத்தை மாற்றியுள்ளது.">
-              We follow the teachings of Thilak K. Baskaran, the founder of Baskara Astrology and inventor of the Cuspal
-              Interlink Theory. His revolutionary approach to astrology has transformed how we understand planetary
-              influences and their effects on human life. His decades of research and teaching continue to guide our
-              practice.
-            </p>
+      <div class="col-12 mt-4">
+        <div class="card baskara-card shadow-premium border-0 p-5 rounded-xl">
+          <div class="row align-items-center">
+            <div class="col-md-8 text-center text-md-start">
+              <h3 class="h3 mb-3 lang" data-en="Honoring Our Guru: Thilak K. Baskaran"
+                data-ta="எங்கள் குரு: திலக் கே. பாஸ்கரன்">
+                Honoring Our Guru: Thilak K. Baskaran
+              </h3>
+              <p class="lang opacity-75 lead"
+                data-en="The architect of modern Baskara Astrology and the inventor of the Cuspal Interlink Theory. His revolutionary approach continues to guide our every prediction."
+                data-ta="நவீன பாஸ்கரா ஜோதிடத்தின் வடிவமைப்பாளர் மற்றும் பாவ முனை உள்தொடர்பு கோட்பாட்டின் கண்டுபிடிப்பாளர்.">
+                The architect of modern Baskara Astrology and the inventor of the Cuspal Interlink Theory. His
+                revolutionary approach continues to guide our every prediction.
+              </p>
+            </div>
+            <div class="col-md-4 text-center mt-4 mt-md-0">
+              <a href="baskara-system.html" class="btn btn-accent btn-lg text-navy fw-bold px-5">Explore CIT Theory</a>
+            </div>
           </div>
         </div>
       </div>
@@ -241,6 +248,8 @@
               data-ta="ஜோதிட அட்டவணைகள்">Astrology Tables</a>
             <a href="transit.html" class="link-light text-decoration-none lang" data-en="Daily Planet Transit"
               data-ta="தினசரி கிரக மாற்றம்">Daily Planet Transit</a>
+            <a href="baskara-system.html" class="link-light text-decoration-none lang" data-en="Baskara System"
+              data-ta="பாஸ்கரா முறை">Baskara System</a>
           </div>
         </div>
 
@@ -249,11 +258,71 @@
       <hr class="border-secondary my-4">
 
       <!-- COPYRIGHT -->
-      <div class="text-center text-white-50 small">
-        © 2026 Asthiraa Astrology · All Rights Reserved
-      </div>
+      © 2026 Asthiraa Astrology · All Rights Reserved | <a href="#" class="text-white-50 text-decoration-none lang"
+        data-en="Terms & Conditions" data-ta="விதிமுறைகள்" data-bs-toggle="modal" data-bs-target="#termsModal">Terms &
+        Conditions</a>
+
     </div>
   </footer>
+
+  <!-- ================= TERMS & CONDITIONS MODAL ================= -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold text-navy h4 lang" id="termsModalLabel" data-en="Terms & Conditions"
+            data-ta="விதிமுறைகள் மற்றும் நிபந்தனைகள்">
+            Terms & Conditions
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="1. Prediction Basis" data-ta="1. கணிப்பு அடிப்படை">1.
+              Prediction Basis</h6>
+            <p class="small text-muted lang"
+              data-en="All astrological predictions and analysis are strictly based on the birth details (Date, Time, and Place of birth) provided by the client. The accuracy of the prediction is directly dependent on the accuracy of these details."
+              data-ta="அனைத்து ஜோதிடக் கணிப்புகளும் ஆய்வுகளும் வாடிக்கையாளர் வழங்கிய பிறப்பு விவரங்களை (பிறந்த தேதி, நேரம் மற்றும் இடம்) அடிப்படையாகக் கொண்டவை. கணிப்பின் துல்லியம் இந்த விவரங்களின் துல்லியத்தைப் பொறுத்தது.">
+              All astrological predictions and analysis are strictly based on the birth details provided by the client.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="2. Nature of Guidance" data-ta="2. வழிகாட்டுதலின் தன்மை">2.
+              Nature of Guidance</h6>
+            <p class="small text-muted lang"
+              data-en="Astrology is a tool for guidance and self-discovery. Predictions are meant to assist in decision-making and provide a broader perspective on life events. They should not be used as a substitute for professional medical, legal, or financial advice."
+              data-ta="ஜோதிடம் என்பது வழிகாட்டுதலுக்கான ஒரு கருவியாகும். அஸ்திரா ஜோதிடம் வழங்கும் கணிப்புகள் முடிவெடுப்பதில் உதவவும், வாழ்க்கையின் நிகழ்வுகள் குறித்த விரிவான பார்வையை வழங்கவும் மட்டுமே. இவற்றை மருத்துவ, சட்ட அல்லது நிதி ஆலோசனைகளுக்கு மாற்றாகப் பயன்படுத்தக் கூடாது.">
+              Astrology is a tool for guidance and self-discovery.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="3. Technical Information"
+              data-ta="3. தொழில்நுட்பத் தகவல்கள்">3. Technical Information</h6>
+            <p class="small text-muted lang"
+              data-en="Our methodology is based on the scientific principles of Baskara Astrology (K.B. System) and the Cuspal Interlink Theory (CIT)."
+              data-ta="எங்கள் ஜோதிட முறை பாஸ்கரா ஜோதிடம் (கே.பி. சிஸ்டம்) மற்றும் பாவ முனை உள்தொடர்பு கோட்பாடு (CIT) ஆகியவற்றின் அறிவியல் கொள்கைகளை அடிப்படையாகக் கொண்டது.">
+              Our methodology is based on the scientific principles of Baskara Astrology.
+            </p>
+          </div>
+          <div class="mb-0">
+            <h6 class="fw-bold text-primary lang" data-en="4. Disclaimer of Liability" data-ta="4. பொறுப்பு மறுப்பு">4.
+              Disclaimer of Liability</h6>
+            <div class="alert alert-warning border-0 small mb-0">
+              <p class="lang mb-0"
+                data-en="Asthiraa Astrology Research and Training Institute and its astrologers are NOT responsible for any actions, decisions, or consequences taken by the client based on the predictions or guidance provided. Final decisions must be made by the clients through their own self-assessment and judgment."
+                data-ta="அஸ்திரா ஜோதிட ஆய்வகம் மற்றும் பயிற்சி மையம் அல்லது அதன் ஜோதிடர்கள், வழங்கப்பட்ட கணிப்புகள் அல்லது வழிகாட்டுதலின் அடிப்படையில் வாடிக்கையாளர் எடுக்கும் எந்தவொரு செயலுக்கும், முடிவுகளுக்கும் அல்லது அதன் விளைவுகளுக்கும் பொறுப்பல்ல. அனைத்து இறுதி முடிவுகளும் வாடிக்கையாளர்களின் சுய மதிப்பீடு மற்றும் முடிவெடுக்கும் திறனை அடிப்படையாகக் கொண்டிருக்க வேண்டும்.">
+                Asthiraa Astrology and its astrologers are NOT responsible for client actions. Final decisions must be
+                made by clients through self-assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ✅ BOOTSTRAP 5 BUNDLE (JS + Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

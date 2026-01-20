@@ -1,33 +1,46 @@
-/* ================= ASTHIRAA ASTROLOGY - CORE THEME ================= */
-/* 
-   Integrated with Bootstrap 5
-   Design: Clean, Modern, Mobile-First
-   Colors: Slate (Dark), Blue (Primary), White (Bg)
-   Font: Inter
-*/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-/* ================= 1. VARIABLES & OVERRIDES ================= */
+/* ================= 1. THEME TOKENS ================= */
 :root {
+  /* Colors */
+  --navy: #060b1b;
+  /* Deep Dark Navy */
+  --navy-light: #111827;
   --primary: #2563eb;
-  /* Blue 600 */
-  --primary-dark: #1d4ed8;
-  /* Blue 700 */
+  --primary-light: #eff6ff;
   --secondary: #4f46e5;
-  /* Indigo 600 */
-  --accent: #16a34a;
-  /* Green 600 */
+  --accent: #ffcc00;
+  /* Bright Yellow Accent */
+  --accent-soft: rgba(255, 204, 0, 0.1);
+  --success: #16a34a;
+  --danger: #dc2626;
+  --soft-bg: #f8fafc;
+  /* Slate 50 */
+  --border: #e2e8f0;
+  /* Slate 200 */
 
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Overrides */
   --bs-primary: var(--primary);
   --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --bs-body-bg: #ffffff;
 }
 
+/* ================= 2. GLOBAL STYLES ================= */
 body {
   font-family: var(--bs-body-font-family);
-  color: #475569;
-  /* Slate 600 */
+  color: #1e293b;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+section {
+  padding: 5rem 0;
 }
 
 h1,
@@ -36,68 +49,264 @@ h3,
 h4,
 h5,
 h6 {
-  color: #0f172a;
-  /* Slate 900 */
-  font-weight: 700;
+  color: var(--navy);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.text-navy {
+  color: var(--navy) !important;
 }
 
 a {
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-/* ================= 2. BOOTSTRAP OVERRIDES & UTILITIES ================= */
+/* ================= 3. COMPONENTS ================= */
 
-/* Buttons */
-.btn-primary {
-  background-color: var(--primary);
-  border-color: var(--primary);
+.hero-section {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.45) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(4, 8, 18, 0.98) 0%, rgba(6, 11, 27, 0.95) 100%),
+    url('../assets/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  color: #ffffff !important;
+  font-family: 'Outfit', sans-serif;
+  text-align: center;
 }
 
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
-}
-
-/* Navbar */
-.navbar-brand {
+.hero-section h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  /* Scalable font size */
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
 }
 
-/* Cards Hover Effect */
-.transition-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.hero-section h1,
+.hero-section h2,
+.hero-section p {
+  color: #ffffff !important;
 }
 
-.transition-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+.text-highlight-yellow {
+  color: var(--accent);
 }
 
-/* Guru Image in Card */
-.guru-img-card {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border: 4px solid #f8fafc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.glass-badge {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
 }
 
-/* Footer Links */
-.footer-link {
-  color: #94a3b8;
-  text-decoration: none;
-  transition: color 0.2s;
+.btn-hero-primary {
+  background-color: var(--accent);
+  color: var(--navy);
+  border: none;
+  font-weight: 700;
 }
 
-.footer-link:hover {
+.btn-hero-primary:hover {
+  background-color: #efbe00;
+  transform: translateY(-3px);
+  color: var(--navy);
+}
+
+.btn-hero-outline {
+  background: transparent;
+  border: 2px solid #ffffff;
   color: #ffffff;
 }
 
-/* Language Button Active State */
-.btn-outline-primary.active {
+.btn-hero-outline:hover {
+  background: #ffffff;
+  color: var(--navy);
+  transform: translateY(-3px);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
   background-color: var(--primary);
-  color: white;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+/* Cards */
+.card {
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl) !important;
+  border-color: var(--primary-light);
+}
+
+.card-title {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* Navbar */
+.navbar {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #00d4ff !important;
+  /* Bright cyan/blue for hover */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.05em;
+}
+
+.spinning-planet {
+  display: none;
+  /* Replaced by solar-system-widget */
+}
+
+.solar-system-widget {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solar-system-widget .sun {
+  font-size: 1.2rem;
+  z-index: 2;
+  filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.8));
+}
+
+.solar-system-widget .orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: orbitRotate 4s linear infinite;
+}
+
+.solar-system-widget .planet {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatePlanet {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-link {
+  font-weight: 600;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem;
+}
+
+/* Baskara Card Special Styling */
+.baskara-card {
+  background-color: var(--navy);
+  color: #ffffff;
+  border: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.baskara-card::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  top: -150px;
+  right: -150px;
+  border-radius: 50%;
+}
+
+.baskara-card .display-1 {
+  color: var(--accent);
+}
+
+.baskara-card h3 {
+  color: #ffffff;
+}
+
+.baskara-card p {
+  color: #94a3b8;
 }
 
 /* ================= 3. MOBILE OPTIMIZATIONS ================= */
@@ -115,67 +324,98 @@ a {
   }
 }
 
-/* ================= 4. MODERN BLUE HEADER & FOOTER ================= */
+/* ================= 4. HEADER & FOOTER ================= */
 .bg-modern-blue {
-  background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
-  /* Slate 900 to Blue 800 */
+  background-color: rgba(15, 23, 42, 0.95);
+  /* Slightly lighter navy with transparency */
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(37, 99, 235, 0.5);
 }
 
-/* Footer Font Sizes */
+.bg-modern-blue .nav-link,
+.bg-modern-blue .navbar-brand {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.bg-modern-blue .nav-link:hover,
+.bg-modern-blue .navbar-brand:hover {
+  opacity: 1;
+}
+
+.bg-modern-blue .nav-link.active {
+  color: var(--accent) !important;
+  opacity: 1;
+}
+
+footer {
+  background-color: var(--navy);
+  color: #94a3b8;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
 footer h3,
-footer .h4 {
-  font-size: 1.1rem !important;
+footer h4 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
 }
 
-footer h4,
-footer .h5 {
-  font-size: 1rem !important;
-}
-
-footer p,
 footer a {
-  font-size: 0.9rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
-footer .small {
-  font-size: 0.8rem !important;
+footer a:hover {
+  color: var(--accent) !important;
+  transform: translateX(5px);
+  opacity: 1 !important;
+}
+
+/* Ensure links with Bootstrap opacity classes also react */
+footer .text-white-50:hover,
+footer .link-light:hover {
+  color: var(--accent) !important;
+  opacity: 1 !important;
+}
+
+/* ================= 5. UTILITIES ================= */
+.bg-soft {
+  background-color: var(--soft-bg);
+}
+
+.rounded-xl {
+  border-radius: 1.5rem !important;
+}
+
+.shadow-premium {
+  box-shadow: var(--shadow-lg);
 }
 
 /* Adaptive Fonts */
 @media (max-width: 991px) {
-
-  h1,
-  .display-4,
-  .display-6 {
-    font-size: 1.8rem !important;
+  section {
+    padding: 3rem 0;
   }
 
-  h2,
-  .h3 {
-    font-size: 1.5rem !important;
+  h1 {
+    font-size: 2.25rem;
   }
 
-  .navbar-brand {
-    font-size: 1.2rem;
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-mobile-compact {
+    font-size: 0.75rem;
   }
 
-  .card-title {
-    font-size: 1.25rem;
-  }
-
-  /* Footer even smaller on mobile */
-  footer h3,
-  footer .h4 {
-    font-size: 1rem !important;
-  }
-
-  footer h4,
-  footer .h5 {
-    font-size: 0.9rem !important;
-  }
-
-  footer p,
-  footer a {
-    font-size: 0.85rem;
+  .table-mobile-compact td,
+  .table-mobile-compact th {
+    padding: 0.25rem !important;
   }
 }

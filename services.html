@@ -20,8 +20,14 @@
   <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-modern-blue sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold text-white" href="index.html">
-        🪐 Asthiraa Astrology
+      <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="index.html">
+        <div class="solar-system-widget me-3">
+          <div class="sun">☀️</div>
+          <div class="orbit">
+            <div class="planet">🪐</div>
+          </div>
+        </div>
+        Asthiraa Astrology
       </a>
 
       <div class="d-flex align-items-center order-lg-3 ms-lg-3">
@@ -48,12 +54,20 @@
               data-ta="Consultation">Consultation</a></li>
           <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact"
               data-ta="Contact">Contact</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="tables.html" data-en="Tables" data-ta="Tables">Tables</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle lang" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-en="Tools" data-ta="Tools">
+              Tools
+            </a>
+            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="toolsDropdown">
+              <li><a class="dropdown-item lang" href="tables.html" data-en="Sub Tables" data-ta="அட்டவணைகள்">Sub
+                  Tables</a></li>
+              <li><a class="dropdown-item lang" href="transit.html" data-en="Daily Transit"
+                  data-ta="தினசரி கோட்சாரம்">Daily Transit</a></li>
+              <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026"
+                  data-ta="கோட்சாரம் 2026">Planet Transit 2026</a></li>
+            </ul>
           </li>
-          <li class="nav-item"><a class="nav-link lang" href="transit.html" data-en="Daily Transit"
-              data-ta="Daily Transit">Daily Transit</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="transit2.html" data-en="Planet Transit 2026"
-              data-ta="Transit 2026">Planet Transit 2026</a></li>
         </ul>
       </div>
     </div>
@@ -62,15 +76,14 @@
   <main class="container my-5">
 
     <div class="text-center mb-5">
-      <h1 class="mx-auto lang" data-en="Our Astrology Services" data-ta="எங்கள் ஜோதிட சேவைகள்"
-        style="max-width: 800px;">
+      <h1 class="mx-auto lang display-4 fw-800 text-navy" data-en="Our Astrology Services"
+        data-ta="எங்கள் ஜோதிட சேவைகள்" style="max-width: 800px;">
         Our Astrology Services
       </h1>
       <p class="lead text-muted mx-auto lang mt-3" style="max-width: 700px;"
-        data-en="Asthiraa Astrology provides comprehensive Baskara astrology guidance for all aspects of life. We offer detailed consultations in Tamil and English to help you make informed decisions."
-        data-ta="அஸ்திரா ஜோதிடம் வாழ்க்கையின் அனைத்து அம்சங்களுக்கும் விரிவான பாஸ்கரா ஜோதிட வழிகாட்டலை வழங்குகிறது. தமிழ் மற்றும் ஆங்கிலத்தில் விரிவான ஆலோசனைகளை வழங்கி, நீங்கள் தகவலறிந்த முடிவுகளை எடுக்க உதவுகிறோம்.">
-        Asthiraa Astrology provides comprehensive Baskara astrology guidance for all aspects of life. We offer detailed
-        consultations in Tamil and English to help you make informed decisions.
+        data-en="Providing comprehensive Baskara Astrology guidance for all aspects of life with precision and clarity."
+        data-ta="வாழ்க்கையின் அனைத்து அம்சங்களுக்கும் துல்லியம் மற்றும் தெளிவுடன் விரிவான பாஸ்கரா ஜோதிட வழிகாட்டலை வழங்குகிறோம்.">
+        Providing comprehensive Baskara Astrology guidance for all aspects of life with precision and clarity.
       </p>
     </div>
 
@@ -78,154 +91,98 @@
     <div class="row g-4">
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="📊 Horoscope Analysis" data-ta="📊 ஜாதக ஆய்வு">
-              📊 Horoscope Analysis
+            <div class="display-6 text-primary mb-3"><i class="bi bi-bar-chart-fill"></i></div>
+            <h3 class="h5 card-title lang" data-en="Horoscope Analysis" data-ta="ஜாதக ஆய்வு">
+              Horoscope Analysis
             </h3>
-            <p class="card-text text-muted lang"
-              data-en="Complete birth chart analysis using Baskara astrology principles. Detailed examination of planetary positions, houses, and their influences on your life."
-              data-ta="பாஸ்கரா ஜோதிட கொள்கைகளைப் பயன்படுத்தி முழுமையான பிறப்பு விளக்கப்பட ஆய்வு. கிரக நிலைகள், வீடுகள் மற்றும் அவற்றின் வாழ்க்கையில் உள்ள தாக்கங்களின் விரிவான ஆய்வு.">
+            <p class="card-text text-muted small lang"
+              data-en="Complete birth chart analysis using Baskara astrology principles. Detailed examination of planetary influences on your life."
+              data-ta="பாஸ்கரா ஜோதிட கொள்கைகளைப் பயன்படுத்தி முழுமையான பிறப்பு விளக்கப்பட ஆய்வு.">
               Complete birth chart analysis using Baskara astrology principles. Detailed examination of planetary
-              positions,
-              houses, and their influences on your life.
+              influences on your life.
             </p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="🏥 Medical Astrology Guidance"
-              data-ta="🏥 மருத்துவ ஜோதிட வழிகாட்டல்">
-              🏥 Medical Astrology Guidance
+            <div class="display-6 text-danger mb-3"><i class="bi bi-heart-pulse-fill"></i></div>
+            <h3 class="h5 card-title lang" data-en="Medical Astrology" data-ta="மருத்துவ ஜோதிடம்">
+              Medical Astrology
             </h3>
-            <p class="card-text text-muted lang"
-              data-en="Health predictions and remedies based on planetary influences. Identify potential health issues and preventive measures through astrological analysis."
-              data-ta="கிரக தாக்கங்களின் அடிப்படையில் சுகாதார கணிப்புகள் மற்றும் தீர்வுகள். ஜோதிட ஆய்வு மூலம் சாத்தியமான சுகாதார பிரச்சினைகள் மற்றும் தடுப்பு நடவடிக்கைகளை அடையாளம் காணுங்கள்.">
-              Health predictions and remedies based on planetary influences. Identify potential health issues and
-              preventive
-              measures through astrological analysis.
+            <p class="card-text text-muted small lang"
+              data-en="Health predictions and preventive measures through astrological analysis of planetary influences."
+              data-ta="கிரக தாக்கங்களின் ஜோதிட ஆய்வு மூலம் சுகாதார கணிப்புகள் மற்றும் தடுப்பு நடவடிக்கைகள்.">
+              Health predictions and preventive measures through astrological analysis of planetary influences.
             </p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="💑 Marriage Matching" data-ta="💑 திருமண பொருத்தம்">
-              💑 Marriage Matching
+            <div class="display-6 text-secondary mb-3"><i class="bi bi-people-fill"></i></div>
+            <h3 class="h5 card-title lang" data-en="Marriage Matching" data-ta="திருமண பொருத்தம்">
+              Marriage Matching
             </h3>
-            <p class="card-text text-muted lang"
-              data-en="Comprehensive compatibility analysis for marriage using traditional matching methods. Detailed assessment of horoscope compatibility for a harmonious married life."
-              data-ta="பாரம்பரிய பொருத்த முறைகளைப் பயன்படுத்தி திருமணத்திற்கான விரிவான பொருத்தம் ஆய்வு. இணக்கமான திருமண வாழ்க்கைக்கான ஜாதக பொருத்தத்தின் விரிவான மதிப்பீடு.">
-              Comprehensive compatibility analysis for marriage using traditional matching methods. Detailed assessment
-              of
-              horoscope compatibility for a harmonious married life.
+            <p class="card-text text-muted small lang"
+              data-en="Detailed assessment of horoscope compatibility for a harmonious and stable married life."
+              data-ta="இணக்கமான மற்றும் நிலையான திருமண வாழ்க்கைக்கான ஜாதக பொருத்தத்தின் விரிவான மதிப்பீடு.">
+              Detailed assessment of horoscope compatibility for a harmonious and stable married life.
             </p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="🎓 Career & Education Guidance"
-              data-ta="🎓 கல்வி & தொழில் வழிகாட்டல்">
-              🎓 Career & Education Guidance
+            <div class="display-6 text-info mb-3"><i class="bi bi-mortarboard-fill"></i></div>
+            <h3 class="h5 card-title lang" data-en="Career & Education" data-ta="கல்வி & தொழில்">
+              Career & Education
             </h3>
-            <p class="card-text text-muted lang"
-              data-en="Astrological guidance for choosing the right career path and educational opportunities. Understand your strengths and best timing for career decisions."
-              data-ta="சரியான தொழில் பாதை மற்றும் கல்வி வாய்ப்புகளைத் தேர்ந்தெடுப்பதற்கான ஜோதிட வழிகாட்டல். உங்கள் பலம் மற்றும் தொழில் முடிவுகளுக்கான சிறந்த நேரத்தைப் புரிந்து கொள்ளுங்கள்.">
-              Astrological guidance for choosing the right career path and educational opportunities. Understand your
-              strengths and best timing for career decisions.
+            <p class="card-text text-muted small lang"
+              data-en="Strategic guidance for choosing the right career path and educational opportunities based on your strengths."
+              data-ta="உங்கள் பலத்தின் அடிப்படையில் சரியான தொழில் பாதை மற்றும் கல்வி வாய்ப்புகளைத் தேர்ந்தெடுப்பதற்கான வழிகாட்டல்.">
+              Strategic guidance for choosing the right career path and educational opportunities based on your
+              strengths.
             </p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="💰 Financial Astrology" data-ta="💰 நிதி ஜோதிடம்">
-              💰 Financial Astrology
+            <div class="display-6 text-success mb-3"><i class="bi bi-cash-stack"></i></div>
+            <h3 class="h5 card-title lang" data-en="Financial Astrology" data-ta="நிதி ஜோதிடம்">
+              Financial Astrology
             </h3>
-            <p class="card-text text-muted lang"
-              data-en="Analysis of financial prospects, investment timing, and wealth accumulation. Guidance on favorable periods for financial decisions and business ventures."
-              data-ta="நிதி வாய்ப்புகள், முதலீட்டு நேரம் மற்றும் செல்வம் சேகரிப்பு ஆய்வு. நிதி முடிவுகள் மற்றும் வணிக முயற்சிகளுக்கான சாதகமான காலங்கள் குறித்த வழிகாட்டல்.">
-              Analysis of financial prospects, investment timing, and wealth accumulation. Guidance on favorable periods
-              for
-              financial decisions and business ventures.
+            <p class="card-text text-muted small lang"
+              data-en="Analysis of financial prospects, wealth accumulation, and guidance on favorable periods for investments."
+              data-ta="நிதி வாய்ப்புகள், செல்வம் சேகரிப்பு மற்றும் முதலீடுகளுக்கான சாதகமான காலங்கள் குறித்த வழிகாட்டல்.">
+              Analysis of financial prospects, wealth accumulation, and guidance on favorable periods for investments.
             </p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
+        <div class="card h-100 border-0 shadow-sm transition-hover p-4">
           <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="🏠 Property & Real Estate Guidance"
-              data-ta="🏠 சொத்து & நிலம் வழிகாட்டல்">
-              🏠 Property & Real Estate Guidance
+            <div class="display-6 text-dark mb-3"><i class="bi bi-house-door-fill"></i></div>
+            <h3 class="h5 card-title lang" data-en="Property Guidance" data-ta="சொத்து வழிகாட்டல்">
+              Property Guidance
             </h3>
-            <p class="card-text text-muted lang"
-              data-en="Astrological consultation for property purchases, construction timing, and real estate investments. Find auspicious dates for property-related decisions."
-              data-ta="சொத்து வாங்குதல், கட்டுமான நேரம் மற்றும் நிலம் முதலீடுகளுக்கான ஜோதிட ஆலோசனை. சொத்து தொடர்பான முடிவுகளுக்கான சுப நாட்களைக் கண்டறியுங்கள்.">
-              Astrological consultation for property purchases, construction timing, and real estate investments. Find
-              auspicious dates for property-related decisions.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
-          <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="👶 Child Birth & Naming"
-              data-ta="👶 குழந்தை பிறப்பு & பெயரிடுதல்">
-              👶 Child Birth & Naming
-            </h3>
-            <p class="card-text text-muted lang"
-              data-en="Guidance for selecting auspicious dates for childbirth and choosing appropriate names based on astrological principles for your child's well-being."
-              data-ta="குழந்தை பிறப்புக்கான சுப நாட்களைத் தேர்ந்தெடுப்பதற்கும், உங்கள் குழந்தையின் நல்வாழ்வுக்காக ஜோதிட கொள்கைகளின் அடிப்படையில் பொருத்தமான பெயர்களைத் தேர்ந்தெடுப்பதற்கும் வழிகாட்டல்.">
-              Guidance for selecting auspicious dates for childbirth and choosing appropriate names based on
-              astrological
-              principles for your child's well-being.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
-          <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="📅 Muhurtham & Auspicious Dates"
-              data-ta="📅 முகூர்த்தம் & சுப நாட்கள்">
-              📅 Muhurtham & Auspicious Dates
-            </h3>
-            <p class="card-text text-muted lang"
-              data-en="Selection of auspicious dates and times for important events like weddings, housewarming, business inaugurations, and other significant ceremonies."
-              data-ta="திருமணம், குடியேற்றம், வணிக திறப்பு மற்றும் பிற முக்கியமான விழாக்களுக்கான சுப நாட்கள் மற்றும் நேரங்களைத் தேர்ந்தெடுப்பது.">
-              Selection of auspicious dates and times for important events like weddings, housewarming, business
-              inaugurations, and other significant ceremonies.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm transition-hover border-0">
-          <div class="card-body">
-            <h3 class="h5 card-title text-primary lang" data-en="🔮 Remedial Measures" data-ta="🔮 தீர்வு நடவடிக்கைகள்">
-              🔮 Remedial Measures
-            </h3>
-            <p class="card-text text-muted lang"
-              data-en="Personalized remedies including gemstone recommendations, mantra chanting, pooja suggestions, and other astrological remedies to mitigate negative planetary influences."
-              data-ta="எதிர்மறை கிரக தாக்கங்களைக் குறைப்பதற்கான தனிப்பயனாக்கப்பட்ட தீர்வுகள், மணிக்கற்கள் பரிந்துரைகள், மந்திர ஜெபம், பூஜை பரிந்துரைகள் மற்றும் பிற ஜோதிட தீர்வுகள் உட்பட.">
-              Personalized remedies including gemstone recommendations, mantra chanting, pooja suggestions, and other
-              astrological remedies to mitigate negative planetary influences.
+            <p class="card-text text-muted small lang"
+              data-en="Consultation for property purchases, construction timing, and find auspicious dates for real estate."
+              data-ta="சொத்து வாங்குதல், கட்டுமான நேரம் மற்றும் நிலம் தொடர்பான சுப நாட்களைக் கண்டறியுங்கள்.">
+              Consultation for property purchases, construction timing, and find auspicious dates for real estate.
             </p>
           </div>
         </div>
@@ -234,19 +191,21 @@
     </div>
 
     <!-- CALL TO ACTION -->
-    <div class="card mt-5 border-primary shadow text-center p-4">
+    <div class="card mt-5 border-0 shadow-premium bg-navy text-white text-center p-5 rounded-xl">
       <div class="card-body">
-        <h3 class="card-title text-primary fw-bold lang" data-en="📞 Consultation Details"
-          data-ta="📞 ஆலோசனை விவரங்கள்">
-          📞 Consultation Details
-        </h3>
-        <p class="card-text lang lead mb-4"
-          data-en="First 20 minutes consultation is FREE! Available in Tamil and English. Contact us to schedule your appointment."
-          data-ta="முதல் 20 நிமிட ஆலோசனை இலவசம்! தமிழ் மற்றும் ஆங்கிலத்தில் கிடைக்கிறது. உங்கள் நேரத்தை திட்டமிட எங்களைத் தொடர்பு கொள்ளுங்கள்.">
-          First 20 minutes consultation is FREE! Available in Tamil and English. Contact us to schedule your
-          appointment.
+        <h2 class="card-title text-white mb-4 lang" data-en="Start Your Journey with Clarity"
+          data-ta="தெளிவுடன் உங்கள் பயணத்தைத் தொடங்குங்கள்">
+          Start Your Journey with Clarity
+        </h2>
+        <p class="card-text lang lead mb-5 opacity-75"
+          data-en="First 20 minutes of consultation is absolutely FREE. Experience the precision of Baskara Astrology."
+          data-ta="ஆலோசனை முதல் 20 நிமிடங்கள் முற்றிலும் இலவசம். பாஸ்கரா ஜோதிடத்தின் துல்லியத்தை அனுபவியுங்கள்.">
+          First 20 minutes of consultation is absolutely FREE. Experience the precision of Baskara Astrology.
         </p>
-        <a href="tel:9787921438" class="btn btn-primary btn-lg">📞 97879-21438</a>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="tel:9787921438" class="btn btn-accent btn-lg text-navy fw-bold">📞 97879-21438</a>
+          <a href="consultation.html" class="btn btn-light btn-lg">Book Now</a>
+        </div>
       </div>
     </div>
 
@@ -284,6 +243,8 @@
               data-ta="ஜோதிட அட்டவணைகள்">Astrology Tables</a>
             <a href="transit.html" class="link-light text-decoration-none lang" data-en="Daily Planet Transit"
               data-ta="தினசரி கிரக மாற்றம்">Daily Planet Transit</a>
+            <a href="baskara-system.html" class="link-light text-decoration-none lang" data-en="Baskara System"
+              data-ta="பாஸ்கரா முறை">Baskara System</a>
           </div>
         </div>
 
@@ -291,12 +252,72 @@
 
       <hr class="border-secondary my-4">
 
-      <!-- COPYRIGHT -->
       <div class="text-center text-white-50 small">
-        © 2026 Asthiraa Astrology · All Rights Reserved
+        © 2026 Asthiraa Astrology · All Rights Reserved | <a href="#" class="text-white-50 text-decoration-none lang"
+          data-en="Terms & Conditions" data-ta="விதிமுறைகள்" data-bs-toggle="modal" data-bs-target="#termsModal">Terms &
+          Conditions</a>
       </div>
     </div>
   </footer>
+
+  <!-- ================= TERMS & CONDITIONS MODAL ================= -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold text-navy h4 lang" id="termsModalLabel" data-en="Terms & Conditions"
+            data-ta="விதிமுறைகள் மற்றும் நிபந்தனைகள்">
+            Terms & Conditions
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="1. Prediction Basis" data-ta="1. கணிப்பு அடிப்படை">1.
+              Prediction Basis</h6>
+            <p class="small text-muted lang"
+              data-en="All astrological predictions and analysis are strictly based on the birth details (Date, Time, and Place of birth) provided by the client. The accuracy of the prediction is directly dependent on the accuracy of these details."
+              data-ta="அனைத்து ஜோதிடக் கணிப்புகளும் ஆய்வுகளும் வாடிக்கையாளர் வழங்கிய பிறப்பு விவரங்களை (பிறந்த தேதி, நேரம் மற்றும் இடம்) அடிப்படையாகக் கொண்டவை. கணிப்பின் துல்லியம் இந்த விவரங்களின் துல்லியத்தைப் பொறுத்தது.">
+              All astrological predictions and analysis are strictly based on the birth details provided by the client.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="2. Nature of Guidance" data-ta="2. வழிகாட்டுதலின் தன்மை">2.
+              Nature of Guidance</h6>
+            <p class="small text-muted lang"
+              data-en="Astrology is a tool for guidance and self-discovery. Predictions are meant to assist in decision-making and provide a broader perspective on life events. They should not be used as a substitute for professional medical, legal, or financial advice."
+              data-ta="ஜோதிடம் என்பது வழிகாட்டுதலுக்கான ஒரு கருவியாகும். அஸ்திரா ஜோதிடம் வழங்கும் கணிப்புகள் முடிவெடுப்பதில் உதவவும், வாழ்க்கையின் நிகழ்வுகள் குறித்த விரிவான பார்வையை வழங்கவும் மட்டுமே. இவற்றை மருத்துவ, சட்ட அல்லது நிதி ஆலோசனைகளுக்கு மாற்றாகப் பயன்படுத்தக் கூடாது.">
+              Astrology is a tool for guidance and self-discovery.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h6 class="fw-bold text-primary lang" data-en="3. Technical Information"
+              data-ta="3. தொழில்நுட்பத் தகவல்கள்">3. Technical Information</h6>
+            <p class="small text-muted lang"
+              data-en="Our methodology is based on the scientific principles of Baskara Astrology (K.B. System) and the Cuspal Interlink Theory (CIT)."
+              data-ta="எங்கள் ஜோதிட முறை பாஸ்கரா ஜோதிடம் (கே.பி. சிஸ்டம்) மற்றும் பாவ முனை உள்தொடர்பு கோட்பாடு (CIT) ஆகியவற்றின் அறிவியல் கொள்கைகளை அடிப்படையாகக் கொண்டது.">
+              Our methodology is based on the scientific principles of Baskara Astrology.
+            </p>
+          </div>
+          <div class="mb-0">
+            <h6 class="fw-bold text-primary lang" data-en="4. Disclaimer of Liability" data-ta="4. பொறுப்பு மறுப்பு">4.
+              Disclaimer of Liability</h6>
+            <div class="alert alert-warning border-0 small mb-0">
+              <p class="lang mb-0"
+                data-en="Asthiraa Astrology Research and Training Institute and its astrologers are NOT responsible for any actions, decisions, or consequences taken by the client based on the predictions or guidance provided. Final decisions must be made by the clients through their own self-assessment and judgment."
+                data-ta="அஸ்திரா ஜோதிட ஆய்வகம் மற்றும் பயிற்சி மையம் அல்லது அதன் ஜோதிடர்கள், வழங்கப்பட்ட கணிப்புகள் அல்லது வழிகாட்டுதலின் அடிப்படையில் வாடிக்கையாளர் எடுக்கும் எந்தவொரு செயலுக்கும், முடிவுகளுக்கும் அல்லது அதன் விளைவுகளுக்கும் பொறுப்பல்ல. அனைத்து இறுதி முடிவுகளும் வாடிக்கையாளர்களின் சுய மதிப்பீடு மற்றும் முடிவெடுக்கும் திறனை அடிப்படையாகக் கொண்டிருக்க வேண்டும்.">
+                Asthiraa Astrology and its astrologers are NOT responsible for client actions. Final decisions must be
+                made by clients through self-assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ✅ BOOTSTRAP 5 BUNDLE (JS + Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
