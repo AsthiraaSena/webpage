@@ -77,17 +77,55 @@ a {
 
 /* ================= 3. COMPONENTS ================= */
 
+/* Parallax Utility */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Mobile fallback for parallax */
+@media (max-width: 991px) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
 .hero-section {
   background-image:
     radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.45) 0%, transparent 70%),
     linear-gradient(180deg, rgba(4, 8, 18, 0.98) 0%, rgba(6, 11, 27, 0.95) 100%),
     url('../assets/hero-bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   min-height: 85vh;
   display: flex;
   align-items: center;
+  color: #ffffff !important;
+  font-family: 'Outfit', sans-serif;
+  text-align: center;
+}
+
+.mild-parallax-section {
+  background-image:
+    linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)),
+    url('../assets/mild-parallax-bg.png');
+  padding: 10rem 0;
+  color: var(--navy);
+  border-bottom: 1px solid var(--border);
+}
+
+.research-hero {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.3) 0%, transparent 80%),
+    linear-gradient(180deg, rgba(4, 8, 18, 0.85) 0%, rgba(6, 11, 27, 0.9) 100%),
+    url('../assets/research-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff !important;
   font-family: 'Outfit', sans-serif;
   text-align: center;
