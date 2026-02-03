@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const rasiMap = {
     en: [
-      "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
-      "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"
+      "Ari", "Tau", "Gem", "Can", "Leo", "Vir",
+      "Lib", "Sco", "Sag", "Cap", "Aqu", "Pis"
     ],
     ta: [
       "மேஷ", "ரிஷ", "மிது", "கட", "சிம்", "கன்",
@@ -88,5 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
     currentLang = e.detail.lang;
     loadTable();
   });
+
 
 });
