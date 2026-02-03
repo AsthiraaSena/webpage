@@ -1,7 +1,7 @@
 /* ================= TRANSLATION MAP ================= */
 const transMap = {
   // Planets
-  "சூரி": "Sun", "சந்": "Moon", "செவ்": "Mar", "புத": "Mer",
+  "சூரி": "Sun", "சந்": "Mo", "செவ்": "Mar", "புத": "Mer",
   "குரு": "Jup", "சுக்": "Ven", "சனி": "Sat", "ராகு": "Ra", "கேது": "Ke",
   "குரு-(வ)": "Jup (R)", "சனி-(வ)": "Sat (R)", "புத-(வ)": "Mer (R)",
   // Signs
@@ -110,4 +110,5 @@ btn.onclick = loadData;
 window.addEventListener("languageChange", () => {
   renderTable();
 });
+
 
