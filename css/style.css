@@ -457,3 +457,49 @@ footer .link-light:hover {
     padding: 0.25rem !important;
   }
 }
+
+/* ================= 6. CUSTOM CURSOR ================= */
+#cursor-star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  display: none;
+  /* Hidden on touch, shown by JS */
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+#cursor-star {
+  font-size: 28px;
+  color: var(--accent);
+  /* Outlined look */
+  text-shadow:
+    -1px -1px 0 var(--navy),
+    1px -1px 0 var(--navy),
+    -1px 1px 0 var(--navy),
+    1px 1px 0 var(--navy);
+  animation: rotateStar 2s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+@keyframes rotateStar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 991px) {
+  #cursor-star-container {
+    display: none !important;
+  }
+}
