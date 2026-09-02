@@ -1,78 +1,319 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
-/* ================= 1. THEME TOKENS ================= */
+/* ================= 1. THEME TOKENS (VALAMPURI PANCHANGAM MASTER SUITE) ================= */
 :root {
-  /* Colors */
-  --navy: #060b1b;
-  /* Deep Dark Navy */
-  --navy-light: #111827;
-  --primary: #2563eb;
-  --primary-light: #eff6ff;
-  --secondary: #4f46e5;
-  --accent: #ffcc00;
-  /* Bright Yellow Accent */
-  --accent-soft: rgba(255, 204, 0, 0.1);
-  --success: #16a34a;
-  --danger: #dc2626;
-  --soft-bg: #f8fafc;
-  /* Slate 50 */
-  --border: #e2e8f0;
-  /* Slate 200 */
+  /* Auspicious Vedic Color Palette */
+  --primary-maroon: #6e101c;
+  --primary-dark: #4a0912;
+  --primary-crimson: #8f1727;
+  --cosmic-navy: #090d1f;
+  --cosmic-deep: #050711;
+  --cosmic-card: rgba(16, 22, 48, 0.88);
+  --cosmic-border: rgba(212, 175, 55, 0.28);
+  
+  /* Sacred Gold & Brass Accents */
+  /* Sacred Dark Brown & Golden Brass Accents */
+  --gold-primary: #b8860b;
+  --gold-bright: #d4af37;
+  --gold-dark: #854d0e;
+  --gold-gradient: linear-gradient(135deg, #380a10 0%, #6e101c 30%, #b8860b 70%, #581c26 100%);
+  --gold-glow: 0 0 25px rgba(184, 134, 11, 0.35);
+  --maroon-gradient: linear-gradient(135deg, #8f1727 0%, #6e101c 60%, #4a0912 100%);
+  
+  /* Neutral & Background Tones (Exact Valampuri Cream/Sand) */
+  --bg-light: #fbf9f5;
+  --bg-sand: #f4ede2;
+  --text-dark: #1e1b18;
+  --text-muted: #5e5758;
+  --text-white: #ffffff;
+  --text-gold: #b8860b;
+  
+  /* Glassmorphism & Shadows */
+  --glass-light: rgba(255, 255, 255, 0.96);
+  --glass-shadow: 0 12px 40px 0 rgba(74, 9, 18, 0.08);
+  --cosmic-shadow: 0 15px 45px 0 rgba(0, 0, 0, 0.45);
+  --card-radius: 18px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --navy: #380a10;
+  --navy-light: #581c26;
+  --primary: #854d0e;
+  --primary-light: #f4ede2;
+  --secondary: #6e101c;
+  --accent: #b8860b;
+  --soft-bg: #f4ede2;
+  --border: rgba(184, 134, 11, 0.3);
 
-  /* Overrides */
-  --bs-primary: var(--primary);
-  --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  --bs-body-bg: #ffffff;
+  --font-heading: 'Cinzel', 'Outfit', 'Anek Tamil', serif;
+  --font-tamil: 'Anek Tamil', 'Noto Sans Tamil', sans-serif;
+  --font-body: 'Anek Tamil', 'Inter', sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(74, 9, 18, 0.06);
+  --shadow-md: 0 8px 24px rgba(74, 9, 18, 0.08);
+  --shadow-lg: 0 14px 38px rgba(74, 9, 18, 0.12);
+
+  --bs-body-font-family: var(--font-body);
+  --bs-body-bg: var(--bg-light);
 }
 
-/* ================= 2. GLOBAL STYLES ================= */
+/* ================= 2. GLOBAL STYLES & STRING VISIBILITY ENGINE ================= */
 body {
   font-family: var(--bs-body-font-family);
-  color: #1e293b;
-  line-height: 1.6;
+  background-color: var(--bg-light) !important;
+  color: var(--text-dark) !important;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
 section {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
 }
 
+/* All Headings Across Entire App: Deep Sacred Temple Maroon / Dark Brown (Solid, No Gradient) */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: var(--navy);
+  color: var(--primary-dark) !important;
+  font-family: var(--font-heading);
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
 }
 
-.text-primary {
-  color: var(--primary) !important;
+/* All Paragraphs & Translatable Strings Default to Dark Charcoal */
+p,
+span.lang,
+div.lang,
+li,
+td,
+th,
+.accordion-body,
+.modal-body {
+  color: var(--text-dark);
+}
+
+/* Strict Global Override of Legacy White Utility Classes on Light Backgrounds */
+.text-white:not(.glass-panel-dark *):not(.dark-panel *):not(.navbar *):not(.top-invoc-bar *):not(footer *):not(.btn-maroon *):not([style*="linear-gradient"] *),
+.glass-panel:not(.glass-panel-dark) .text-white,
+.knowledge-feature-card .text-white,
+.card .text-white,
+.tab-content .text-white,
+.accordion .text-white,
+.table .text-white,
+.hero-section .text-white {
+  color: var(--text-dark) !important;
+}
+
+.text-white-50:not(.glass-panel-dark *):not(.dark-panel *):not(.navbar *):not(.top-invoc-bar *):not(footer *):not(.btn-maroon *):not([style*="linear-gradient"] *),
+.glass-panel:not(.glass-panel-dark) .text-white-50,
+.knowledge-feature-card .text-white-50,
+.card .text-white-50,
+.tab-content .text-white-50,
+.accordion .text-white-50,
+.table .text-white-50,
+.hero-section .text-white-50,
+.text-muted {
+  color: #475569 !important; /* High contrast Slate 600 for sharp readability */
+}
+
+/* Light Blue & Cyan Complete Eradication to Deep Temple Maroon */
+.text-info,
+.text-cyan,
+.text-cyan-400,
+.text-cyan-500,
+.text-blue,
+.bg-soft-info {
+  color: var(--primary-maroon) !important;
+}
+
+/* All Icons on Light Theme - Deep Sacred Maroon / Gold */
+.glass-panel:not(.glass-panel-dark) i.fa-solid:not(.text-danger):not(.text-success),
+.knowledge-feature-card i.fa-solid:not(.text-danger):not(.text-success),
+.stats-banner i.fa-solid,
+section i.text-info,
+section i.text-cyan {
+  color: var(--primary-maroon) !important;
+}
+
+/* ================= DARK CARDS & PANELS TYPOGRAPHY ENGINE ================= */
+.glass-panel-dark,
+.dark-panel,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"],
+[style*="linear-gradient(135deg, #581c26"] {
+  color: #ffffff !important;
+}
+
+.glass-panel-dark p,
+.glass-panel-dark span,
+.glass-panel-dark li,
+.glass-panel-dark .lead,
+.glass-panel-dark .text-white-50,
+.dark-panel p,
+.dark-panel span,
+.dark-panel li,
+.dark-panel .lead,
+.dark-panel .text-white-50,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] p,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] span,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] li,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .text-white-50,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .lead,
+[style*="linear-gradient(135deg, #581c26"] p,
+[style*="linear-gradient(135deg, #581c26"] span,
+[style*="linear-gradient(135deg, #581c26"] li,
+[style*="linear-gradient(135deg, #581c26"] .text-white-50,
+[style*="linear-gradient(135deg, #581c26"] .lead {
+  color: #f8fafc !important;
+  opacity: 0.96;
+}
+
+.glass-panel-dark h1,
+.glass-panel-dark h2,
+.glass-panel-dark h3,
+.glass-panel-dark h4,
+.glass-panel-dark h5,
+.glass-panel-dark h6,
+.dark-panel h1,
+.dark-panel h2,
+.dark-panel h3,
+.dark-panel h4,
+.dark-panel h5,
+.dark-panel h6,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] h1,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] h2,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] h3,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] h4,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] h5,
+[style*="linear-gradient(135deg, #581c26"] h1,
+[style*="linear-gradient(135deg, #581c26"] h2,
+[style*="linear-gradient(135deg, #581c26"] h3,
+[style*="linear-gradient(135deg, #581c26"] h4,
+[style*="linear-gradient(135deg, #581c26"] h5 {
+  color: #ffd700 !important;
+  -webkit-text-fill-color: #ffd700 !important;
+  background: none !important;
+  text-shadow: none !important;
+}
+
+/* Inner white cards inside dark panels */
+.glass-panel-dark .glass-panel,
+.dark-panel .glass-panel,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .glass-panel {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+}
+
+.glass-panel-dark .glass-panel *,
+.dark-panel .glass-panel *,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .glass-panel * {
+  color: var(--text-dark) !important;
+}
+
+.glass-panel-dark .glass-panel h5,
+.glass-panel-dark .glass-panel h6,
+.dark-panel .glass-panel h5,
+.dark-panel .glass-panel h6,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .glass-panel h5,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .glass-panel h6 {
+  color: var(--primary-maroon) !important;
+  font-weight: 700 !important;
+}
+
+.glass-panel-dark .glass-panel p,
+.dark-panel .glass-panel p,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .glass-panel p {
+  color: #334155 !important;
+}
+
+.glass-panel-dark .glass-panel li,
+.dark-panel .glass-panel li,
+[style*="linear-gradient(135deg, rgba(88, 28, 38"] .glass-panel li {
+  color: #334155 !important;
+  font-weight: 500 !important;
+}
+
+/* Clean Solid High-Contrast Titles (No Gradient Text) */
+.text-gradient-gold,
+.heading-gold {
+  color: var(--primary-dark) !important;
+  -webkit-text-fill-color: var(--primary-dark) !important;
+  background: none !important;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.glass-panel-dark .text-gradient-gold,
+.dark-panel .text-gradient-gold,
+[style*="linear-gradient"] .text-gradient-gold {
+  color: #ffd700 !important;
+  -webkit-text-fill-color: #ffd700 !important;
+}
+
+.text-primary,
+.text-maroon {
+  color: var(--primary-maroon) !important;
 }
 
 .text-secondary {
-  color: var(--secondary) !important;
+  color: #475569 !important;
 }
 
-.text-accent {
-  color: var(--accent) !important;
+.text-accent,
+.text-gold {
+  color: var(--gold-dark) !important;
 }
 
-.text-navy {
-  color: var(--navy) !important;
+.text-navy,
+.text-brown {
+  color: var(--primary-dark) !important;
 }
 
 a {
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+}
+
+/* Dedicated Protected Dark Zones (Navbar, Top Bar, Footer, Maroon Buttons) */
+.top-invoc-bar,
+.top-invoc-bar * {
+  color: var(--gold-bright) !important;
+}
+
+.navbar .nav-link {
+  color: #e2e8f0 !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--gold-bright) !important;
+}
+
+footer,
+footer p,
+footer span,
+footer a {
+  color: #cbd5e1 !important;
+}
+
+footer h3,
+footer h4,
+footer h5 {
+  color: var(--gold-bright) !important;
+}
+
+.btn-maroon,
+.btn-maroon span,
+.btn-maroon i {
+  color: #ffffff !important;
+}
+
+.btn-gold,
+.btn-gold span,
+.btn-gold i {
+  color: #221c1d !important;
 }
 
 /* ================= 3. COMPONENTS ================= */
@@ -93,59 +334,51 @@ a {
 }
 
 .hero-section {
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.45) 0%, transparent 70%),
-    linear-gradient(180deg, rgba(4, 8, 18, 0.98) 0%, rgba(6, 11, 27, 0.95) 100%),
-    url('../assets/hero-bg.png');
-  min-height: 85vh;
+  background: radial-gradient(circle at 50% 20%, #ffffff 0%, #f4ede2 65%, #fbf9f5 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  min-height: 80vh;
   display: flex;
   align-items: center;
-  color: #ffffff !important;
-  font-family: 'Outfit', sans-serif;
-  text-align: center;
+  color: var(--text-dark) !important;
+  font-family: var(--font-body);
+  text-align: left;
 }
 
 .mild-parallax-section {
-  background-image:
-    linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)),
-    url('../assets/mild-parallax-bg.png');
-  padding: 10rem 0;
-  color: var(--navy);
+  background: var(--bg-sand);
+  padding: 8rem 0;
+  color: var(--primary-dark);
   border-bottom: 1px solid var(--border);
 }
 
 .research-hero {
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.3) 0%, transparent 80%),
-    linear-gradient(180deg, rgba(4, 8, 18, 0.85) 0%, rgba(6, 11, 27, 0.9) 100%),
-    url('../assets/research-bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 60vh;
+  background: radial-gradient(circle at 50% 30%, #ffffff 0%, #f4ede2 70%, #fbf9f5 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff !important;
-  font-family: 'Outfit', sans-serif;
+  color: var(--text-dark) !important;
+  font-family: var(--font-body);
   text-align: center;
 }
 
 .hero-section h1 {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  /* Scalable font size */
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--primary-dark) !important;
+  margin-bottom: 1rem;
 }
 
-.hero-section h1,
-.hero-section h2,
+.hero-section h2 {
+  color: var(--primary-maroon) !important;
+}
+
 .hero-section p {
-  color: #ffffff !important;
+  color: var(--text-dark) !important;
 }
 
 .text-highlight-yellow {
@@ -315,13 +548,15 @@ a {
   margin: 0 0.25rem;
 }
 
-/* Baskara Card Special Styling */
+/* Baskara Card Special Styling (Valampuri Royal Maroon) */
 .baskara-card {
-  background-color: var(--navy);
+  background: var(--maroon-gradient);
   color: #ffffff;
-  border: none;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 1.5rem;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 14px 40px rgba(74, 9, 18, 0.25);
 }
 
 .baskara-card::before {
@@ -329,14 +564,14 @@ a {
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(229, 169, 59, 0.2) 0%, transparent 70%);
   top: -150px;
   right: -150px;
   border-radius: 50%;
 }
 
 .baskara-card .display-1 {
-  color: var(--accent);
+  color: var(--gold-bright);
 }
 
 .baskara-card h3 {
@@ -344,16 +579,42 @@ a {
 }
 
 .baskara-card p {
-  color: #94a3b8;
+  color: #fde68a;
 }
 
-/* ================= 3. MOBILE OPTIMIZATIONS ================= */
+/* ================= 3. MOBILE & FORM CONTROLS ================= */
+.form-control,
+.form-select {
+  background-color: #ffffff !important;
+  color: var(--text-dark) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.95rem !important;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(229, 169, 59, 0.25) !important;
+  background-color: #ffffff !important;
+  color: var(--text-dark) !important;
+}
+
+.form-label {
+  font-weight: 700;
+  color: var(--primary-dark) !important;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
 @media (max-width: 576px) {
   .table-mobile-compact {
     font-size: 0.75rem;
     /* Smaller text for mobile */
   }
-
 
   .table-mobile-compact th,
   .table-mobile-compact td {
@@ -362,32 +623,87 @@ a {
   }
 }
 
-/* ================= 4. HEADER & FOOTER ================= */
+/* ================= 4. HEADER & FOOTER (VALAMPURI PANCHANGAM SUITE) ================= */
 .bg-modern-blue {
-  background-color: rgba(15, 23, 42, 0.95);
-  /* Slightly lighter navy with transparency */
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(37, 99, 235, 0.5);
+  background-color: rgba(9, 13, 31, 0.98) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.bg-modern-blue .nav-link,
 .bg-modern-blue .navbar-brand {
-  color: #ffffff !important;
-  opacity: 1;
+  color: #ffd700 !important;
+  font-weight: 800;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
-.bg-modern-blue .nav-link:hover,
-.bg-modern-blue .navbar-brand:hover {
-  opacity: 1;
+.bg-modern-blue .logo-title {
+  color: #ffd700 !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.bg-modern-blue .logo-subtitle {
+  color: #fde68a !important;
+  font-size: 0.72rem;
+  opacity: 0.9;
+}
+
+.bg-modern-blue .nav-link {
+  color: #f1f5f9 !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem !important;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.bg-modern-blue .nav-link:hover {
+  color: #ffd700 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
 
 .bg-modern-blue .nav-link.active {
-  color: var(--accent) !important;
-  opacity: 1;
+  color: #ffd700 !important;
+  font-weight: 800;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+}
+
+.bg-modern-blue .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 15%;
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd700, #ffc107, transparent);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+.dropdown-menu-dark {
+  background-color: #0d1226 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.dropdown-item {
+  color: #e2e8f0 !important;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background: rgba(229, 169, 59, 0.2) !important;
+  color: #ffd700 !important;
 }
 
 footer {
-  background-color: var(--navy);
+  background: linear-gradient(180deg, #0a0f1e 0%, #050811 100%) !important;
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
   color: #94a3b8;
   padding-top: 5rem;
   padding-bottom: 3rem;
@@ -456,4 +772,668 @@ footer .link-light:hover {
   .table-mobile-compact th {
     padding: 0.25rem !important;
   }
+}
+
+/* ================= 6. VALAMPURI SACRED LIGHT THEME COMPONENTS ================= */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--card-radius);
+  box-shadow: var(--glass-shadow);
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.glass-panel:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 16px 45px rgba(74, 9, 18, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Sacred Stats Banner (Cream & Maroon) */
+.stats-banner {
+  background: var(--bg-sand);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-item {
+  padding: 1.25rem 1rem;
+  position: relative;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--primary-maroon);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 0.35rem;
+}
+
+/* ================= 7. SCIENTIFIC KNOWLEDGE TABS (SACRED LIGHT) ================= */
+.knowledge-section {
+  background: var(--bg-light);
+  position: relative;
+}
+
+.nav-pills-custom .nav-link {
+  background: #ffffff;
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  color: var(--primary-dark) !important;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.nav-pills-custom .nav-link:hover {
+  background: var(--bg-sand);
+  border-color: var(--gold-primary);
+  color: var(--primary-maroon) !important;
+}
+
+.nav-pills-custom .nav-link.active {
+  background: var(--maroon-gradient);
+  border-color: var(--gold-bright);
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(74, 9, 18, 0.3);
+}
+
+.knowledge-feature-card {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.knowledge-feature-card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 10px 30px rgba(74, 9, 18, 0.1);
+  transform: translateY(-4px);
+}
+
+/* ================= 10. CTA BUTTONS & BADGES ================= */
+.btn-gold {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #060b19 !important;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(229, 169, 59, 0.35);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 8px 25px rgba(229, 169, 59, 0.6);
+  transform: translateY(-2px);
+  color: #000000 !important;
+}
+
+.btn-maroon {
+  background: var(--maroon-gradient);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(74, 9, 18, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-maroon:hover {
+  background: linear-gradient(135deg, #a81c30 0%, #6e101c 60%, #4a0912 100%);
+  border-color: var(--gold-bright);
+  box-shadow: 0 6px 20px rgba(74, 9, 18, 0.5);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+.btn-outline-gold {
+  background: transparent;
+  border: 1.5px solid var(--gold-dark);
+  color: var(--primary-maroon) !important;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold-gradient);
+  color: #221c1d !important;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(229, 169, 59, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-outline-warning {
+  border: 1.5px solid var(--gold-dark) !important;
+  color: var(--primary-dark) !important;
+  font-weight: 700;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover,
+.btn-check:checked + .btn-outline-warning {
+  background: var(--maroon-gradient) !important;
+  color: #ffffff !important;
+  border-color: var(--gold-bright) !important;
+  box-shadow: 0 4px 15px rgba(74, 9, 18, 0.3);
+}
+
+.badge-glow-gold {
+  background: rgba(229, 169, 59, 0.15);
+  border: 1px solid rgba(229, 169, 59, 0.4);
+  color: var(--primary-dark);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.badge-glow-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #065f46;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ================= 11. MOBILE BOTTOM QUICK-ACTION BAR ================= */
+.mobile-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background: rgba(9, 13, 31, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--cosmic-border);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-bottom-bar .btn-mobile-act {
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-bottom-bar .btn-mobile-act:active {
+  transform: scale(0.98);
+}
+
+/* Call Button (Gold) */
+.mobile-bottom-bar .btn-gold {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #060b19 !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+.mobile-bottom-bar .btn-gold,
+.mobile-bottom-bar .btn-gold * {
+  color: #060b19 !important;
+}
+
+/* WhatsApp Button (Maroon) */
+.mobile-bottom-bar .btn-maroon {
+  background: var(--maroon-gradient);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(110, 16, 28, 0.3);
+}
+.mobile-bottom-bar .btn-maroon,
+.mobile-bottom-bar .btn-maroon * {
+  color: #ffffff !important;
+}
+
+/* ================= 12. FAQ ACCORDION SACRED ================= */
+.faq-cosmic .accordion-item {
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 1rem !important;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-cosmic .accordion-button {
+  background: #ffffff;
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none;
+}
+
+.faq-cosmic .accordion-button:not(.collapsed) {
+  color: var(--primary-maroon);
+  background: rgba(244, 237, 226, 0.7);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.faq-cosmic .accordion-body {
+  color: var(--text-dark);
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  line-height: 1.7;
+}
+
+/* Section Utilities */
+.section-cosmic-dark {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.section-cosmic-gradient {
+  background: var(--bg-sand);
+  color: var(--text-dark);
+}
+
+/* ================= 13. VALAMPURI PANCHANGAM AESTHETIC SUITE ================= */
+
+/* Auspicious Top Invocation Bar (Clean Crisp Light Yellow, No Glow) */
+.top-invoc-bar {
+  background: #380a10;
+  color: #ffe082 !important;
+  padding: 8px 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-bottom: 1.5px solid rgba(255, 224, 130, 0.3);
+  text-align: center;
+  position: relative;
+  z-index: 1001;
+}
+
+.top-invoc-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.invoc-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #ffe082 !important;
+  text-shadow: none !important;
+}
+
+.invoc-text span {
+  color: #ffe082 !important;
+  text-shadow: none !important;
+}
+
+#liveTimeTicker {
+  font-size: 0.88rem;
+  color: #ffe082 !important;
+  font-weight: 700;
+  text-shadow: none !important;
+}
+
+/* Header & Brand Logo Typography */
+.brand-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+}
+
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #ffd700 !important;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.logo-title span {
+  color: #ffffff !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.logo-subtitle {
+  font-size: 0.8rem;
+  color: #fde68a !important;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Sleek Icon Language Switcher */
+.lang-icon-btn,
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(10, 15, 30, 0.9);
+  border: 1.5px solid #ffd700;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.lang-icon-btn i,
+.lang-toggle i {
+  color: #ffd700;
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.lang-icon-btn:hover,
+.lang-toggle:hover {
+  background: rgba(229, 169, 59, 0.25);
+  border-color: #ffe082;
+  box-shadow: 0 0 22px rgba(255, 215, 0, 0.7);
+  transform: translateY(-1px);
+}
+
+.lang-icon-btn:hover i,
+.lang-toggle:hover i {
+  transform: rotate(25deg);
+}
+
+.lang-badge-text {
+  color: #ffd700 !important;
+  font-weight: 800;
+  font-size: 0.84rem;
+  letter-spacing: 0.5px;
+}
+
+/* Sacred Badge */
+.badge-sacred {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(74, 9, 18, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--primary-dark);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.badge-sacred i {
+  color: var(--primary-maroon);
+}
+
+/* ================= 14. GLOWING KALACHAKRA HERO WHEEL (SACRED LIGHT) ================= */
+.hero-kalachakra-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 15px 45px rgba(74, 9, 18, 0.08), 0 0 25px rgba(229, 169, 59, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.kalachakra-wheel-wrap {
+  position: relative;
+  width: 290px;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem auto 1.5rem auto;
+}
+
+.kalachakra-outer-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dashed rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 25px rgba(229, 169, 59, 0.25), inset 0 0 20px rgba(229, 169, 59, 0.1);
+  animation: rotateClockwise 36s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kalachakra-mid-ring {
+  position: absolute;
+  width: 76%;
+  height: 76%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  animation: rotateCounterClockwise 24s linear infinite;
+}
+
+.kalachakra-core {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a0912;
+  font-size: 2.75rem;
+  box-shadow: 0 0 30px rgba(229, 169, 59, 0.7);
+  border: 2px solid #ffffff;
+  z-index: 5;
+}
+
+.kalachakra-core i {
+  animation: rotateClockwise 18s linear infinite;
+}
+
+.kalachakra-caption {
+  font-family: var(--font-heading);
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.kalachakra-subtext {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Rotating Mandala Background */
+.hero-mandala-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: radial-gradient(circle, rgba(229, 169, 59, 0.15) 0%, transparent 65%);
+  border: 2px dashed rgba(229, 169, 59, 0.25);
+  border-radius: 50%;
+  animation: rotateClockwise 45s linear infinite;
+  pointer-events: none;
+}
+
+/* Live Today's Snapshot Card (Valampuri Cream Theme) */
+.snapshot-card {
+  background: var(--glass-light);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--card-radius);
+  padding: 1.75rem;
+  box-shadow: var(--glass-shadow);
+  margin-top: -30px;
+  position: relative;
+  z-index: 10;
+}
+
+.snapshot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(74, 9, 18, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.snapshot-title-wrap h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.2rem;
+}
+
+.snapshot-date-badge {
+  background: rgba(229, 169, 59, 0.15);
+  border: 1px solid rgba(229, 169, 59, 0.4);
+  color: var(--primary-dark);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.snap-item {
+  background: #fdfbf7;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.snap-item:hover {
+  border-color: var(--gold-primary);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.snap-label {
+  font-size: 0.82rem;
+  color: var(--primary-maroon);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.snap-label i {
+  color: var(--gold-dark);
+}
+
+.snap-val {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.snap-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Cosmic & Sacred Tables */
+.table-cosmic {
+  background: #ffffff !important;
+  color: var(--text-dark) !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.table-cosmic th {
+  background: var(--primary-dark) !important;
+  color: var(--gold-bright) !important;
+  font-weight: 700 !important;
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid var(--gold-primary) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.table-cosmic td {
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid rgba(74, 9, 18, 0.08) !important;
+  border-right: 1px solid rgba(74, 9, 18, 0.06) !important;
+  color: var(--text-dark) !important;
+}
+
+.table-cosmic tr:hover td {
+  background: #fdfbf7 !important;
 }
