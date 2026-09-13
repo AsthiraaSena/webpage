@@ -186,6 +186,50 @@
 
           <div class="card-body p-4 p-lg-5">
 
+            <!-- Multi-Step Progress Tracker (Zeigarnik Effect & Miller's Law) -->
+            <div class="form-step-tracker">
+              <div class="step-tracker-header">
+                <h4 class="step-tracker-title">
+                  <i class="fa-solid fa-list-check" style="color: var(--primary-maroon);"></i>
+                  <span class="lang" data-en="Consultation Progress" data-ta="ஆலோசனை படிவ முன்னேற்றம்">ஆலோசனை படிவ முன்னேற்றம்</span>
+                </h4>
+                <span id="stepPercentText" class="step-progress-percent">33% Completed</span>
+              </div>
+
+              <div class="step-progress-bar-container">
+                <div id="stepProgressFill" class="step-progress-bar-fill"></div>
+              </div>
+
+              <div class="step-items-grid">
+                <!-- Step 1 -->
+                <div id="stepItem1" class="step-item active">
+                  <div class="step-badge">1</div>
+                  <div class="step-label-wrap">
+                    <span class="step-name lang" data-en="Identity" data-ta="தனிநபர்">தனிநபர்</span>
+                    <span class="step-sub lang" data-en="Name & Contact" data-ta="பெயர் & தொடர்பு">பெயர் & தொடர்பு</span>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="stepItem2" class="step-item">
+                  <div class="step-badge">2</div>
+                  <div class="step-label-wrap">
+                    <span class="step-name lang" data-en="Birth Info" data-ta="பிறந்த விவரம்">பிறந்த விவரம்</span>
+                    <span class="step-sub lang" data-en="Date, Time, Place" data-ta="தேதி, நேரம், ஊர்">தேதி, நேரம், ஊர்</span>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="stepItem3" class="step-item">
+                  <div class="step-badge">3</div>
+                  <div class="step-label-wrap">
+                    <span class="step-name lang" data-en="Preferences" data-ta="விருப்பங்கள்">விருப்பங்கள்</span>
+                    <span class="step-sub lang" data-en="Service & Mode" data-ta="சேவை & முறை">சேவை & முறை</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <form id="consultationForm">
 
               <!-- Section 1 -->

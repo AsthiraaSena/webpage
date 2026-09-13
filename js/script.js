@@ -111,7 +111,91 @@ function updateLiveTicker() {
   setInterval(updateLiveTicker, 1000);
 })();
 
+/* ================= 3. FLOATING BACK TO TOP BUTTON (FITTS'S LAW) ================= */
+function initBackToTop() {
+  let btt = document.getElementById("backToTop");
+  if (!btt) {
+    btt = document.createElement("button");
+    btt.id = "backToTop";
+    btt.className = "back-to-top";
+    btt.setAttribute("aria-label", "Back to top / மேலே செல்க");
+    btt.setAttribute("title", "Back to top");
+    btt.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    document.body.appendChild(btt);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 350) {
+      btt.classList.add("visible");
+    } else {
+      btt.classList.remove("visible");
+    }
+  }, { passive: true });
+
+  btt.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
+/* ================= 4. CONSULTATION MULTI-STEP PROGRESS TRACKER (ZEIGARNIK EFFECT) ================= */
+function initFormStepTracker() {
+  const form = document.getElementById("consultationForm");
+  if (!form) return;
+
+  const step1 = document.getElementById("stepItem1");
+  const step2 = document.getElementById("stepItem2");
+  const step3 = document.getElementById("stepItem3");
+  const progressFill = document.getElementById("stepProgressFill");
+  const percentText = document.getElementById("stepPercentText");
+
+  function updateProgress() {
+    const fullName = document.getElementById("fullName")?.value.trim();
+    const phone = document.getElementById("phone")?.value.trim();
+    const dob = document.getElementById("dob")?.value;
+    const birthTime = document.getElementById("birthTime")?.value;
+    const birthPlace = document.getElementById("birthPlace")?.value.trim();
+    const consultationType = document.getElementById("consultationType")?.value;
+
+    const hasStep1 = !!(fullName && phone);
+    const hasStep2 = !!(dob && birthTime && birthPlace);
+    const hasStep3 = !!consultationType;
+
+    let progress = 33;
+    if (hasStep1 && !hasStep2) {
+      progress = 50;
+      if (step1) { step1.className = "step-item completed"; }
+      if (step2) { step2.className = "step-item active"; }
+      if (step3) { step3.className = "step-item"; }
+    } else if (hasStep1 && hasStep2 && !hasStep3) {
+      progress = 75;
+      if (step1) { step1.className = "step-item completed"; }
+      if (step2) { step2.className = "step-item completed"; }
+      if (step3) { step3.className = "step-item active"; }
+    } else if (hasStep1 && hasStep2 && hasStep3) {
+      progress = 100;
+      if (step1) { step1.className = "step-item completed"; }
+      if (step2) { step2.className = "step-item completed"; }
+      if (step3) { step3.className = "step-item completed"; }
+    } else {
+      if (step1) { step1.className = "step-item active"; }
+      if (step2) { step2.className = "step-item"; }
+      if (step3) { step3.className = "step-item"; }
+    }
+
+    if (progressFill) progressFill.style.width = `${progress}%`;
+    if (percentText) percentText.textContent = `${progress}% Completed`;
+  }
+
+  form.addEventListener("input", updateProgress);
+  form.addEventListener("change", updateProgress);
+  updateProgress();
+}
+
 /* ================= DOM READY ================= */
 document.addEventListener("DOMContentLoaded", () => {
-  // Application initialized
+  initBackToTop();
+  initFormStepTracker();
 });
