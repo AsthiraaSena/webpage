@@ -1020,60 +1020,9 @@ footer .link-light:hover {
   gap: 0.4rem;
 }
 
-/* ================= 11. MOBILE BOTTOM QUICK-ACTION BAR ================= */
+/* ================= 11. MOBILE BOTTOM QUICK-ACTION BAR (DISABLED) ================= */
 .mobile-bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1040;
-  background: rgba(9, 13, 31, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid var(--cosmic-border);
-  padding: 0.75rem 1rem;
-  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.4);
-}
-
-.mobile-bottom-bar .btn-mobile-act {
-  font-size: 0.95rem;
-  padding: 0.7rem 1rem;
-  border-radius: 0.65rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex: 1;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.mobile-bottom-bar .btn-mobile-act:active {
-  transform: scale(0.98);
-}
-
-/* Call Button (Gold) */
-.mobile-bottom-bar .btn-gold {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #060b19 !important;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-}
-.mobile-bottom-bar .btn-gold,
-.mobile-bottom-bar .btn-gold * {
-  color: #060b19 !important;
-}
-
-/* WhatsApp Button (Maroon) */
-.mobile-bottom-bar .btn-maroon {
-  background: var(--maroon-gradient);
-  border: 1.5px solid rgba(212, 175, 55, 0.45);
-  color: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(110, 16, 28, 0.3);
-}
-.mobile-bottom-bar .btn-maroon,
-.mobile-bottom-bar .btn-maroon * {
-  color: #ffffff !important;
+  display: none !important;
 }
 
 /* ================= 12. FAQ ACCORDION SACRED ================= */
@@ -1706,7 +1655,7 @@ footer .link-light:hover {
 
 @media (max-width: 991px) {
   .back-to-top {
-    bottom: 85px; /* Sits cleanly above .mobile-bottom-bar */
+    bottom: 24px;
     right: 18px;
     width: 42px;
     height: 42px;
