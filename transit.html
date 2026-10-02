@@ -15,12 +15,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily Planet Transit | Asthiraa Astrology</title>
   <meta name="description"
-    content="Check daily planetary transits and positions based on Baskara Astrology. Accurate timing for planetary shifts across signs and Nakshatras.">
+    content="Check daily planetary transits and positions based on Baskara Astrology. Accurate timing for planetary shifts across signs, Nakshatras, and Sub Lords.">
+  <meta name="keywords" content="Daily Planet Transit, Realtime Astrology Ephemeris, Baskara Astrology Transit, Sub Lord Daily Positions, Astrologer Senapathi">
+  <link rel="canonical" href="https://www.asthiraaastrology.in/transit.html">
+
+  <!-- ✅ Open Graph & Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Daily Planet Transit | Asthiraa Astrology">
+  <meta property="og:description" content="Daily planetary transit calculator computed with high-precision Baskara Astrology Sub-Lord algorithms.">
+  <meta property="og:url" content="https://www.asthiraaastrology.in/transit.html">
+  <meta property="og:image" content="https://www.asthiraaastrology.in/assets/Software.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ✅ JSON-LD Structured Data for AI & Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": "Daily Planet Transit - Asthiraa Astrology",
+    "url": "https://www.asthiraaastrology.in/transit.html",
+    "description": "Daily real-time planetary ephemeris and transit tracking based on Baskara Cuspal Interlink Theory.",
+    "publisher": {
+      "@type": "LocalBusiness",
+      "name": "Asthiraa Astrology Research & Training Institute",
+      "founder": "Astrologer Senapathi"
+    }
+  }
+  </script>
 
   <!-- ✅ Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <!-- ✅ Font Awesome 6 & Bootstrap 5 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -66,7 +94,8 @@
   <div class="top-invoc-bar">
     <div class="container">
       <div class="invoc-text">
-        <span class="lang" data-en="Om Gam Ganapataye Namaha • Asthiraa Astrology Research & Training Institute, Dharapuram"
+        <span class="lang"
+          data-en="Om Gam Ganapataye Namaha • Asthiraa Astrology Research & Training Institute, Dharapuram"
           data-ta="ஓம் கம் கணபதயே நமஹ • அஸ்திரா ஜோதிட ஆய்வகம் & பயிற்சி மையம், தாராபுரம்">
           ஓம் கம் கணபதயே நமஹ • அஸ்திரா ஜோதிட ஆய்வகம் & பயிற்சி மையம், தாராபுரம்
         </span>
@@ -80,12 +109,13 @@
   <!-- ================= NAVBAR ================= -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-modern-blue sticky-top shadow-sm py-2">
     <div class="container">
-      
+
       <!-- Brand Typography -->
       <a href="index.html" class="brand-container">
         <div class="logo-text-wrap">
           <div class="logo-title">ASTHIRAA <span>ASTROLOGY</span></div>
-          <div class="logo-subtitle lang" data-en="Baskara & Medical Astrology Research" data-ta="பாஸ்கரா & மருத்துவ ஜோதிட ஆய்வகம்">
+          <div class="logo-subtitle lang" data-en="Baskara & Medical Astrology Research"
+            data-ta="பாஸ்கரா & மருத்துவ ஜோதிட ஆய்வகம்">
             பாஸ்கரா & மருத்துவ ஜோதிட ஆய்வகம்
           </div>
         </div>
@@ -93,7 +123,8 @@
 
       <!-- Language Icon Toggle & Mobile Menu Trigger -->
       <div class="d-flex align-items-center order-lg-3 ms-lg-3 gap-2">
-        <button class="lang-icon-btn" id="langToggle" title="Switch Language / மொழியை மாற்றுக" aria-label="Toggle Language">
+        <button class="lang-icon-btn" id="langToggle" title="Switch Language / மொழியை மாற்றுக"
+          aria-label="Toggle Language">
           <i class="fa-solid fa-globe"></i>
           <span id="langBadge" class="lang-badge-text">தமிழ்</span>
         </button>
@@ -107,21 +138,32 @@
       <!-- Nav Links -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto text-center py-2 py-lg-0">
-          <li class="nav-item"><a class="nav-link lang" href="index.html" data-en="Home" data-ta="முகப்பு">முகப்பு</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="about.html" data-en="About" data-ta="எங்களை பற்றி">எங்களை பற்றி</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="services.html" data-en="Services" data-ta="சேவைகள்">சேவைகள்</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="classes.html" data-en="Classes" data-ta="வகுப்புகள்">வகுப்புகள்</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="consultation.html" data-en="Consultation" data-ta="ஆலோசனை">ஆலோசனை</a></li>
-          <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact" data-ta="தொடர்பு">தொடர்பு</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="index.html" data-en="Home" data-ta="முகப்பு">முகப்பு</a>
+          </li>
+          <li class="nav-item"><a class="nav-link lang" href="about.html" data-en="About" data-ta="எங்களை பற்றி">எங்களை
+              பற்றி</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="services.html" data-en="Services"
+              data-ta="சேவைகள்">சேவைகள்</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="classes.html" data-en="Classes"
+              data-ta="வகுப்புகள்">வகுப்புகள்</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="software.html" data-en="Software"
+              data-ta="மென்பொருள்">மென்பொருள்</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="consultation.html" data-en="Consultation"
+              data-ta="ஆலோசனை">ஆலோசனை</a></li>
+          <li class="nav-item"><a class="nav-link lang" href="contact.html" data-en="Contact"
+              data-ta="தொடர்பு">தொடர்பு</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link active dropdown-toggle lang" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false" data-en="Tools" data-ta="கருவிகள்">
+            <a class="nav-link active dropdown-toggle lang" href="#" id="toolsDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" data-en="Tools" data-ta="கருவிகள்">
               கருவிகள்
             </a>
             <ul class="dropdown-menu dropdown-menu-dark border-0 shadow-lg" aria-labelledby="toolsDropdown">
-              <li><a class="dropdown-item lang" href="tables.html" data-en="Sub Tables" data-ta="அட்டவணைகள்">Sub Tables</a></li>
-              <li><a class="dropdown-item active lang" href="transit.html" data-en="Daily Transit" data-ta="தினசரி கோட்சாரம்">Daily Transit</a></li>
-              <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026" data-ta="கோட்சாரம் 2026">Planet Transit 2026</a></li>
+              <li><a class="dropdown-item lang" href="tables.html" data-en="Sub Tables" data-ta="அட்டவணைகள்">Sub
+                  Tables</a></li>
+              <li><a class="dropdown-item active lang" href="transit.html" data-en="Daily Transit"
+                  data-ta="தினசரி கோட்சாரம்">Daily Transit</a></li>
+              <li><a class="dropdown-item lang" href="transit2.html" data-en="Planet Transit 2026"
+                  data-ta="கோட்சாரம் 2026">Planet Transit 2026</a></li>
             </ul>
           </li>
         </ul>
@@ -138,10 +180,12 @@
           நிகழ்நேர கோட்சார கிரக நிலைகள்
         </span>
       </div>
-      <h1 class="display-4 fw-800 mb-3 lang" style="color: var(--primary-dark);" data-en="Daily Planet Transit" data-ta="தினசரி கிரக கோட்சாரம்">
+      <h1 class="display-4 fw-800 mb-3 lang" style="color: var(--primary-dark);" data-en="Daily Planet Transit"
+        data-ta="தினசரி கிரக கோட்சாரம்">
         தினசரி கிரக கோட்சாரம்
       </h1>
-      <p class="lead text-muted mx-auto" style="max-width: 720px;" data-en="Daily live planetary positions, degrees, nakshatras, and sub-lords."
+      <p class="lead text-muted mx-auto" style="max-width: 720px;"
+        data-en="Daily live planetary positions, degrees, nakshatras, and sub-lords."
         data-ta="தினசரி கிரக நிலைகள், பாகைகள், நட்சத்திரங்கள் மற்றும் உப-அதிபதி கால இடைவெளிகள்.">
         தினசரி கிரக நிலைகள், பாகைகள், நட்சத்திரங்கள் மற்றும் உப-அதிபதி கால இடைவெளிகள்.
       </p>
@@ -218,6 +262,8 @@
               data-ta="ஜோதிட சேவைகள்">ஜோதிட சேவைகள்</a>
             <a href="classes.html" class="link-light text-decoration-none lang" data-en="Astrology Classes"
               data-ta="ஜோதிட வகுப்புகள்">ஜோதிட வகுப்புகள்</a>
+            <a href="software.html" class="link-light text-decoration-none lang" data-en="Astrology Software"
+              data-ta="ஜோதிட மென்பொருள்">ஜோதிட மென்பொருள்</a>
             <a href="consultation.html" class="link-light text-decoration-none lang" data-en="Book Consultation"
               data-ta="ஆலோசனை முன்பதிவு">ஆலோசனை முன்பதிவு</a>
             <a href="tables.html" class="link-light text-decoration-none lang" data-en="Astrology Tables"

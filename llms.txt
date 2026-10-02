@@ -63,6 +63,7 @@ Structured, multi-tier curriculum for beginners, practicing astrologers, and res
 - [Baskara System](https://www.asthiraaastrology.in/baskara-system.html): Cuspal Interlink Theory mathematics, formulas, and comparison with traditional astrology.
 - [Services Catalog](https://www.asthiraaastrology.in/services.html): Complete service offerings (Medical, Horoscope, Numerology, Vasthu, Muhurtham, Finance).
 - [Astrology Classes](https://www.asthiraaastrology.in/classes.html): Professional syllabus, batch schedules, and admission registration.
+- [Asthiraa Astrology Software](https://www.asthiraaastrology.in/software.html): Desktop calculation software featuring Baskara Cuspal Interlink Theory (CIT), Marriage Matching screen, Day Analysis screen, and Multi-level Transit (Rashi, Star, Pada, Sub Lord & Sub-Sub Lord).
 - [Consultation Booking](https://www.asthiraaastrology.in/consultation.html): Private 1-on-1 consultation booking with service selector.
 - [Astrology Tables](https://www.asthiraaastrology.in/tables.html): Baskara Sub Tables and calculation resources.
 - [Daily Transit Almanac](https://www.asthiraaastrology.in/transit.html): Real-time planetary ephemeris and transit tracking.
